@@ -1,0 +1,50 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+* {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.button {
+    font-size: 12px;
+    background: #666666;
+    border: 1px solid #999999;
+    margin-bottom: 10px;
+}
+
+.button:hover, .button:focus {
+    background-color: #cccccc;
+}
+
+.top-bar > ul .name h1 a {
+    font-size: 14px !important;
+}
+
+.tabs dd.active, .tabs li.active {
+    border-top: 3px solid #999999;
+}
+
+/* -----------------------------------------
+   Homepage
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Contact
+----------------------------------------- */
+#response {
+    display: none;
+}
+

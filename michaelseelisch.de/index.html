@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+
+  	<title>Michael Seelisch | Webentwicklung</title>
+  
+	<link rel="stylesheet" href="stylesheets/foundation.min.css">
+	<link rel="stylesheet" href="stylesheets/app.css">
+	
+	<script src="javascripts/modernizr.foundation.js"></script>
+</head>
+
+<body>
+
+	<!-- Nav and Banner -->
+  
+	<div class="row">
+		<div class="twelve columns">
+			<nav class="top-bar">
+			    <ul>
+			      <!-- Title Area -->
+			      <li class="name">
+			        <h1>
+			          <a href="index.html">
+			            Michael Seelisch | Webentwicklung
+			          </a>
+			        </h1>
+			      </li>
+			      <li class="toggle-topbar"><a href="#"></a></li>
+			    </ul>
+      		</nav>
+      		
+      		<p><img src="http://placehold.it/1000x400&text=[Moin Moin]" /></p>
+		</div>
+	</div>
+  
+	<!-- End Nav and Banner -->
+  
+  
+	<!-- Main Content Section -->
+  
+	<div class="row">
+  
+		<div class="eight columns">
+			<h4>Hallo.</h4>
+			<p>Ich biete Frontend-Entwicklung mit modernsten Technologien.</p>
+		</div>
+    
+		<div class="four columns">			
+			<ul class="block-grid three-up">
+	        	<li><img src="http://placehold.it/120x120&text=<html>" /></li>
+	        	<li><img src="http://placehold.it/120x120&text=HTML5" /></li>
+	        	<li><img src="http://placehold.it/120x120&text=CSS" /></li>
+	        	<li><img src="http://placehold.it/120x120&text=JS" /></li>
+	        	<li><img src="http://placehold.it/120x120&text=Flash" /></li>
+	        	<li><img src="http://placehold.it/120x120&text=AS" /></li>
+	      	</ul>
+		</div>
+        
+	</div>
+  
+  
+	<!-- Call to Action Panel -->
+  	<div class="row">
+	    <div class="twelve columns">
+    
+      		<div class="panel">
+        		<h4>Melden Sie sich!</h4>
+            
+        		<div class="row">
+          			<div class="nine columns">
+            			<p>Ich w&uuml;rde mich freuen, von Ihnen zu h&ouml;ren.</p>
+          			</div>
+          			<div class="three columns">
+            			<a href="contact.html" class="radius button right">Zum Kontaktformular</a>
+            			<button id="collaborate" type="button" class="radius button right" disabled>Zum Chat</button>
+          			</div>
+        		</div>
+			</div>
+      
+		</div>
+	</div>
+  
+  
+	<!-- Footer -->
+  
+	<footer class="row">
+    	<div class="twelve columns">
+	      	<hr />
+	      	<div class="row">
+	        	<div class="twelve columns">
+	          		<p>&copy; Michael Seelisch. Neum&uuml;nster. 2013</p>
+	        	</div>
+	      	</div>
+    	</div> 
+	</footer>
+  
+  	<!-- End Footer -->
+  	
+  
+	<!-- Included JS Files (Compressed) -->
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/foundation.min.js"></script>
+	<script src="https://togetherjs.com/togetherjs.js"></script>
+  
+	<!-- Initialize JS Plugins -->
+	<script src="javascripts/app.js"></script>
+	
+	<!-- Tracking -->
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-18019896-1']);
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 	'.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	
+	<!-- Piwik -->
+	<script type="text/javascript">
+		var pkBaseURL = (("https:" == document.location.protocol) ? "https://michaelseelisch.de/piwik/" : "http://michaelseelisch.de/piwik/");
+   		document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+	<script type="text/javascript">
+		try {
+		var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+		piwikTracker.trackPageView();
+		piwikTracker.enableLinkTracking();
+		} catch( err ) {}
+    </script>
+    <noscript>
+    	<p><img src="http://michaelseelisch.de/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p>
+    </noscript>
+	<!-- End Piwik Tag -->
+  
+</body>
+</html>
