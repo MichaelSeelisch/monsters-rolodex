@@ -9,11 +9,11 @@
 		.page-container {
 			position:absolute;
 			top:50px;
-			left:5px;
+			left:50px;
 		}	
 	</style>
 
-	<script src="../_libs/modernizr.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="../../_libs/modernizr.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script type="text/javascript">
 	
 		window.addEventListener("load", eventWindowLoaded, false);
@@ -59,7 +59,7 @@
 
 				// Image
 				var helloWorldImage = new Image();
-				helloWorldImage.onLoad = function() {
+				helloWorldImage.onload = function() {
 					context.drawImage(helloWorldImage, 155, 110);
 				}
 				helloWorldImage.src = "helloworld.gif";
