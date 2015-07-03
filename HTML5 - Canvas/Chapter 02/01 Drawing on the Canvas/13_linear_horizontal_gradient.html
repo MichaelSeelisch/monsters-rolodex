@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ch2Ex5 Canvas Compositing</title>
+	<title>Ch2Ex12 A linear horizontal gradient</title>
 	
 	<style type="text/css" media="screen">
 		.page-container {
@@ -38,28 +38,17 @@
 			drawScreen();
 
 			function drawScreen() {
-				// Draw a big box on the screen
-				context.fillStyle = "black"; 
-				context.fillRect(10, 10, 200, 200);
+				// Horizontal gradient values must remain 0
+				var gr = context.createLinearGradient(0, 0, 100, 0);
 				
-				// Leave globalCompositeOperation as is now draw a red square
-				context.fillStyle = "red";
-				context.fillRect(1, 1, 50, 50);
+				// Add the color stops.
+				gr.addColorStop(0,'rgb(255, 0, 0)');
+				gr.addColorStop(.5,'rgb(0, 255, 0)');
+				gr.addColorStop(1,'rgb(255, 0, 0)');
 
-				// New drawing is drawn on top of the existing image
-				context.globalCompositeOperation = "source-over";
-				
-				// Draw a red square next to the other one
-				context.fillRect(60, 1, 50, 50); // Now set to destination-atop
-				context.globalCompositeOperation = "destination-atop";
-				context.fillRect(1, 60, 50, 50);
-				
-				// Now set globalAlpha
-				context.globalAlpha = .5;
-
-				// Now set to source-atop
-				context.globalCompositeOperation = "source-atop";
-				context.fillRect(60, 60, 50, 50);
+				// Use the gradient for the fillStyle.
+				context.fillStyle = gr;
+				context.fillRect(0, 0, 100, 100);
 			}
 		}
 

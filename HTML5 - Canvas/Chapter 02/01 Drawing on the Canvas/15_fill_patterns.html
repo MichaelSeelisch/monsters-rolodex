@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ch2Ex5 Canvas Compositing</title>
+	<title>Ch2Ex14 Using the no-repeat, repeat-x, and repeat-y strings</title>
 	
 	<style type="text/css" media="screen">
 		.page-container {
@@ -38,28 +38,21 @@
 			drawScreen();
 
 			function drawScreen() {
-				// Draw a big box on the screen
-				context.fillStyle = "black"; 
-				context.fillRect(10, 10, 200, 200);
-				
-				// Leave globalCompositeOperation as is now draw a red square
-				context.fillStyle = "red";
-				context.fillRect(1, 1, 50, 50);
-
-				// New drawing is drawn on top of the existing image
-				context.globalCompositeOperation = "source-over";
-				
-				// Draw a red square next to the other one
-				context.fillRect(60, 1, 50, 50); // Now set to destination-atop
-				context.globalCompositeOperation = "destination-atop";
-				context.fillRect(1, 60, 50, 50);
-				
-				// Now set globalAlpha
-				context.globalAlpha = .5;
-
-				// Now set to source-atop
-				context.globalCompositeOperation = "source-atop";
-				context.fillRect(60, 60, 50, 50);
+				var fillImg = new Image();
+				fillImg.src = 'fill_20x20.gif';
+				fillImg.onload = function() {
+					var fillPattern1 = context.createPattern(fillImg, 'no-repeat');
+					var fillPattern2 = context.createPattern(fillImg, 'repeat-x');
+					var fillPattern3 = context.createPattern(fillImg, 'repeat-y');
+					
+					context.fillStyle = fillPattern1;
+					context.fillRect(0, 0, 100, 100);
+					context.fillStyle = fillPattern3;
+					context.fillRect(0, 220, 100, 100);
+					context.translate(0, 110);
+					context.fillStyle = fillPattern2;
+					context.fillRect(0, 0, 100, 100);
+				}
 			}
 		}
 

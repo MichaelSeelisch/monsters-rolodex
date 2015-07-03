@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ch2Ex5 Canvas Compositing</title>
+	<title>Ch2Ex15 Using the clearRect() function</title>
 	
 	<style type="text/css" media="screen">
 		.page-container {
@@ -35,32 +35,27 @@
 				var context = theCanvas.getContext("2d");
 			}
 
-			drawScreen();
+			var yOffset = 0;
 
 			function drawScreen() {
-				// Draw a big box on the screen
-				context.fillStyle = "black"; 
-				context.fillRect(10, 10, 200, 200);
-				
-				// Leave globalCompositeOperation as is now draw a red square
-				context.fillStyle = "red";
-				context.fillRect(1, 1, 50, 50);
-
-				// New drawing is drawn on top of the existing image
-				context.globalCompositeOperation = "source-over";
-				
-				// Draw a red square next to the other one
-				context.fillRect(60, 1, 50, 50); // Now set to destination-atop
-				context.globalCompositeOperation = "destination-atop";
-				context.fillRect(1, 60, 50, 50);
-				
-				// Now set globalAlpha
-				context.globalAlpha = .5;
-
-				// Now set to source-atop
-				context.globalCompositeOperation = "source-atop";
-				context.fillRect(60, 60, 50, 50);
+				context.clearRect(0, 0, theCanvas.width,theCanvas.height);
+				var currentPath = context.beginPath();
+				context.strokeStyle = "red"; // Need list of available colors
+				context.lineWidth = 5;
+				context.moveTo(0, 0 + yOffset);
+				context.lineTo(50, 0 + yOffset);
+				context.lineTo(50, 50 + yOffset);
+				context.stroke();
+				context.closePath();
+				yOffset += 1;
 			}
+
+			function gameLoop() {
+				window.setTimeout(gameLoop, 20);
+				drawScreen()
+			}
+			
+			gameLoop();
 		}
 
 	</script>
