@@ -17,9 +17,14 @@
 		}
 
 		.label {
-			width: 100px;
+			width: 150px;
 			display: inline-block;
 			margin-bottom: 10px;
+		}
+
+		.wrapper {
+			display: table-cell;
+			padding: 20px;
 		}
 	</style>
 
@@ -122,6 +127,21 @@
 			formElement = document.getElementById("fillType");
 			formElement.addEventListener('change', fillTypeChanged, false);
 
+			formElement = document.getElementById("canvasWidth");
+			formElement.addEventListener('change', canvasWidthChanged, false);
+
+			formElement = document.getElementById("canvasHeight");
+			formElement.addEventListener('change', canvasHeightChanged, false);
+
+			formElement = document.getElementById("canvasStyleWidth");
+			formElement.addEventListener("change", canvasStyleSizeChanged, false);
+
+			formElement = document.getElementById("canvasStyleHeight");
+			formElement.addEventListener("change", canvasStyleSizeChanged, false);
+
+			formElement = document.getElementById("createImageData");
+			formElement.addEventListener('click', createImageDataPressed, false);
+
 			drawScreen();
 
 			function drawScreen() {
@@ -134,12 +154,13 @@
 				context.shadowOffsetY = 0;
 				context.shadowBlur = 0;
 
-				context.fillStyle = "#ffffaa";
+				context.fillStyle = '#ffffaa';
 				context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 				
 				//Box
-				context.strokeStyle = "#000000"; 
-				context.strokeRect(5,  5, theCanvas.width-10, theCanvas.height-10);
+				context.strokeStyle = '#000000';
+				context.strokeRect(5, 5, theCanvas.width - 10, theCanvas.height - 10);
+
 				context.font = fontWeight + " " + fontStyle + " " + fontSize + "px " + fontFace;
 				context.textBaseline = textBaseline;
 				context.textAlign = textAlign;
@@ -295,6 +316,32 @@
 				fillType = target.value;
 				drawScreen();
 			}
+
+			function canvasWidthChanged(evt) {
+				var target = evt.target;
+				theCanvas.width = target.value;
+				drawScreen();
+			}
+
+			function canvasHeightChanged(evt) {
+				var target = evt.target;
+				theCanvas.height = target.value;
+				drawScreen();
+			}
+
+			function canvasStyleSizeChanged(evt) {
+				var styleWidth = document.getElementById("canvasStyleWidth");
+				var styleHeight = document.getElementById("canvasStyleHeight");
+				var styleValue = "width:" + styleWidth.value + "px; height:" + styleHeight.value + "px;";
+				theCanvas.setAttribute("style", styleValue );
+				drawScreen();
+			}
+
+			function createImageDataPressed(evt) {
+				var imageDataDisplay = document.getElementById('imageDataDisplay');
+				imageDataDisplay.value = theCanvas.toDataURL();
+				window.open(imageDataDisplay.value, "canvasImage", "left=0,top=0,width=" + theCanvas.width + ",height=" + theCanvas.height + ",toolbar=0,resizable=0");
+			}
 		}
 
 	</script>
@@ -308,99 +355,117 @@
 			Your browser does not support HTML5 Canvas.
 		</canvas>
 
-		<form>
-			<span class="label">Text:</span><input id="textBox" placeholder="your text"/>
-		</form>
+		<div class="wrapper">
+			<form>
+				<span class="label">Text:</span><input id="textBox" placeholder="your text"/>
+			</form>
+			
+			
+			<span class="label">Fill or Stroke:</span>
+			<select id = "fillOrStroke">
+				<option value = "fill">fill</option>
+				<option value = "stroke">stroke</option>
+				<option value = "both">both</option>
+			</select>
+			<br>
+
+			<span class="label">Text font:</span>
+			<select id="fontStyle">
+				<option value="normal">normal</option>
+				<option value="italic">italic</option>
+				<option value="oblique">oblique</option>
+			</select>
+			<br>
+
+			<span class="label">Font Weight:</span>
+			<select id="fontWeight">
+				<option value="normal">normal</option>
+				<option value="bold">bold</option>
+				<option value="bolder">bolder</option>
+				<option value="lighter">lighter</option>
+			</select>
+			<br>
+
+			<span class="label">Font Style:</span>
+			<select id="textFont">
+				<option value="serif">serif</option>
+				<option value="sans-serif">sans-serif</option>
+				<option value="cursive">cursive</option>
+				<option value="fantasy">fantasy</option>
+				<option value="monospace">monospace</option>
+			</select>
+			<br>
+			
+			<span class="label">Text Size:</span>
+			<input type="range" id="textSize" min="0" max="200" step="1" value="50" />
+			<br>
+			
+			<span class="label">Fill Type:</span>
+			<select id="fillType">
+				<option value="colorFill">Color Fill</option>
+				<option value="linearGradient">Linear Gradient</option>
+				<option value="radialGradient">Radial Gradient</option>
+				<option value="pattern">pattern</option>
+			</select>
+			<br>
+
+			<span class="label">Text Color:</span>
+			<input class="color" id="textFillColor" value="FF0000" />
+			<br>
+			
+			<span class="label">Text Color 2:</span>
+			<input class="color" id="textFillColor2" value ="000000" />
+			<br>
+
+			<span class="label">Text Baseline:</span>
+			<select id="textBaseline">
+				<option value="middle">middle</option>
+				<option value="top">top</option>
+				<option value="hanging">hanging</option>
+				<option value="alphabetic">alphabetic</option>
+				<option value="ideographic">ideographic</option>
+				<option value="bottom">bottom</option>
+			</select>
+			<br>
+			
+			<span class="label">Text Align:</span>
+			<select id="textAlign">
+				<option value="center">center</option>
+				<option value="start">start</option>
+				<option value="end">end</option>
+				<option value="left">left</option>
+				<option value="right">right</option>
+			</select>
+		</div>
 		
-		
-		<span class="label">Fill or Stroke:</span>
-		<select id = "fillOrStroke">
-			<option value = "fill">fill</option>
-			<option value = "stroke">stroke</option>
-			<option value = "both">both</option>
-		</select>
-		<br>
+		<div class="wrapper">
+			<span class="label">Alpha:</span><input type="range" id="textAlpha" min="0.0" max="1.0" step="0.01" value="1.0" />
+			<br>
 
-		<span class="label">Text font:</span>
-		<select id="fontStyle">
-			<option value="normal">normal</option>
-			<option value="italic">italic</option>
-			<option value="oblique">oblique</option>
-		</select>
-		<br>
+			<span class="label">Shadow X:</span><input type="range" id="shadowX" min="−100" max="100" step="1" value="1" />
+			<br>
+			<span class="label">Shadow Y:</span><input type="range" id="shadowY" min="−100" max="100" step="1"	value="1" />
+			<br>
+			<span class="label">Shadow Blur:</span><input type="range" id="shadowBlur" min="1" max="100" step="1"	value="1" />
+			<br>
+			<span class="label">Shadow Color:</span><input class="color" id="shadowColor" value="707070" />
+			<br>
+			<span class="label">Canvas Width:</span> <input type="range" id="canvasWidth" min="0" max="1000" step="1" value="500" />
+			<br>
+			<span class="label">Canvas Height:</span> <input type="range" id="canvasHeight" min="0" max="1000"	step="1" value="300" />
+			<br>
+			<span class="label">Canvas Style Width:</span> <input type="range" id="canvasStyleWidth" min="0" max="1000" step="1" value="500" />
+			<br>
+			<span class="label">Canvas Style Height:</span> <input type="range" id="canvasStyleHeight" min="0" max="1000" step="1" value="300" />
+			<br>
+		</div>
 
-		<span class="label">Font Weight:</span>
-		<select id="fontWeight">
-			<option value="normal">normal</option>
-			<option value="bold">bold</option>
-			<option value="bolder">bolder</option>
-			<option value="lighter">lighter</option>
-		</select>
-		<br>
-
-		<span class="label">Font Style:</span>
-		<select id="textFont">
-			<option value="serif">serif</option>
-			<option value="sans-serif">sans-serif</option>
-			<option value="cursive">cursive</option>
-			<option value="fantasy">fantasy</option>
-			<option value="monospace">monospace</option>
-		</select>
-		<br>
-		
-		<span class="label">Text Size:</span>
-		<input type="range" id="textSize" min="0" max="200" step="1" value="50" />
-		<br>
-		
-		<span class="label">Fill Type:</span>
-		<select id="fillType">
-			<option value="colorFill">Color Fill</option>
-			<option value="linearGradient">Linear Gradient</option>
-			<option value="radialGradient">Radial Gradient</option>
-			<option value="pattern">pattern</option>
-		</select>
-		<br>
-
-		<span class="label">Text Color:</span>
-		<input class="color" id="textFillColor" value="FF0000" />
-		<br>
-		
-		<span class="label">Text Color 2:</span>
-		<input class="color" id="textFillColor2" value ="000000" />
-		<br>
-
-		<span class="label">Text Baseline:</span>
-		<select id="textBaseline">
-			<option value="middle">middle</option>
-			<option value="top">top</option>
-			<option value="hanging">hanging</option>
-			<option value="alphabetic">alphabetic</option>
-			<option value="ideographic">ideographic</option>
-			<option value="bottom">bottom</option>
-		</select>
-		<br>
-		
-		<span class="label">Text Align:</span>
-		<select id="textAlign">
-			<option value="center">center</option>
-			<option value="start">start</option>
-			<option value="end">end</option>
-			<option value="left">left</option>
-			<option value="right">right</option>
-		</select>
-		<br>
-
-		<span class="label">Alpha:</span><input type="range" id="textAlpha" min="0.0" max="1.0" step="0.01" value="1.0" />
-		<br>
-
-		<span class="label">Shadow X:</span><input type="range" id="shadowX" min="−100" max="100" step="1" value="1" />
-		<br>
-		<span class="label">Shadow Y:</span><input type="range" id="shadowY" min="−100" max="100" step="1"	value="1" />
-		<br>
-		<span class="label">Shadow Blur:</span><input type="range" id="shadowBlur" min="1" max="100" step="1"	value="1" />
-		<br>
-		<span class="label">Shadow Color:</span><input class="color" id="shadowColor" value="707070" />
-		<br>
+		<div class="wrapper">
+			<input type="button" id="createImageData" value="Create Image Data">
+			<br>
+			<br>
+			<textarea id="imageDataDisplay" rows=10 cols=30></textarea>
+		</div>
 
 	</div>
 
