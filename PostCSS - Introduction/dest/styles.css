@@ -1,61 +1,250 @@
+/* Example 01
+	body {
+		display: flex;
+		border-radius: 50%;
+		transform: translateX(15px);
+		background: var(--mainColor);
+	}
+
+	.example01-grid-item {
+		background: var(--redColor);
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.example01-nested-grid-item {
+		background: red;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.example01-grid-one {
+		width: 100%;
+		lost-utility: clearfix;
+	}
+
+	.example01-grid-one div {
+		lost-column: 1/3;
+	}
+*/
+
+/* Example 02: Asymetrical grid */
+
+/*@lost cycle none;  = same as: lost-column: 1/2 0; or lost-column: 1/4 0; */
+
+/*
+	body {
+	}
+
+	.example02-grid-item {
+		background: var(--redColor);
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.example02-nested-grid-item {
+		background: red;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.example02-grid-one {
+		width: 100%;
+		lost-utility: clearfix;
+	}
+
+	.example02-grid-one div {
+		lost-column: 1/4;
+	}
+
+	.example02-grid-one div:nth-child(2) {
+		lost-column: 1/2;
+	}
+*/
+
+/* Example 03: Responsive grid
+
+	body {
+	}
+
+	.example03-grid-item {
+		background: var(--redColor);
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.example03-nested-grid-item {
+		background: red;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.example03-grid-one {
+		width: 100%;
+		lost-utility: clearfix;
+	}
+
+	.example03-grid-one div {
+		lost-column: 1/1;
+	}
+
+	@media screen and (min-width: 400px) {
+		.example03-grid-one div {
+			lost-column: 1/2;
+		}
+	}
+
+	@media screen and (min-width: 900px) {
+		.example03-grid-one div {
+			lost-column: 1/3;
+		}
+	}
+
+	@media screen and (min-width: 1300px) {
+		.example03-grid-one div {
+			lost-column: 1/4 4 50px;
+		}
+	}
+ */
+
+ /* Example 04: Vertical grid */
+
 body {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: -webkit-box;
-	display: flex;
-	border-radius: 50%;
-	-webkit-transform: translateX(15px);
-	        -ms-transform: translateX(15px);
-	    transform: translateX(15px);
-	background: #ffffff;
 }
 
-.grid-item {
+.example04-grid-item {
 	background: #2c3e50;
 	height: 100px;
 	margin-bottom: 20px;
 }
 
-.nested-grid-item {
+.example04-nested-grid-item {
 	background: red;
 	height: 50px;
 	margin-bottom: 10px;
 }
 
-.grid-one {
+.example04-grid-one {
 	width: 100%;
 	*zoom: 1;
 }
 
-.grid-one:before {
+.example04-grid-one:before {
 	content: '';
 	display: table;
 }
 
-.grid-one:after {
+.example04-grid-one:after {
 	content: '';
 	display: table;
 	clear: both;
 }
 
-.grid-one div {
-	width: calc(99.99% * 1/3 - 20px);
+.example04-grid-one div {
+	width: 99.99%;
 }
 
-.grid-one div:nth-child(n) {
+.example04-grid-one div:nth-child(n) {
 	float: left;
 	margin-right: 30px;
 	clear: none;
 }
 
-.grid-one div:last-child {
+.example04-grid-one div:last-child {
 	margin-right: 0;
 }
 
-.grid-one div:nth-child(2n) {
+.example04-grid-one div:nth-child(1n) {
 	margin-right: 0;
 }
 
-.grid-one div:nth-child(2n + 1) {
+.example04-grid-one div:nth-child(1n + 1) {
 	clear: left;
+}
+
+.example04-grid-two {
+	width: 100%;
+	*zoom: 1;
+	height: 500px;
+}
+
+.example04-grid-two:before {
+	content: '';
+	display: table;
+}
+
+.example04-grid-two:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.example04-grid-two div {
+	width: 100%;
+	height: calc(99.99% * 1/4 - 22.5px);
+	margin-bottom: 30px;
+}
+
+.example04-grid-two div:last-child {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 400px) {
+	.example04-grid-one div {
+		width: calc(99.99% * 1/2 - 15px);
+	}
+	.example04-grid-one div:nth-child(n) {
+		float: left;
+		margin-right: 30px;
+		clear: none;
+	}
+	.example04-grid-one div:last-child {
+		margin-right: 0;
+	}
+	.example04-grid-one div:nth-child(2n) {
+		margin-right: 0;
+	}
+	.example04-grid-one div:nth-child(2n + 1) {
+		clear: left;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example04-grid-one div {
+		width: calc(99.99% * 1/3 - 20px);
+	}
+	.example04-grid-one div:nth-child(n) {
+		float: left;
+		margin-right: 30px;
+		clear: none;
+	}
+	.example04-grid-one div:last-child {
+		margin-right: 0;
+	}
+	.example04-grid-one div:nth-child(3n) {
+		margin-right: 0;
+	}
+	.example04-grid-one div:nth-child(3n + 1) {
+		clear: left;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example04-grid-one div {
+		width: calc(99.99% * 1/4 - 37.5px);
+	}
+	.example04-grid-one div:nth-child(n) {
+		float: left;
+		margin-right: 50px;
+		clear: none;
+	}
+	.example04-grid-one div:last-child {
+		margin-right: 0;
+	}
+	.example04-grid-one div:nth-child(4n) {
+		margin-right: 0;
+	}
+	.example04-grid-one div:nth-child(4n + 1) {
+		clear: left;
+	}
 }

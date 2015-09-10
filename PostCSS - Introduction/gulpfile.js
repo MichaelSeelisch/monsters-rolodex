@@ -37,5 +37,5 @@ gulp.task('watch:styles', function() {
 	gulp.watch('**/*.css', ['styles']);
 });
 
-gulp.task('default', ['webserver', 'watch:styles']);
-
+// gulp.task('default', ['webserver', 'watch:styles']);
+gulp.task('default', ['watch:styles']);
