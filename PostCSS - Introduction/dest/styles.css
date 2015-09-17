@@ -107,13 +107,13 @@
 	}
  */
 
- /* Example 04: Vertical grid */
+ /* Example 04: Vertical grid 
 
 body {
 }
 
 .example04-grid-item {
-	background: #2c3e50;
+	background: var(--redColor);
 	height: 100px;
 	margin-bottom: 20px;
 }
@@ -126,125 +126,293 @@ body {
 
 .example04-grid-one {
 	width: 100%;
-	*zoom: 1;
-}
-
-.example04-grid-one:before {
-	content: '';
-	display: table;
-}
-
-.example04-grid-one:after {
-	content: '';
-	display: table;
-	clear: both;
+	lost-utility: clearfix;
 }
 
 .example04-grid-one div {
-	width: 99.99%;
-}
-
-.example04-grid-one div:nth-child(n) {
-	float: left;
-	margin-right: 30px;
-	clear: none;
-}
-
-.example04-grid-one div:last-child {
-	margin-right: 0;
-}
-
-.example04-grid-one div:nth-child(1n) {
-	margin-right: 0;
-}
-
-.example04-grid-one div:nth-child(1n + 1) {
-	clear: left;
+	lost-column: 1/1;
 }
 
 .example04-grid-two {
 	width: 100%;
-	*zoom: 1;
+	lost-utility: clearfix;
 	height: 500px;
 }
 
-.example04-grid-two:before {
-	content: '';
-	display: table;
-}
-
-.example04-grid-two:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
 .example04-grid-two div {
-	width: 100%;
-	height: calc(99.99% * 1/4 - 22.5px);
-	margin-bottom: 30px;
-}
-
-.example04-grid-two div:last-child {
-	margin-bottom: 0;
+	lost-row: 1/4;
 }
 
 @media screen and (min-width: 400px) {
 	.example04-grid-one div {
-		width: calc(99.99% * 1/2 - 15px);
-	}
-	.example04-grid-one div:nth-child(n) {
-		float: left;
-		margin-right: 30px;
-		clear: none;
-	}
-	.example04-grid-one div:last-child {
-		margin-right: 0;
-	}
-	.example04-grid-one div:nth-child(2n) {
-		margin-right: 0;
-	}
-	.example04-grid-one div:nth-child(2n + 1) {
-		clear: left;
+		lost-column: 1/2;
 	}
 }
 
 @media screen and (min-width: 900px) {
 	.example04-grid-one div {
-		width: calc(99.99% * 1/3 - 20px);
-	}
-	.example04-grid-one div:nth-child(n) {
-		float: left;
-		margin-right: 30px;
-		clear: none;
-	}
-	.example04-grid-one div:last-child {
-		margin-right: 0;
-	}
-	.example04-grid-one div:nth-child(3n) {
-		margin-right: 0;
-	}
-	.example04-grid-one div:nth-child(3n + 1) {
-		clear: left;
+		lost-column: 1/3;
 	}
 }
 
 @media screen and (min-width: 1300px) {
 	.example04-grid-one div {
-		width: calc(99.99% * 1/4 - 37.5px);
+		lost-column: 1/4 4 50px;
 	}
-	.example04-grid-one div:nth-child(n) {
-		float: left;
-		margin-right: 50px;
-		clear: none;
+}
+*/
+
+/* Example 05: Helpful lost grid properties
+
+body {
+	color: #fff;
+}
+
+.example05-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example05-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example05-grid-one {
+	lost-center: 80% 40px;
+	padding-top: 40px;
+	background-color: #CCC;
+	/*
+		width: 100%;
+		lost-utility: clearfix;
+	*/
+	/*
+}
+
+.example05-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	/*
+		lost-align: top-left;
+		lost-align: top-right;
+		lost-align: top-center;
+		lost-align: middle-left;
+		lost-align: middle-center;
+		lost-align: right;
+		...
+	*/
+	/*
+}
+
+.example05-grid-one div p {
+	margin: 0;
+}
+
+.example05-grid-two {
+	width: 100%;
+	lost-utility: clearfix;
+	height: 500px;
+}
+
+.example05-grid-two div {
+	lost-row: 1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example05-grid-one div {
+		lost-column: 1/2;
 	}
-	.example04-grid-one div:last-child {
+}
+
+@media screen and (min-width: 900px) {
+	.example05-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example05-grid-one div {
+		lost-column: 1/4 4 50px;
+	}
+}
+*/
+
+/* Example 06: Waffle & Flexbox Grids In Lost */
+
+body {
+	color: #fff;
+}
+
+.example06-grid-item {
+	background: #2c3e50;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example06-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example06-grid-one {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 40px;
+	padding-right: 40px;
+	/*
+		lost-center: 80% 40px;
+		height: 100vh;
+	*/
+}
+
+.example06-grid-one div {
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        -webkit-box-flex: 0;
+	        flex: 0 0 auto;
+	width: 99.99%;
+	position: relative;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example06-grid-one div:nth-child(n) {
+	margin-right: 30px;
+}
+
+.example06-grid-one div:last-child {
+	margin-right: 0;
+}
+
+.example06-grid-one div:nth-child(1n) {
+	margin-right: 0;
+}
+
+.example06-grid-one div > * {
+	position: absolute;
+	top: 50%;
+	right: auto;
+	bottom: auto;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+}
+
+.example06-grid-one div p {
+	margin: 0;
+}
+
+.example06-grid-two {
+	width: 100%;
+	*zoom: 1;
+	height: 500px;
+}
+
+.example06-grid-two:before {
+	content: '';
+	display: table;
+}
+
+.example06-grid-two:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.example06-grid-two div {
+	width: 100%;
+	-webkit-flex: 0 0 auto;
+	    -ms-flex: 0 0 auto;
+	        -webkit-box-flex: 0;
+	        flex: 0 0 auto;
+	height: calc(99.99% * 1/4 - 22.5px);
+	margin-bottom: 30px;
+}
+
+.example06-grid-two div:last-child {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 400px) {
+	.example06-grid-one div {
+		-webkit-flex: 0 0 auto;
+		    -ms-flex: 0 0 auto;
+		        -webkit-box-flex: 0;
+		        flex: 0 0 auto;
+		width: calc(99.99% * 1/2 - 15px);
+	}
+	.example06-grid-one div:nth-child(n) {
+		margin-right: 30px;
+	}
+	.example06-grid-one div:last-child {
 		margin-right: 0;
 	}
-	.example04-grid-one div:nth-child(4n) {
+	.example06-grid-one div:nth-child(2n) {
 		margin-right: 0;
 	}
-	.example04-grid-one div:nth-child(4n + 1) {
-		clear: left;
+}
+
+@media screen and (min-width: 900px) {
+	.example06-grid-one div {
+		-webkit-flex: 0 0 auto;
+		    -ms-flex: 0 0 auto;
+		        -webkit-box-flex: 0;
+		        flex: 0 0 auto;
+		width: calc(99.99% * 1/3 - 20px);
+	}
+	.example06-grid-one div:nth-child(n) {
+		margin-right: 30px;
+	}
+	.example06-grid-one div:last-child {
+		margin-right: 0;
+	}
+	.example06-grid-one div:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example06-grid-one div {
+		/*
+			lost-waffle: 1/4;
+		*/
+		-webkit-flex: 0 0 auto;
+		    -ms-flex: 0 0 auto;
+		        -webkit-box-flex: 0;
+		        flex: 0 0 auto;
+		width: calc(99.99% * 1/4 - 22.5px);
+	}
+	.example06-grid-one div:nth-child(n) {
+
+		/*
+			lost-waffle: 1/4;
+		*/
+		margin-right: 30px;
+	}
+	.example06-grid-one div:last-child {
+
+		/*
+			lost-waffle: 1/4;
+		*/
+		margin-right: 0;
+	}
+	.example06-grid-one div:nth-child(4n) {
+
+		/*
+			lost-waffle: 1/4;
+		*/
+		margin-right: 0;
 	}
 }
