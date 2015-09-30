@@ -239,14 +239,16 @@ body {
 }
 */
 
-/* Example 06: Waffle & Flexbox Grids In Lost */
+/* Example 06: Waffle & Flexbox Grids In Lost
+
+@lost flexbox flex;
 
 body {
 	color: #fff;
 }
 
 .example06-grid-item {
-	background: #2c3e50;
+	background: var(--redColor);
 	height: 100px;
 	margin-bottom: 20px;
 }
@@ -258,6 +260,74 @@ body {
 }
 
 .example06-grid-one {
+	lost-center: 80% 40px;
+	/*
+		lost-center: 80% 40px;
+		height: 100vh;
+	*//*
+}
+
+.example06-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example06-grid-one div p {
+	margin: 0;
+}
+
+.example06-grid-two {
+	width: 100%;
+	lost-utility: clearfix;
+	height: 500px;
+}
+
+.example06-grid-two div {
+	lost-row: 1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example06-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example06-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example06-grid-one div {
+		/*
+			lost-waffle: 1/4;
+		*//*
+		lost-column: 1/4 4 30px;
+	}
+}*/
+
+/* Example 07: Offset and Move with Lost */
+
+body {
+	color: #fff;
+}
+
+.example07-grid-item {
+	background: #2c3e50;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example07-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example07-grid-one {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: -webkit-box;
@@ -270,13 +340,9 @@ body {
 	margin-right: auto;
 	padding-left: 40px;
 	padding-right: 40px;
-	/*
-		lost-center: 80% 40px;
-		height: 100vh;
-	*/
 }
 
-.example06-grid-one div {
+.example07-grid-one div {
 	-webkit-flex: 0 0 auto;
 	    -ms-flex: 0 0 auto;
 	        -webkit-box-flex: 0;
@@ -287,19 +353,19 @@ body {
 	text-align: center;
 }
 
-.example06-grid-one div:nth-child(n) {
+.example07-grid-one div:nth-child(n) {
 	margin-right: 30px;
 }
 
-.example06-grid-one div:last-child {
+.example07-grid-one div:last-child {
 	margin-right: 0;
 }
 
-.example06-grid-one div:nth-child(1n) {
+.example07-grid-one div:nth-child(1n) {
 	margin-right: 0;
 }
 
-.example06-grid-one div > * {
+.example07-grid-one div > * {
 	position: absolute;
 	top: 50%;
 	right: auto;
@@ -310,109 +376,73 @@ body {
 	    transform: translate(-50%, -50%);
 }
 
-.example06-grid-one div p {
+.example07-grid-one div p {
 	margin: 0;
 }
 
-.example06-grid-two {
-	width: 100%;
-	*zoom: 1;
-	height: 500px;
+.example07-grid-one div:first-child {
+	position: relative;
+	left: calc(99.99% * 1/4 - 22.5px + 30px);
 }
 
-.example06-grid-two:before {
-	content: '';
-	display: table;
-}
-
-.example06-grid-two:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-.example06-grid-two div {
-	width: 100%;
-	-webkit-flex: 0 0 auto;
-	    -ms-flex: 0 0 auto;
-	        -webkit-box-flex: 0;
-	        flex: 0 0 auto;
-	height: calc(99.99% * 1/4 - 22.5px);
-	margin-bottom: 30px;
-}
-
-.example06-grid-two div:last-child {
-	margin-bottom: 0;
+.example07-grid-one div:nth-child(2) {
+	position: relative;
+	left: calc(99.99% * -1/4 - 37.5px + 30px);
 }
 
 @media screen and (min-width: 400px) {
-	.example06-grid-one div {
+	.example07-grid-one div {
 		-webkit-flex: 0 0 auto;
 		    -ms-flex: 0 0 auto;
 		        -webkit-box-flex: 0;
 		        flex: 0 0 auto;
 		width: calc(99.99% * 1/2 - 15px);
 	}
-	.example06-grid-one div:nth-child(n) {
+	.example07-grid-one div:nth-child(n) {
 		margin-right: 30px;
 	}
-	.example06-grid-one div:last-child {
+	.example07-grid-one div:last-child {
 		margin-right: 0;
 	}
-	.example06-grid-one div:nth-child(2n) {
+	.example07-grid-one div:nth-child(2n) {
 		margin-right: 0;
 	}
 }
 
 @media screen and (min-width: 900px) {
-	.example06-grid-one div {
+	.example07-grid-one div {
 		-webkit-flex: 0 0 auto;
 		    -ms-flex: 0 0 auto;
 		        -webkit-box-flex: 0;
 		        flex: 0 0 auto;
 		width: calc(99.99% * 1/3 - 20px);
 	}
-	.example06-grid-one div:nth-child(n) {
+	.example07-grid-one div:nth-child(n) {
 		margin-right: 30px;
 	}
-	.example06-grid-one div:last-child {
+	.example07-grid-one div:last-child {
 		margin-right: 0;
 	}
-	.example06-grid-one div:nth-child(3n) {
+	.example07-grid-one div:nth-child(3n) {
 		margin-right: 0;
 	}
 }
 
 @media screen and (min-width: 1300px) {
-	.example06-grid-one div {
-		/*
-			lost-waffle: 1/4;
-		*/
+	.example07-grid-one div {
 		-webkit-flex: 0 0 auto;
 		    -ms-flex: 0 0 auto;
 		        -webkit-box-flex: 0;
 		        flex: 0 0 auto;
 		width: calc(99.99% * 1/4 - 22.5px);
 	}
-	.example06-grid-one div:nth-child(n) {
-
-		/*
-			lost-waffle: 1/4;
-		*/
+	.example07-grid-one div:nth-child(n) {
 		margin-right: 30px;
 	}
-	.example06-grid-one div:last-child {
-
-		/*
-			lost-waffle: 1/4;
-		*/
+	.example07-grid-one div:last-child {
 		margin-right: 0;
 	}
-	.example06-grid-one div:nth-child(4n) {
-
-		/*
-			lost-waffle: 1/4;
-		*/
+	.example07-grid-one div:nth-child(4n) {
 		margin-right: 0;
 	}
 }

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var server = require('gulp-server-livereload');
+var webserver = require('gulp-webserver');
 /*
 	var csswring = require('csswring');
 */
@@ -25,7 +26,7 @@ gulp.task('styles', function() {
 
 gulp.task('webserver', function() {
   gulp.src('')
-    .pipe(server({
+    .pipe(webserver({
       livereload: true,
       directoryListing: false,
       open: true,
@@ -38,4 +39,4 @@ gulp.task('watch:styles', function() {
 });
 
 //gulp.task('default', ['webserver', 'watch:styles']);
-gulp.task('default', ['watch:styles']);
+gulp.task('default', ['watch:styles', 'webserver']);

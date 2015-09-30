@@ -13,7 +13,9 @@
     "gulp-cssnext": "^1.0.1",
     "gulp-livereload": "^3.8.0",
     "gulp-server-livereload": "^1.5.2",
-    "lost": "^6.5.0"
+    "gulp-webserver": "^0.9.1",
+    "lost": "^6.5.0",
+    "webserver": "^1.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -244,7 +244,7 @@ body {
 }
 */
 
-/* Example 06: Waffle & Flexbox Grids In Lost */
+/* Example 06: Waffle & Flexbox Grids In Lost
 
 @lost flexbox flex;
 
@@ -269,7 +269,7 @@ body {
 	/*
 		lost-center: 80% 40px;
 		height: 100vh;
-	*/
+	*//*
 }
 
 .example06-grid-one div {
@@ -309,7 +309,68 @@ body {
 	.example06-grid-one div {
 		/*
 			lost-waffle: 1/4;
-		*/
+		*//*
+		lost-column: 1/4 4 30px;
+	}
+}*/
+
+/* Example 07: Offset and Move with Lost */
+
+@lost flexbox flex;
+
+body {
+	color: #fff;
+}
+
+.example07-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example07-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example07-grid-one {
+	lost-center: 80% 40px;
+}
+
+.example07-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example07-grid-one div p {
+	margin: 0;
+}
+
+.example07-grid-one div:first-child {
+	lost-move: 1/4;
+}
+
+.example07-grid-one div:nth-child(2) {
+	lost-move: -1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example07-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example07-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example07-grid-one div {
 		lost-column: 1/4 4 30px;
 	}
 }
