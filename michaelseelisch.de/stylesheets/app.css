@@ -37,9 +37,39 @@
 /* -----------------------------------------
    Homepage
 ----------------------------------------- */
+body {
+}
 
+#bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../video/Poster/poster.jpg) no-repeat;
+    background-size: cover; 
+}
 
+.opaque {
+  opacity: 0.6;
+}
 
+.imprint {
+  margin-top: 10%;
+ }
+ .imprint p {
+  font-size: 10px;
+  color: #ffffff;
+}
+
+.contentText, .contentText h4 {
+  color: #ffffff;
+}
 
 /* -----------------------------------------
    Contact
