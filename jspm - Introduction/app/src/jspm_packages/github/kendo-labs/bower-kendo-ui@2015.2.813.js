@@ -1,1 +1,0 @@
-module.exports = require("github:kendo-labs/bower-kendo-ui@2015.2.813/src/js/kendo.ui.core");

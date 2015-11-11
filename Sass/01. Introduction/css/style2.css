@@ -1,0 +1,85 @@
+body {
+  background: #262626;
+  font-family: helvetica, ariel, sans-serif; }
+
+header {
+  margin: 20px 0 0 5%; }
+  header h1 {
+    color: #9FBFBF; }
+  header h2 {
+    color: #9FBFBF;
+    margin: 10px 10%; }
+
+p {
+  margin: 20px 5%; }
+
+a {
+  color: #9FBFBF; }
+
+.grad {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 1%;
+  background-color: #F2EFEB;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F2EFEB), to(#8e8b87));
+  background-image: -webkit-linear-gradient(top, #F2EFEB, #8e8b87);
+  background-image: -moz-linear-gradient(top, #F2EFEB, #8e8b87);
+  background-image: -ms-linear-gradient(top, #F2EFEB, #8e8b87);
+  background-image: -o-linear-gradient(top, #F2EFEB, #8e8b87); }
+  .grad .intro, .grad .feature {
+    background: #333;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px; }
+    .grad .intro .par1, .grad .feature .par1 {
+      color: white; }
+      .grad .intro .par1 a, .grad .feature .par1 a {
+        font-size: 20px;
+        background: #F2EFEB;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px; }
+      .grad .intro .par1 a:hover, .grad .feature .par1 a:hover {
+        background: #8e8b87; }
+  .grad .feature {
+    border: 1px solid yellow; }
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: #999;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block; }
+  .circle:hover {
+    background: black; }
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid #888;
+  display: block; }
+
+.ir {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+/*# sourceMappingURL=style2.css.map */
