@@ -13,9 +13,4 @@ gulp.task('webserver', function() {
 		}));
 	});
 
-// Watch Task
-gulp.task('watch', function() {
-	gulp.watch('./*.html', ['html']);
-});
-
-gulp.task('default', ['watch', 'webserver']);
+gulp.task('default', ['webserver']);
