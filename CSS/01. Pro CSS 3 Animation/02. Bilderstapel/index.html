@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang=en> 
+	<head> 
+	<meta charset=utf-8> 
+	<title> CSS3 Bilderstapel</title> 
+	<style> 
+		body {
+			background: #234;
+			padding-top: 10%;
+		}
+
+		#cardfan, #cardfan img {
+			width: 320px;
+			height: 240px;
+			-webkit-transition: .3s transform ease-out;
+		}
+
+		#cardfan {
+			margin: 0 auto;
+		}
+
+		#cardfan img {
+			position: absolute;
+			border: 16px solid #ffe; 
+			box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.2);
+			-webkit-transform-origin: center 640px;  
+		}
+
+		#cardfan:hover img:first-child { 
+     		-webkit-transform: rotate(24deg); 
+		}
+
+		#cardfan:hover img:last-child { 
+		    -webkit-transform: rotate(-24deg); 
+		}
+	
+	</style> 
+	</head>
+
+	<body> 	
+	
+	<div id="cardfan"> 
+		<img src="http://placehold.it/320x240?text=Thumb_01" alt="Image_01" />
+		<img src="http://placehold.it/320x240?text=Thumb_02" alt="Image_02" />
+		<img src="http://placehold.it/320x240?text=Thumb_03" alt="Image_03" />
+	</div>
+	
+	</body> 
+</html> 
