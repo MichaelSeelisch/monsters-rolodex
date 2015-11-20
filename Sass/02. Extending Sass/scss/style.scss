@@ -1,0 +1,12 @@
+// Sass Globbing (load all scss-files in all folders inside 'vars' folder)
+@import "vars/**/*";
+@import "singularitygs";
+
+body {
+	font-size: $font-size;
+	background: $rand;
+
+	.main {
+		width: $site-width;
+	}
+}

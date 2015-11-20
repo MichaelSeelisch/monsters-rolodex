@@ -1,0 +1,59 @@
+@import "style";
+
+@mixin circle($width, $color) {
+	width: $width;
+	height: $width;
+	background: $color;
+	-webkit-border-radius: $width / 2;
+	-moz-border-radius: $width / 2;
+	border-radius: $width / 2;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin triangle($width, $dir, $color) {
+	@if $dir == up {
+		width: 0;
+		height: 0;
+		border-left: $width solid transparent;
+		border-right: $width solid transparent;
+		border-bottom: $width solid $color;
+	}
+	@else if $dir == down {
+		width: 0;
+		height: 0;
+		border-left: $width solid transparent;
+		border-right: $width solid transparent;
+		border-top: $width solid $color;
+	}
+}
+.circle {
+	@include circle(100px, #999);
+	display: block;
+	// Parent Reference...
+	&:hover {
+		background: black;
+	}
+}
+.triangle {
+	@include triangle(200px, up, #888);
+	display: block;
+}
+
+.ir {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}

@@ -1,0 +1,121 @@
+$blue: #9FBFBF;
+$margin: 5%;
+$cream: #F2EFEB;
+$cream2: $cream - 100;
+$dark: #666;
+
+/* Sass terminal:
+	$ sass -w scss/style.scss:css/style.css --style compressed (or comapct or expanded)
+*/
+
+@mixin border-radius($radius: 20px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+body {
+	background: #262626;
+	font-family: helvetica, ariel, sans-serif;
+	font-size: 14px;
+}
+
+header {
+	margin: 20px 0 0 $margin;
+
+	h1 { color: $blue; }
+	h2 { 
+		color: $blue;
+		margin: 10px $margin + 5%;
+	}
+}
+
+p {
+	margin: 20px $margin;
+}
+
+a {
+	color: $blue;
+}
+
+// While loops...
+$i : 1;
+@while $i < 5 {
+	.par-#{$i} {
+		margin-left: 100px * $i;
+	}
+	$i : $i + 1;
+}
+
+// For loops...
+/*
+	@for $i from 1 through 4 {
+		.par-#{$i} {
+			margin-right: 20px * $i;
+		}
+	}
+*/
+.grad {
+	background: $cream;
+	padding: 1%;
+}
+
+// Using Lists an @each...
+ul.social-links li{
+	list-style: none;
+
+	a {
+		display: block;
+		float: left;
+		width: 64px;
+		height: 64px;
+		text-indent: -999px;
+	}
+}
+$icons: (twitter, facebook, youtube, rss);
+@each $social in $icons {
+	.#{$social} {
+		background:url('../img/#{$social}.png') no-repeat;
+	}
+}
+
+// Nth Function in Lists...
+@each $p in (
+	one $dark,
+	two $dark + 20,
+	three white,
+	four black + 60
+) {
+	.#{nth($p, 1)} {
+		background: #{nth($p, 2)};
+		clear: both;
+	}
+}
+
+// Define own functions
+@function text-contrast($background) {
+	@if lightness($background) < 50% {
+		@return lighten($background, 70%);
+	}
+	@else {
+		@return darken($background, 90%);
+	}
+}
+/*
+	@function text-contrast($background, $val) {
+		@return ( $background + $val );
+	}
+*/
+
+.three {
+	//color: text-contrast(black + 40, 100);
+	color: text-contrast(white);
+}
+
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after { clear: both; }
+.clearfix {	zoom: 1; }

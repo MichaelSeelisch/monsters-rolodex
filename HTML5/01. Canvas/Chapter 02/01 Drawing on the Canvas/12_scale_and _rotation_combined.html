@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ch2Ex11 Scale from the center point</title>
+	
+	<style type="text/css" media="screen">
+		.page-container {
+			position:absolute;
+			top:50px;
+			left:50px;
+		}	
+	</style>
+
+	<script src="../../_libs/modernizr.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script type="text/javascript">
+	
+		window.addEventListener("load", eventWindowLoaded, false);
+
+		function eventWindowLoaded() {
+			canvasApp();
+		}
+
+		function canvasSupport() {
+			return Modernizr.canvas;
+		}
+
+		function canvasApp() {
+			if(!canvasSupport()) {
+				return;
+			}
+			else {
+				var theCanvas = document.getElementById("canvasOne");
+				var context = theCanvas.getContext("2d");
+			}
+
+			drawScreen();
+
+			function drawScreen() {
+				context.setTransform(1,0,0,1,0,0);
+				var angleInRadians = 45 * Math.PI / 180;
+				var x = 100;
+				var y = 100;
+				var width = 50;
+				var height = 50;
+				context.translate(x + .5 * width, y + .5 * height);
+				context.scale(2, 2);
+				context.rotate(angleInRadians);
+				context.fillStyle = "red";
+				context.fillRect(-.5 * width, -.5 * height , width, height);
+			}
+		}
+
+	</script>
+
+</head>
+<body>
+	
+	<div class="page-container">
+		<canvas id="canvasOne" width="500" height="500">
+			Your browser does not support HTML5 Canvas.
+		</canvas>
+	</div>
+
+</body>
+</html>

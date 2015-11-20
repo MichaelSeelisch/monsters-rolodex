@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ch2Ex2 Simple Paths</title>
+	
+	<style type="text/css" media="screen">
+		.page-container {
+			position:absolute;
+			top:50px;
+			left:50px;
+		}	
+	</style>
+
+	<script src="../../_libs/modernizr.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script type="text/javascript">
+	
+		window.addEventListener("load", eventWindowLoaded, false);
+
+		function eventWindowLoaded() {
+			canvasApp();
+		}
+
+		function canvasSupport() {
+			return Modernizr.canvas;
+		}
+
+		function canvasApp() {
+			if(!canvasSupport()) {
+				return;
+			}
+			else {
+				var theCanvas = document.getElementById("canvasOne");
+				var context = theCanvas.getContext("2d");
+			}
+
+			drawScreen();
+
+			function drawScreen() {
+
+				context.fillStyle = "#CCCCCC";
+				context.fillRect(0, 0, 500, 500);
+
+				// Simple line
+				context.strokeStyle = "black";
+				context.lineWidth = 10;
+				context.lineCap = 'square';
+				context.beginPath();
+				context.moveTo(100, 0);
+				context.lineTo(200, 0);
+				context.stroke();
+				context.closePath();
+
+				// Round end. bevel join, at top left of canvas
+				context.strokeStyle = "black"; //need list of available colors
+				context.lineWidth = 10;
+				context.lineJoin = 'bevel';
+				context.lineCap = 'round';
+				context.beginPath();
+				context.moveTo(0, 0);
+				context.lineTo(25, 0);
+				context.lineTo(25,25);
+				context.stroke();
+				context.closePath();
+				
+				// Round end, bevel join, not at top or left of canvas
+				context.beginPath();
+				context.moveTo(10, 50);
+				context.lineTo(35, 50);
+				context.lineTo(35,75);
+				context.stroke();
+				context.closePath();
+				
+				// Flat end, round join, not at top or left
+				context.lineJoin = 'round';
+				context.lineCap = 'butt';
+				context.beginPath();
+				context.moveTo(10, 100);
+				context.lineTo(35, 100);
+				context.lineTo(35,125);
+				context.stroke();
+				context.closePath();
+			}
+		}
+
+	</script>
+
+</head>
+<body>
+	
+	<div class="page-container">
+		<canvas id="canvasOne" width="500" height="500">
+			Your browser does not support HTML5 Canvas.
+		</canvas>
+	</div>
+
+</body>
+</html>
