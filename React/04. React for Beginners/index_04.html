@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>#6 - Click Events & A Basic Lifecycle Method</title>
-
+		<title>#4 - Conditionals In JSX & Parent Child Relationships</title>
+		
 		<script src="build/react.js"></script>
 		<script src="build/react-dom.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -27,23 +27,6 @@
 					}
 				},
 
-				getInitialState: function() {
-					return {
-						value: 1
-					}
-				},
-
-				componentDidMount: function() {
-					
-				},
-				
-				// Custom Methods am Besten mit Underscore beginnen, dann erkennt man sie gleich als custom
-				_addByOne: function() {
-					this.setState({
-						value: this.state.value + 1
-					});
-				},
-
 				render: function() {
 					var greeting = 'World';
 
@@ -51,12 +34,7 @@
 						greeting = (<Person name={this.props.name} />)
 					}
 					return (
-						// Den div braucht man als container zum Wrappen des gesamten Contents!!!
-						<div>
-							<h1>Hello {greeting}</h1>
-							{this.state.value}
-							<button onClick={this._addByOne}>Click Me</button>
-						</div>
+						<h1>Hello {greeting}</h1>
 					)
 				}
 			});
