@@ -4,7 +4,7 @@ var gulp 		= require('gulp'),
 	browserify 	= require('browserify'),
 	source 		= require('vinyl-source-stream'),
 
-	currentFolder = '02_React_Counter';
+	currentFolder = '06_Reducer_Composition_with_combineReducers()';
 
 // Webserver for testing
 gulp.task('webserver', () => {
