@@ -16,6 +16,7 @@
     "deep-freeze-strict": "^1.1.1",
     "expect": "^1.13.0",
     "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-webserver": "^0.9.1",
     "vinyl-source-stream": "^1.1.0"
   }

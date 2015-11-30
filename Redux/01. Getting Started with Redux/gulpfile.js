@@ -3,12 +3,14 @@ var gulp 		= require('gulp'),
 	babelify 	= require('babelify'),
 	browserify 	= require('browserify'),
 	source 		= require('vinyl-source-stream'),
+	plumber		= require('gulp-plumber');
 
-	currentFolder = '09_Filtering_Todos';
+	currentFolder = '20_Extracting_Action_Creators';
 
 // Webserver for testing
 gulp.task('webserver', () => {
 	return gulp.src('./')
+				.pipe(plumber())
 				.pipe(webserver({
 					livereload: true,
 					directoryListing: true,
@@ -26,6 +28,7 @@ gulp.task('scripts', () => {
 	    	presets: ['es2015', 'react']
 	    })
 	    .bundle()
+	    .pipe(plumber())
 	    .pipe(source('main.min.js'))
 	    .pipe(gulp.dest('./build/' + currentFolder));
 });
