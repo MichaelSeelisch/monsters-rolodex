@@ -1,15 +1,15 @@
-var gulp 		 = require('gulp'),
-	webserver 	 = require('gulp-webserver');
+var gulp 		= require('gulp'),
+	webserver 	= require('gulp-webserver');
 
 // Webserver for testing
 gulp.task('webserver', function() {
-	return 	gulp.src('./')			
+	return 	gulp.src('./')		
 				.pipe(webserver({
 					livereload: true,
 					directoryListing: false,
 					open: true,
 					defaultFile: 'index.html'
 				}));
-	});
+});
 
-gulp.task('default', ['webserver']);
+gulp.task('default', ['watch', 'webserver']);
