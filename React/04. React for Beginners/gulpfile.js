@@ -7,9 +7,8 @@ gulp.task('webserver', function() {
 	return 	gulp.src('./')
 		.pipe(webserver({
 			livereload: true,
-			directoryListing: false,
-			open: true,
-			defaultFile: 'index.html'
+			directoryListing: true,
+			open: true
 		}));
 	});
 
