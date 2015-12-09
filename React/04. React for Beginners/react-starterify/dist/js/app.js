@@ -23663,7 +23663,7 @@ exports['default'] = _react2['default'].createClass({
 });
 module.exports = exports['default'];
 
-},{"./ContactList":213,"react":209,"react-router":47}],213:[function(require,module,exports){
+},{"./ContactList":214,"react":209,"react-router":47}],213:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23677,6 +23677,73 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 exports['default'] = _react2['default'].createClass({
+	displayName: 'Contact',
+
+	render: function render() {
+		return _react2['default'].createElement(
+			'div',
+			null,
+			_react2['default'].createElement('img', { src: this.props.person.img }),
+			_react2['default'].createElement(
+				'h3',
+				null,
+				this.props.person.name
+			),
+			_react2['default'].createElement(
+				'span',
+				null,
+				this.props.person.phone
+			),
+			_react2['default'].createElement(
+				'span',
+				null,
+				this.props.person.email
+			)
+		);
+	}
+});
+module.exports = exports['default'];
+
+},{"react":209}],214:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Contact = require('./Contact');
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
+var people = [{
+	'name': 'Scott',
+	'email': 'scott@leveluptuts.com',
+	'img': 'http://lorempixel.com/80/80/cats/1',
+	'phone': '545 545 5545'
+}, {
+	'name': 'Ben',
+	'email': 'ben@leveluptuts.com',
+	'img': 'http://lorempixel.com/80/80/cats/2',
+	'phone': '545 545 1232'
+}, {
+	'name': 'Jeff',
+	'email': 'jeff@leveluptuts.com',
+	'img': 'http://lorempixel.com/80/80/cats/3',
+	'phone': '545 545 8964'
+}, {
+	'name': 'Bobby',
+	'email': 'bobby@leveluptuts.com',
+	'img': 'http://lorempixel.com/80/80/cats/4',
+	'phone': '545 545 1789'
+}];
+
+exports['default'] = _react2['default'].createClass({
 	displayName: 'ContactList',
 
 	render: function render() {
@@ -23687,10 +23754,13 @@ exports['default'] = _react2['default'].createClass({
 				'h2',
 				null,
 				'Contact List'
-			)
+			),
+			people.map(function (person, i) {
+				return _react2['default'].createElement(_Contact2['default'], { person: person, key: i });
+			})
 		);
 	}
 });
 module.exports = exports['default'];
 
-},{"react":209}]},{},[210]);
+},{"./Contact":213,"react":209}]},{},[210]);
