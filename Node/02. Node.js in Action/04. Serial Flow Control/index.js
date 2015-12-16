@@ -1,7 +1,14 @@
 var fs 				= require('fs'),
 	request 		= require('request'),
 	htmlparser 		= require('htmlparser'),
-	configFilename 	= './rss_feeds.txt';
+	configFilename 	= './rss_feeds.txt',
+
+	tasks = [ checkForRSSFile,
+			  readRSSFile,
+			  downloadRSSFeed,
+			  parseRSSFeed
+			],
+	feedUrl = '';
 
 function checkForRSSFile() {
 	fs.exists(configFilename, function(exists) {
@@ -9,7 +16,7 @@ function checkForRSSFile() {
 			return next(new Error('Missing RSS file: ' + configFilename));
 		}
 
-		next(null. configFilename);
+		next(null, configFilename);
 	})
 };
 
@@ -47,7 +54,7 @@ function parseRSSFeed(rss) {
 	var parser = new htmlparser.Parser(handler);
 	parser.parseComplete(rss);
 
-	if(!handler.dom.items.length) {
+	if(!handler.dom.items || !handler.dom.items.length) {
 		return next(new Error('No RSS items found'));
 	}
 
@@ -56,11 +63,7 @@ function parseRSSFeed(rss) {
 	console.log(item.link);
 };
 
-var tasks = [	checkForRSSFile,
-				readRSSFile,
-				downloadRSSFeed,
-				parseRSSFeed
-			];
+
 
 function next(err, result) {
 	if(err) {
