@@ -314,7 +314,7 @@ body {
 	}
 }*/
 
-/* Example 07: Offset and Move with Lost */
+/* Example 07: Offset and Move with Lost
 
 @lost flexbox flex;
 
@@ -373,4 +373,69 @@ body {
 	.example07-grid-one div {
 		lost-column: 1/4 4 30px;
 	}
+} */
+
+/* Example 08: Responsive Font-Size with rucksack */
+
+@lost flexbox flex;
+
+div {
+	color: #fff;
+}
+
+.example08-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example08-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example08-grid-one {
+	lost-center: 80% 40px;
+}
+
+.example08-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example08-grid-one div p {
+	margin: 0;
+}
+
+.example08-grid-one div:first-child {
+	lost-move: 1/4;
+}
+
+.example08-grid-one div:nth-child(2) {
+	lost-move: -1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example08-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example08-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example08-grid-one div {
+		lost-column: 1/4 4 30px;
+	}
+}
+
+.responsive {
+    font-size: responsive 16px 36px;
 }

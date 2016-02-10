@@ -8,11 +8,13 @@ var webserver = require('gulp-webserver');
 var cssnext = require('gulp-cssnext');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
+var rucksack = require('rucksack-css');
 
 gulp.task('styles', function() {
 	var processors = [
 		// csswring,
 		lost,
+        rucksack,
 		autoprefixer({browsers:['last 2 version']})
 	];
 
