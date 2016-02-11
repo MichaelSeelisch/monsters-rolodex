@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang=en> 
+	<head> 
+	<meta charset=utf-8> 
+	<title></title> 
+	<style>
+		body {
+            text-align: center;
+        }
+        
+        #slideshow {
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        } 
+        
+        #imagestrip, #slideshow { box-sizing: border-box; } 
+        
+        #slideshow, #imagestrip img {
+            width: 500px;
+            height: 400px;
+            float: left;
+        } 
+        
+        #imagestrip {
+            position: absolute;
+            width: 2000px;
+            margin: 0;
+            animation: slider 10s infinite;
+        }
+        
+        @keyframes slider {             
+            0% { transform: translateX(0px); }
+            20% { transform: translateX(0px); }
+            25% { transform: translateX(-500px); }
+            45% { transform: translateX(-500px); }
+            50% { transform: translateX(-1000px); }
+            70% { transform: translateX(-1000px); }
+            75% { transform: translateX(-1500px); }
+            95% { transform: translateX(-1500px); }
+            100% { transform: translateX(--2000px); }
+        } 
+	</style> 
+	</head>
+
+	<body>
+       
+	   <div id='slideshow'>
+           <figure id='imagestrip'>
+               <img src='http://lorempixel.com/500/400/sports/1/' alt="">
+               <img src='http://lorempixel.com/500/400/sports/2/' alt=""> 
+               <img src='http://lorempixel.com/500/400/sports/3/' alt=""> 
+               <img src='http://lorempixel.com/500/400/sports/5/' alt="">
+            </figure>
+       </div> 
+	
+	</body> 
+</html> 

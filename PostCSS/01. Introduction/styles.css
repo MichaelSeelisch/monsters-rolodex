@@ -1,0 +1,441 @@
+:root {
+	--mainColor: #ffffff;
+	--redColor: #2c3e50;
+}
+
+/* Example 01
+	body {
+		display: flex;
+		border-radius: 50%;
+		transform: translateX(15px);
+		background: var(--mainColor);
+	}
+
+	.example01-grid-item {
+		background: var(--redColor);
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.example01-nested-grid-item {
+		background: red;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.example01-grid-one {
+		width: 100%;
+		lost-utility: clearfix;
+	}
+
+	.example01-grid-one div {
+		lost-column: 1/3;
+	}
+*/
+
+/* Example 02: Asymetrical grid */
+
+/*@lost cycle none;  = same as: lost-column: 1/2 0; or lost-column: 1/4 0; */
+
+/*
+	body {
+	}
+
+	.example02-grid-item {
+		background: var(--redColor);
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.example02-nested-grid-item {
+		background: red;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.example02-grid-one {
+		width: 100%;
+		lost-utility: clearfix;
+	}
+
+	.example02-grid-one div {
+		lost-column: 1/4;
+	}
+
+	.example02-grid-one div:nth-child(2) {
+		lost-column: 1/2;
+	}
+*/
+
+/* Example 03: Responsive grid
+
+	body {
+	}
+
+	.example03-grid-item {
+		background: var(--redColor);
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	.example03-nested-grid-item {
+		background: red;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+
+	.example03-grid-one {
+		width: 100%;
+		lost-utility: clearfix;
+	}
+
+	.example03-grid-one div {
+		lost-column: 1/1;
+	}
+
+	@media screen and (min-width: 400px) {
+		.example03-grid-one div {
+			lost-column: 1/2;
+		}
+	}
+
+	@media screen and (min-width: 900px) {
+		.example03-grid-one div {
+			lost-column: 1/3;
+		}
+	}
+
+	@media screen and (min-width: 1300px) {
+		.example03-grid-one div {
+			lost-column: 1/4 4 50px;
+		}
+	}
+ */
+
+ /* Example 04: Vertical grid 
+
+body {
+}
+
+.example04-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example04-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example04-grid-one {
+	width: 100%;
+	lost-utility: clearfix;
+}
+
+.example04-grid-one div {
+	lost-column: 1/1;
+}
+
+.example04-grid-two {
+	width: 100%;
+	lost-utility: clearfix;
+	height: 500px;
+}
+
+.example04-grid-two div {
+	lost-row: 1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example04-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example04-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example04-grid-one div {
+		lost-column: 1/4 4 50px;
+	}
+}
+*/
+
+/* Example 05: Helpful lost grid properties
+
+body {
+	color: #fff;
+}
+
+.example05-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example05-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example05-grid-one {
+	lost-center: 80% 40px;
+	padding-top: 40px;
+	background-color: #CCC;
+	/*
+		width: 100%;
+		lost-utility: clearfix;
+	*/
+	/*
+}
+
+.example05-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	/*
+		lost-align: top-left;
+		lost-align: top-right;
+		lost-align: top-center;
+		lost-align: middle-left;
+		lost-align: middle-center;
+		lost-align: right;
+		...
+	*/
+	/*
+}
+
+.example05-grid-one div p {
+	margin: 0;
+}
+
+.example05-grid-two {
+	width: 100%;
+	lost-utility: clearfix;
+	height: 500px;
+}
+
+.example05-grid-two div {
+	lost-row: 1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example05-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example05-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example05-grid-one div {
+		lost-column: 1/4 4 50px;
+	}
+}
+*/
+
+/* Example 06: Waffle & Flexbox Grids In Lost
+
+@lost flexbox flex;
+
+body {
+	color: #fff;
+}
+
+.example06-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example06-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example06-grid-one {
+	lost-center: 80% 40px;
+	/*
+		lost-center: 80% 40px;
+		height: 100vh;
+	*//*
+}
+
+.example06-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example06-grid-one div p {
+	margin: 0;
+}
+
+.example06-grid-two {
+	width: 100%;
+	lost-utility: clearfix;
+	height: 500px;
+}
+
+.example06-grid-two div {
+	lost-row: 1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example06-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example06-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example06-grid-one div {
+		/*
+			lost-waffle: 1/4;
+		*//*
+		lost-column: 1/4 4 30px;
+	}
+}*/
+
+/* Example 07: Offset and Move with Lost
+
+@lost flexbox flex;
+
+body {
+	color: #fff;
+}
+
+.example07-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example07-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example07-grid-one {
+	lost-center: 80% 40px;
+}
+
+.example07-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example07-grid-one div p {
+	margin: 0;
+}
+
+.example07-grid-one div:first-child {
+	lost-move: 1/4;
+}
+
+.example07-grid-one div:nth-child(2) {
+	lost-move: -1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example07-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example07-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example07-grid-one div {
+		lost-column: 1/4 4 30px;
+	}
+} */
+
+/* Example 08: Responsive Font-Size with rucksack */
+
+@lost flexbox flex;
+
+div {
+	color: #fff;
+}
+
+.example08-grid-item {
+	background: var(--redColor);
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.example08-nested-grid-item {
+	background: red;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.example08-grid-one {
+	lost-center: 80% 40px;
+}
+
+.example08-grid-one div {
+	lost-column: 1/1;
+	lost-align: center;
+	font-size: 2em;
+	text-align: center;
+}
+
+.example08-grid-one div p {
+	margin: 0;
+}
+
+.example08-grid-one div:first-child {
+	lost-move: 1/4;
+}
+
+.example08-grid-one div:nth-child(2) {
+	lost-move: -1/4;
+}
+
+@media screen and (min-width: 400px) {
+	.example08-grid-one div {
+		lost-column: 1/2;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.example08-grid-one div {
+		lost-column: 1/3;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.example08-grid-one div {
+		lost-column: 1/4 4 30px;
+	}
+}
+
+.responsive {
+    font-size: responsive 16px 36px;
+}
