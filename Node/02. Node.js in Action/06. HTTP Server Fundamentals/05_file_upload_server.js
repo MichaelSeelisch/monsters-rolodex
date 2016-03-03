@@ -24,7 +24,7 @@ function show(res) {
              + '<p><input type="file" name="file" /></p>'
              + '<p><input type="submit" value="Upload" /></p>'
              + '</form>';
-    
+
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Content-Length', Buffer.byteLength<(html));
     res.end(html);
@@ -36,29 +36,37 @@ function upload(req, res) {
         res.end('Bad Request: expecting multipart/form-data');
         return;
     }
-    
+
     /* formidable long version: */
     var form = new formidable.IncomingForm();
-    
+
     form.on('field', function(field, value) {
+        console.log('On field: ');
         console.log(field);
         console.log(value);
     });
-    
-    form.on(file, function(name, file) {
+
+    form.on('file', function(name, file) {
+        console.log('On file: ');
         console.log(name);
         console.log(file);
     });
-    
+
     form.on('end', function() {
-        red.end('upload complete');
+        res.end('upload complete');
     });
-    
+
+    form.on('progress', function(bytesReceived, bytesExpected) {
+      var percent = Math.floor(bytesReceived / bytesExpected * 100);
+      console.log('On progress: ');
+      console.log(percent);
+    })
+
     form.parse(req);
-    
+
     /*  Short version
     *   var form = new formidable.IncomingForm();
-    *   
+    *
     *   form.parse(req, function(err, fields, files) {
     *       console.log(fields);
     *       console.log(files);
