@@ -8,7 +8,7 @@ exports.sendHtml = function(res, html) {
 };
 
 // Parse HTTP POST data
-exorts.parseReceiveData = function(req, cb) {
+exports.parseReceiveData = function(req, cb) {
   var body = '';
   req.setEncoding('utf8');
   req.on('data', function(chunk) {
@@ -56,8 +56,7 @@ exports.add = function(db, req, res) {
 exports.delete = function(db, req, res) {
   // Parse HTTP POST data
   exports.parseReceiveData(req, function(work) {
-    db.query(
-      "DELETE FROM work WHERE id=?",
+    db.query("DELETE FROM work WHERE id=?",
       [work.id],
       function(err) {
         if(err) {
@@ -123,7 +122,7 @@ exports.workHitlistHtml = function(rows) {
   var html = '<table>';
   // Render each work record as HTMLtable row
   for(var i in rows) {
-    html += '<tr>';
+    html += '<tr style="vertical-align: initial;">';
     html += '<td>' + rows[i].date + '</td>';
     html += '<td>' + rows[i].hours + '</td>';
     html += '<td>' + rows[i].description + '</td>';
@@ -146,7 +145,7 @@ exports.workFormHtml = function() {
   var html = '<form method="POST" action="/"' +
     '<p>Date (YYYY-MM-DD):<br/><input name="date" type="text"></p>' +
     '<p>Hours worked:<br/><input name="hours" type="text"></p>' +
-    '<p>Description:><br/>' +
+    '<p>Description:<br/>' +
     '<p><textarea name="description"></textarea></p>' +
     '<input type="submit" value="Add" />' +
     '</form>';
