@@ -56,8 +56,15 @@ exports.add = function(db, req, res) {
 exports.delete = function(db, req, res) {
   // Parse HTTP POST data
   exports.parseReceiveData(req, function(work) {
-    db.query("DELETE FROM work WHERE id=?",
+    db.query(
+      "DELETE FROM work WHERE ID = '" + work.id  + "'",
       [work.id],
+
+      /* Mit prepared Statements:
+       * "DELETE FROM work WHERE ID = ?",
+       * [work.id],
+      */
+
       function(err) {
         if(err) {
           throw err;
@@ -74,8 +81,14 @@ exports.delete = function(db, req, res) {
 exports.archive = function(db, req, res) {
   exports.parseReceiveData(req, function(work) {
     db.query(
-      "UPDATE work SET archived=1 WHERE id=?",
+      "UPDATE work SET archived=1 WHERE ID = '" + work.id  + "'",
       [work.id],
+
+      /* Mit prepared Statements:
+       * "UPDATE work SET archived=1 WHERE ID = ?",
+       * [work.id],
+      */
+
       function(err) {
         if(err) {
           throw err;
