@@ -1,6 +1,16 @@
+// When a router is entered...
+FlowRouter.triggers.enter([function(context, redirect) {
+  if(!Meteor.userId()) {
+    FlowRouter.go('home');
+  }
+}]);
+
 FlowRouter.route('/', {
   name: 'home',
   action() {
+    if(Meteor.userId()) {
+      FlowRouter.go('recipe-book');
+    }
     GAnalytics.pageview();
     BlazeLayout.render('HomeLayout');
   }
@@ -11,5 +21,13 @@ FlowRouter.route('/recipe-book', {
   action() {
     GAnalytics.pageview();
     BlazeLayout.render('MainLayout', {main: 'Recipes'});
+  }
+});
+
+FlowRouter.route('/recipe/:_id', {
+  name: 'recipe',
+  action() {
+    GAnalytics.pageview();
+    BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
   }
 });
