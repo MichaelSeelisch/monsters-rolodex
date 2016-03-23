@@ -1,3 +1,14 @@
+// Package: gwendall:auth-client-callbacks
+if(Meteor.isClient) {
+  Accounts.onLogin(function() {
+    FlowRouter.go('recipe-book');
+  });
+
+  Accounts.onLogout(function() {
+    FlowRouter.go('home');
+  });
+}
+
 // When a router is entered...
 FlowRouter.triggers.enter([function(context, redirect) {
   if(!Meteor.userId()) {
@@ -29,5 +40,19 @@ FlowRouter.route('/recipe/:_id', {
   action() {
     GAnalytics.pageview();
     BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
+  }
+});
+
+FlowRouter.route('/menu', {
+  name: 'menu',
+  action() {
+    BlazeLayout.render('MainLayout', {main: 'Menu'});
+  }
+});
+
+FlowRouter.route('/shopping-list', {
+  name: 'shopping-list',
+  action() {
+    BlazeLayout.render('MainLayout', {main: 'ShoppingList'});
   }
 });
