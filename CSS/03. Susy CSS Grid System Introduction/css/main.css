@@ -1,0 +1,157 @@
+/*
+  $widelayout: (
+    columns: 24,
+    gutters: 1/4,
+    math: fluid,
+    output: float,
+    gutter-position: split
+  );
+
+  @include layout($widelayout);
+  // oder...
+  @include layout(24 1/4 fluid float split);
+
+  $map: layout(24 1/4 fluid float split);
+  // oder @include layout(fluid float split 1/4 24);
+*/
+/*
+  960 Grid: @include layout(12 (60px 10px) split static);
+*/
+body {
+  background: #eee;
+  /*
+    @include container(60em);
+    @include container(800px);
+    960Grid: @include container(960px);
+  */
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+aside ul {
+  padding: 0;
+}
+aside ul li {
+  list-style-type: none;
+  margin: 0;
+}
+aside ul li a {
+  display: block;
+  padding: 10px 5%;
+  border-bottom: solid 1px #95a5a6;
+}
+
+.gallery img {
+  width: 48.33333%;
+  float: left;
+}
+.gallery img:nth-child(2n + 1) {
+  margin-left: 0.83333%;
+  margin-right: -100%;
+  clear: both;
+}
+.gallery img:nth-child(2n + 2) {
+  margin-left: 50.83333%;
+  margin-right: -100%;
+  clear: none;
+}
+@media (min-width: 960px) {
+  .gallery img {
+    width: 23.33333%;
+    float: left;
+  }
+  .gallery img:nth-child(4n + 1) {
+    margin-left: 0.83333%;
+    margin-right: -100%;
+    clear: both;
+  }
+  .gallery img:nth-child(4n + 2) {
+    margin-left: 25.83333%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery img:nth-child(4n + 3) {
+    margin-left: 50.83333%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .gallery img:nth-child(4n + 4) {
+    margin-left: 75.83333%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+
+@media (min-width: 700px) {
+  main {
+    width: 65%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+  }
+}
+
+@media (min-width: 700px) {
+  aside {
+    /*
+      margin-right verhindern: 4 columns starting at the 9th position
+      @include span (4 at 9 of 12);
+    */
+    width: 31.66667%;
+    float: right;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+  }
+}
+
+@media (min-width: 960px) {
+  main {
+    width: 86.66667%;
+    float: left;
+    margin-left: 0.41667%;
+    margin-right: 0.41667%;
+  }
+  main .col1, main .col2, main .col3 {
+    width: 31.66667%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%;
+  }
+
+  aside {
+    width: 11.66667%;
+    float: left;
+    margin-left: 0.41667%;
+    margin-right: 0.41667%;
+    margin: -20px;
+    padding: 20px;
+  }
+}
+/*
+  @include breakpoint($large) {
+    @include layout(24);
+
+    main {
+      @include span(21);
+      .col1, .col2, .col3 {
+        // @include span (8); // ...out of 24
+        @include span(4 of 12);
+      }
+    }
+
+    aside {
+      @include span(3 at 21);
+    }
+  }
+*/
