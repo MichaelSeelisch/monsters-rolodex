@@ -1,15 +1,32 @@
 import React, {Component, PropTypes} from 'react';
 import {render} from 'react-dom';
 
-class ContactItem extends Component {
+import SearchBar from './SearchBar';
+import ContactList from './ContactList';
+
+// Main component. Renders a SearchBar and a Contact-List
+class ContactsApp extends Component {
+  constructor() {
+    super();
+    this.state={
+      filterText:''
+    };
+  }
+  handleUserInput(searchTerm) {
+    this.setState({filterText: searchTerm})
+  }
   render() {
-    return <li>{this.props.name} - {this.props.email}</li>
+    return(
+      <div>
+        <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />
+        <ContactList contacts={this.props.contacts} filterText={this.state.filterText} />
+      </div>
+    )
   }
 }
 
-ContactItem.propTypes={
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired
+ContactsApp.propTypes={
+  contacts: PropTypes.arrayOf(PropTypes.object)
 }
 
 let contacts = [
