@@ -3,7 +3,6 @@ import {render} from 'react-dom';
 
 import SearchBar from './SearchBar';
 import ContactList from './ContactList';
-import ContactsAppContainer from './ContactsAppContainer.js';
 
 // Main component. Renders a SearchBar and a Contact-List
 class ContactsApp extends Component {
