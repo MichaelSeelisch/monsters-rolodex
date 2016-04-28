@@ -9,7 +9,7 @@ class CheckList extends Component {
   }
 
   render() {
-    let tasks = this.props.tasks.map((task, taskIndex)  => (
+    let tasks = this.props.tasks.map((task) => (
       <li key={task.id} className='checklist__task'>
         <input type='checkbox'
           checked={task.done}
