@@ -39,6 +39,7 @@ var config;
 // Detect how npm is run and branch based on that
 switch(process.env.npm_lifecycle_event) {
   case 'build':
+  case 'stats':
     config = merge(
       common,
       {
@@ -63,6 +64,10 @@ switch(process.env.npm_lifecycle_event) {
       parts.extractCSS(PATHS.style),
       parts.purifyCSS([PATHS.app])
     );
+    break;
+
+  case 'stats':
+    config = merge();
     break;
 
   default:
