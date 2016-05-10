@@ -46,7 +46,9 @@ exports.setupCSS = function(paths) {
         {
           test: /\.css$/,
           loaders: ['style', 'css'],
-          include: paths
+          // Although optional, I prefer to set this (better performance,
+          // clearer configuration).
+          include: path.join(__dirname, 'app')
         }
       ]
     }
