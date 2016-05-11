@@ -58,7 +58,9 @@ class AnimatedShoppingList extends Component {
         <ReactCSSTransitionGroup
           transitionName='example'
           transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}>
+          transitionLeaveTimeout={300}
+          transitionAppear={true}
+          transitionAppearTimeout={500}>
           {shoppingItems}
         </ReactCSSTransitionGroup>
         <input
