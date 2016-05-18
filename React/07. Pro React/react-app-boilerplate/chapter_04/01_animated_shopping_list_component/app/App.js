@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import ReactPerfTool from 'react-perf-tool';
+import Perf from 'react-addons-perf';
+
 class AnimatedShoppingList extends Component {
   constructor() {
     super(...arguments);
@@ -68,6 +71,8 @@ class AnimatedShoppingList extends Component {
           value={this.state.newItem}
           onKeyDown={this.handleChange.bind(this)}
         />
+
+        <ReactPerfTool perf={Perf} />
       </div>
     );
   }
