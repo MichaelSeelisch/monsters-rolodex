@@ -15,7 +15,7 @@ var myMoviesComponent = (function () {
     myMoviesComponent = __decorate([
         core_1.Component({
             selector: 'myMovies',
-            template: "\n  <h1>Top movies trending</h1>\n  <ul>\n  <li>Deadpool</li>\n  <li>Batman vs Superman</li>\n  <li>Inception</li>\n  <li>Interstellar</li>\n  </ul>",
+            template: "\n    <h1>Top movies trending</h1>\n    <ul>\n    <li>Deadpool</li>\n    <li>Batman vs Superman</li>\n    <li>Inception</li>\n    <li>Interstellar</li>\n    </ul>",
             styles: ['./app/style.css']
         }), 
         __metadata('design:paramtypes', [])

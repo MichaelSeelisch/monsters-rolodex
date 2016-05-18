@@ -7,7 +7,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   <p>We've the following movies available:</p>
 
   <div>
-    <p *ngFor="#movie of movieList; #i = index">{{i}}. {{movie}}</p>
+    <p *ngFor="let movie of movieList; let i = index">{{i}}. {{movie}}</p>
   </div>`
 
   /*

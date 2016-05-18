@@ -9,18 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var myMoviesComponent = (function () {
-    function myMoviesComponent() {
+// import {myMoviesComponent} from './component.mymovies';
+var myShopComponent = (function () {
+    function myShopComponent() {
+        this.recentMovie = 'None';
+        this.cart = [];
+        this.movieList = ['Batman Vs Superman', 'Civil War', 'Deadpool'];
     }
-    myMoviesComponent = __decorate([
+    myShopComponent.prototype.selectedMovie = function (movie) {
+        this.cart.push(movie);
+        this.recentMovie = movie;
+    };
+    myShopComponent = __decorate([
         core_1.Component({
-            selector: 'myMovies',
-            template: "\n    <h1>Top movies trending</h1>\n    <ul>\n    <li>Deadpool</li>\n    <li>Batman vs Superman</li>\n    <li>Inception</li>\n    <li>Interstellar</li>\n    </ul>",
-            styles: ['./app/style.css']
+            selector: 'myShop',
+            templateUrl: './app/templates/index.html',
+            styleUrls: ['./app/css/myShopComponent.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], myMoviesComponent);
-    return myMoviesComponent;
+    ], myShopComponent);
+    return myShopComponent;
 }());
-exports.myMoviesComponent = myMoviesComponent;
-//# sourceMappingURL=component.mymovies.js.map
+exports.myShopComponent = myShopComponent;
+//# sourceMappingURL=component.index.js.map

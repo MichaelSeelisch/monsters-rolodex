@@ -12,12 +12,18 @@ var core_1 = require('@angular/core');
 // import {myMoviesComponent} from './component.mymovies';
 var myShopComponent = (function () {
     function myShopComponent() {
+        this.recentMovie = 'None';
+        this.cart = [];
         this.movieList = ['Batman Vs Superman', 'Civil War', 'Deadpool'];
     }
+    myShopComponent.prototype.selectedMovie = function (movie) {
+        this.cart.push(movie);
+        this.recentMovie = movie;
+    };
     myShopComponent = __decorate([
         core_1.Component({
             selector: 'myShop',
-            template: "<h1>Welcome to my shop!</h1>\n  <p>We've the following movies available:</p>\n\n  <div>\n    <p *ngFor=\"let movie of movieList; let i = index\">{{i}}. {{movie}}</p>\n  </div>"
+            template: "<h1>Welcome to my shop!</h1>\n  <p>We've the following movies available:</p>\n\n  <ul>\n    <li *ngFor=\"let movie of movieList\" (click)=\"selectedMovie(movie)\">{{movie}}</li>\n  </ul>\n\n  Recently added movie: {{recentMovie}}<br>\n  Cart:\n  <ul>\n    <li *ngFor=\"let item of cart\">{{item}}</li>\n  </ul>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], myShopComponent);
