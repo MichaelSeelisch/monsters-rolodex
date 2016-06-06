@@ -9,8 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var component_cart_1 = require('./component.cart');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var MyShopComponent = (function () {
     function MyShopComponent() {
         this.recentMovie = 'None';
@@ -23,14 +22,10 @@ var MyShopComponent = (function () {
     };
     MyShopComponent = __decorate([
         core_1.Component({
-            selector: 'myShop',
             templateUrl: './app/templates/index.html',
             styleUrls: ['./app/css/myShopComponent.css'],
-            directives: [router_1.ROUTER_DIRECTIVES]
-        }),
-        router_1.Routes([
-            { path: '/cart', component: component_cart_1.CartComponent }
-        ]), 
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
+        }), 
         __metadata('design:paramtypes', [])
     ], MyShopComponent);
     return MyShopComponent;
