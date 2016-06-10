@@ -10,25 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var LoginApp = (function () {
-    function LoginApp() {
+var LoginForm = (function () {
+    function LoginForm(_router) {
+        this._router = _router;
+        this.data = {};
     }
-    LoginApp = __decorate([
+    ;
+    LoginForm.prototype.formSubmit = function () {
+        /*var uname = this.data.username;
+        var pass = this.data.password;
+        var key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function*/
+        console.log(this.data);
+        //console.log(key);
+        //Cookie.setCookie('sessionID', key);
+        /*if(uname === "admin" && pass === "admin") {
+          this._router.navigate(['AdminArea']);
+        }
+        else {
+          this._router.navigate(['DashboardArea']);
+        }*/
+    };
+    LoginForm = __decorate([
         core_1.Component({
-            selector: 'root',
-            template: "<router-outlet></router-outlet>",
+            templateUrl: './app/templates/loginForm.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES]
-        }),
-        router_deprecated_1.RouteConfig([
-            {
-                path: '/',
-                component: LoginForm,
-                name: 'LoginForm'
-            }
-        ]), 
-        __metadata('design:paramtypes', [])
-    ], LoginApp);
-    return LoginApp;
+        }), 
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
+    ], LoginForm);
+    return LoginForm;
 }());
-exports.LoginApp = LoginApp;
-//# sourceMappingURL=app.js.map
+exports.LoginForm = LoginForm;
+//# sourceMappingURL=component.login.js.map

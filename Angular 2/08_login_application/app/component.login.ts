@@ -9,26 +9,24 @@ import {Cookie} from 'ng2-cookies/ng2-cookies';
 })
 
 export class LoginForm {
-  formData = {
-    username: '',
-    password: ''
-  };
-
+  data = {};
   constructor(private _router:Router) {};
 
   formSubmit() {
-    var uname = this.formData.username;
-    var pass = this.formData.password;
-    var base64_key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function
+    /*var uname = this.data.username;
+    var pass = this.data.password;
+    var key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function*/
 
-    console.log(this.formData);
-    console.log(base64_key);
+    console.log(this.data);
+    //console.log(key);
 
-    if(uname === "admin" && pass === "admin") {
+    //Cookie.setCookie('sessionID', key);
+
+    /*if(uname === "admin" && pass === "admin") {
       this._router.navigate(['AdminArea']);
     }
     else {
-      // this._router.navigate(['DashboardArea']);
-    }
+      this._router.navigate(['DashboardArea']);
+    }*/
   }
 }

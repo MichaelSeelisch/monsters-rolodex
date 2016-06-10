@@ -11,31 +11,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var LoginForm = (function () {
-    function LoginForm(_router) {
-        this._router = _router;
-        this.data = {};
+    function LoginForm() {
     }
-    ;
-    LoginForm.prototype.formSubmit = function () {
-        uname = this.data.username;
-        pass = this.data.password;
-        key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function
-        console.log(this.data);
-        console.log(key);
-        if (uname === "admin" && pass === "admin") {
-            this._router.navigate(['AdminArea']);
-        }
-        else {
-        }
-    };
     LoginForm = __decorate([
         core_1.Component({
             templateUrl: './app/templates/loginForm.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router])
+        __metadata('design:paramtypes', [])
     ], LoginForm);
     return LoginForm;
 }());
 exports.LoginForm = LoginForm;
+var data = {};
+constructor(private, _router, router_deprecated_1.Router);
+{ }
+;
+formSubmit();
+{
+    var uname = this.data.username || '';
+    var pass = this.data.password || '';
+    var key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function
+    console.log(this.data);
+    console.log(key);
+    if (uname === "admin" && pass === "admin") {
+        this._router.navigate(['AdminArea']);
+    }
+    else {
+    }
+}
 //# sourceMappingURL=component.login.js.map

@@ -5,7 +5,7 @@ import {LoginForm} from './component.login';
 import {AdminComponent} from './component.admin';
 
 @Component({
-  selector: 'rootNode',
+  selector: 'root',
   template: `<router-outlet></router-outlet>`,
   directives: [ROUTER_DIRECTIVES]
 })

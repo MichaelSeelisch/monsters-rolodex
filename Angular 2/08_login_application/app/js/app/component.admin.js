@@ -10,25 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var LoginApp = (function () {
-    function LoginApp() {
+var AdminComponent = (function () {
+    function AdminComponent() {
     }
-    LoginApp = __decorate([
+    AdminComponent = __decorate([
         core_1.Component({
-            selector: 'root',
-            template: "<router-outlet></router-outlet>",
+            template: 'Hello Admin!',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES]
-        }),
-        router_deprecated_1.RouteConfig([
-            {
-                path: '/',
-                component: LoginForm,
-                name: 'LoginForm'
-            }
-        ]), 
+        }), 
         __metadata('design:paramtypes', [])
-    ], LoginApp);
-    return LoginApp;
+    ], AdminComponent);
+    return AdminComponent;
 }());
-exports.LoginApp = LoginApp;
-//# sourceMappingURL=app.js.map
+exports.AdminComponent = AdminComponent;
+//# sourceMappingURL=component.admin.js.map

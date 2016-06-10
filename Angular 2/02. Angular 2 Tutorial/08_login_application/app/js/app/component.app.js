@@ -17,7 +17,7 @@ var LoginApp = (function () {
     }
     LoginApp = __decorate([
         core_1.Component({
-            selector: 'root',
+            selector: 'rootNode',
             template: "<router-outlet></router-outlet>",
             directives: [router_deprecated_1.ROUTER_DIRECTIVES]
         }),

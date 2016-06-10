@@ -10,25 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var ng2_cookies_1 = require('ng2-cookies/ng2-cookies');
 var LoginForm = (function () {
     function LoginForm(_router) {
         this._router = _router;
-        this.data = {};
+        this.formData = {
+            username: '',
+            password: ''
+        };
     }
     ;
     LoginForm.prototype.formSubmit = function () {
-        var uname = this.data.username;
-        var pass = this.data.password;
-        var key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function
-        console.log(this.data);
-        console.log(key);
-        ng2_cookies_1.Cookie.setCookie('sessionID', key);
+        var uname = this.formData.username;
+        var pass = this.formData.password;
+        var base64_key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function
+        console.log(this.formData);
+        console.log(base64_key);
         if (uname === "admin" && pass === "admin") {
             this._router.navigate(['AdminArea']);
         }
         else {
-            this._router.navigate(['DashboardArea']);
         }
     };
     LoginForm = __decorate([

@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var component_login_1 = require('./component.login');
+var component_admin_1 = require('./component.admin');
 var LoginApp = (function () {
     function LoginApp() {
     }
@@ -22,8 +24,13 @@ var LoginApp = (function () {
         router_deprecated_1.RouteConfig([
             {
                 path: '/',
-                component: LoginForm,
+                component: component_login_1.LoginForm,
                 name: 'LoginForm'
+            },
+            {
+                path: '/admin',
+                component: component_admin_1.AdminComponent,
+                name: 'AdminArea'
             }
         ]), 
         __metadata('design:paramtypes', [])
@@ -31,4 +38,4 @@ var LoginApp = (function () {
     return LoginApp;
 }());
 exports.LoginApp = LoginApp;
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=component.app.js.map
