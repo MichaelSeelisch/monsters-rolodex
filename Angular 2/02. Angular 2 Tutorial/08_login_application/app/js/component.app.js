@@ -32,7 +32,7 @@ var LoginApp = (function () {
                 component: component_admin_1.AdminComponent,
                 name: 'AdminArea'
             }
-        ]), 
+        ]),
         __metadata('design:paramtypes', [])
     ], LoginApp);
     return LoginApp;

@@ -10,25 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var LoginApp = (function () {
-    function LoginApp() {
+var LoginForm = (function () {
+    function LoginForm(_router) {
+        this._router = _router;
+        this.formData = {
+            username: '',
+            password: ''
+        };
     }
-    LoginApp = __decorate([
+    ;
+    LoginForm.prototype.formSubmit = function () {
+        var uname = this.formData.username;
+        var pass = this.formData.password;
+        var base64_key = btoa(btoa(uname) + '??' + btoa(pass)); // => Chrome internal base64 encryption function
+        console.log(this.formData);
+        console.log(base64_key);
+        if (uname === "admin" && pass === "admin") {
+            this._router.navigate(['AdminArea']);
+        }
+        else {
+        }
+    };
+    LoginForm = __decorate([
         core_1.Component({
-            selector: 'rootNode',
-            template: "<router-outlet></router-outlet>",
+            templateUrl: './app/templates/loginForm.html',
             directives: [router_deprecated_1.ROUTER_DIRECTIVES]
-        }),
-        router_deprecated_1.RouteConfig([
-            {
-                path: '/',
-                component: LoginForm,
-                name: 'LoginForm'
-            }
-        ]),
-        __metadata('design:paramtypes', [])
-    ], LoginApp);
-    return LoginApp;
+        }), 
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
+    ], LoginForm);
+    return LoginForm;
 }());
-exports.LoginApp = LoginApp;
-//# sourceMappingURL=app.js.map
+exports.LoginForm = LoginForm;
+//# sourceMappingURL=component.logMeIn.js.map
