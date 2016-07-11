@@ -1,6 +1,8 @@
 import React, {PropTypes, Component} from 'react';
 import {DropTarget} from 'react-dnd';
 
+import constants from './constants';
+
 // ShoppingCart DND Spec
 // "A plain object implementing the drop target specification"
 //
@@ -63,4 +65,4 @@ ShoppingCart.propTypes = {
   canDrop: PropTypes.bool.isRequired
 }
 
-export default DropTarget("snack", ShoppingCartSpec, collect)(ShoppingCart);
+export default DropTarget(constants.SNACK, ShoppingCartSpec, collect)(ShoppingCart);
