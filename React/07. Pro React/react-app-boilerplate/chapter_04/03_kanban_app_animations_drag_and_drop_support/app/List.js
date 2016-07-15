@@ -13,6 +13,7 @@ class List extends Component {
               tasks={card.tasks}
               key={card.id}
               taskCallbacks={this.props.taskCallbacks}
+              cardCallbacks={this.props.cardCallbacks}
               {...card}
             />
     });
@@ -29,7 +30,8 @@ class List extends Component {
 List.propTypes = {
   title: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.object),
-  taskCallbacks: PropTypes.object
+  taskCallbacks: PropTypes.object,
+  cardCallbacks: PropTypes.object
 };
 
 export default List;
