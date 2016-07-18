@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import KanbanBoard from './KanbanBoard';
 import update from '../node_modules/react-addons-update';
+
+import KanbanBoard from './KanbanBoard';
+import { throttle } from './utils';
 
 // Polyfills
 import 'babel-polyfill';
@@ -19,6 +21,12 @@ class KanbanBoardContainer extends Component {
     this.state = {
       cards: []
     };
+
+    // Only call updateCardStatus when arguments changes
+    this.updateCardStatus = throttle(this.updateCardStatus.bind(this));
+
+    // Call updateCardPosition at max every 500ms (or when arguments change)
+    this.updateCardPosition = throttle(this.updateCardPosition.bind(this), 500);
   }
 
   componentDidMount() {
@@ -216,6 +224,38 @@ class KanbanBoardContainer extends Component {
     }
   }
 
+  persistCardDrag(cardId, status) {
+    // Find the index of the card
+    let cardIndex = this.state.cards.findIndex((card) => card.id == cardId);
+
+    // Get the current card
+    let card = this.state.cards[cardIndex];
+
+    fetch(`${API_URL}/cards/${cardId}`, {
+      method: 'put',
+      headers: API_HEADERS,
+      body: JSON.stringify({status: card.status, row_order_position: cardIndex})
+    })
+    .then((response) => {
+      if(!response.ok) {
+        // Throw an error if server response wasn't 'ok' so you can revert back the optimistic changes made the UI.
+        throw new Error('Server response wasn\'t OK');
+      }
+    })
+    .catch((error) => {
+      console.error('Fetch error: ', error);
+      this.setState(
+        update(this.state, {
+          cards: {
+            [cardIndex]: {
+              status: { $set: status }
+            }
+          }
+        })
+      );
+    });
+  }
+
   render() {
     return <KanbanBoard
               cards={this.state.cards}
@@ -226,8 +266,9 @@ class KanbanBoardContainer extends Component {
               }}
 
               cardCallbacks={{
-                updateStatus:this.updateCardStatus.bind(this),
-                updatePosition: this.updateCardPosition.bind(this)
+                updateStatus:this.updateCardStatus,
+                updatePosition: this.updateCardPosition,
+                persistCardDrag: this.persistCardDrag.bind(this)
               }}
             />
   }
