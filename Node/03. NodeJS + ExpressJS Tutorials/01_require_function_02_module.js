@@ -21,4 +21,4 @@ methods.areaOfRectangel = function(a, b) {
   return output_01;
 };
 
-exports.data = methods;
+exports.data = methods; // short for module.exports.data = methods;
