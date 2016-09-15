@@ -41,7 +41,7 @@ class RepoDetails extends Component {
 
     var i;
     for(i = 0; i < this.state.repository.stargazers_count; i++) {
-      stars.push('&#9733;');
+      stars.push('★');
     }
 
     return(
