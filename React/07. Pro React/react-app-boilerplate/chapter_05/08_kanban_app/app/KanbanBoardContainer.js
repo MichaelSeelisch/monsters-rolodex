@@ -265,6 +265,12 @@ class KanbanBoardContainer extends Component {
       let card = Object.assign({}, card, {id: Date.now()});
     }
 
+    // Create a new object and push the new card to the array of cards
+    let nextState = update(
+      this.state.cards, {
+      $push: [card]
+    });
+
     // Set the component state to the mutated object
     this.setState({cards: nextState});
 
@@ -295,7 +301,64 @@ class KanbanBoardContainer extends Component {
     });
   }
 
+  updateCard(card) {
+    // Keep a reference to the original state prior to the mutations in case we need to revert the optimistic changes in the UI
+    let prevState = this.state;
+
+    // Find the index of card
+    let cardIndex = this.state.cards.findIndex((c) => c.id == card.id);
+
+    // Using the $set command, we will change the whole card
+    let nextState = update(
+      this.state.cards, {
+        [cardIndex]: {$set: card}
+      }
+    );
+
+    // Set the component state to the mutated object
+    this.setState({
+      cards: nextState
+    });
+
+    // Call the API to update the card on the server
+    fetch(`${API_URL}/cards/${card.id}`, {
+      method: 'put',
+      headers: API_HEADERS,
+      body: JSON.stringify(card)
+    })
+    .then((response) => {
+      if(!response.ok) {
+        // Throw an error if server response wasn't 'ok' so we can revert back the optimistic changes made to the UI
+        throw new Error("Server response wasn't OK")
+      }
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error)
+      this.setState(prevState);
+    });
+  }
+
   render() {
+    // Cloning the Child to Insert the Cards List and Callbacks as Props
+    let kanbanBoard = this.props.children && React.cloneElement(this.props.children, {
+      cards: this.state.cards,
+      taskCallbacks: {
+        toggle: this.toggleTask.bind(this),
+        delete: this.deleteTask.bind(this),
+        add: this.addTask.bind(this)
+      },
+      cardCallbacks: {
+        addCard: this.addCard.bind(this),
+        updateCard: this.updateCard.bind(this),
+        updateStatus: this.updateCardStatus.bind(this),
+        updatePosition: throttle(this.updateCardPosition.bind(this), 500),
+        persistCardDrag: this.persistCardDrag.bind(this)
+      }
+    });
+
+    return kanbanBoard;
+
+    /*
     return <KanbanBoard
               cards={this.state.cards}
               taskCallbacks={{
@@ -310,6 +373,7 @@ class KanbanBoardContainer extends Component {
                 persistCardDrag: this.persistCardDrag.bind(this)
               }}
             />
+    */
   }
 }
 

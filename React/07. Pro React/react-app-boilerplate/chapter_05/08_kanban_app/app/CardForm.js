@@ -14,7 +14,7 @@ class CardForm extends Component {
     return(
       <div>
         <div className="card big">
-          <form onSubmit="{this.props.handleSubmit.bind(this)}">
+          <form onSubmit={this.props.handleSubmit.bind(this)}>
             <input type="text"
               value={this.props.draftCard.title}
               onChange={this.handleChange.bind(this, 'title')}
@@ -45,8 +45,7 @@ class CardForm extends Component {
               id="color"
               value={this.props.draftCard.color}
               onChange={this.handleChange.bind(this, 'color')}
-              type="color"
-              defaultValue="#ff0000" />
+              type="color" />
 
             <div className="actions">
               <button type="submit">{this.props.buttonLabel}</button>
