@@ -1,0 +1,10 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: green;
+  font-size: 12px;
+  color: #fff1az;
+}
+
+/*# sourceMappingURL=maps/example.css.map */
