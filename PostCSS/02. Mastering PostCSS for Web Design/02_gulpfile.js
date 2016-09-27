@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     constants = require('postcss-constants'),
     plumber = require('gulp-plumber');
 
-// Autoprefix
+// Autoprefix and constants
 gulp.task('styles', function() {
   return gulp.src('src/02_example.css')
       .pipe(plumber())
