@@ -21,3 +21,10 @@
 
 06_gulpfile.js:
 - BEM
+
+07_gulpfile.js:
+- Media Queries
+
+08_gulpfile.js:
+- Responsive images
+- Responsive fonts
