@@ -3,9 +3,10 @@ var gulp = require('gulp'),
     constants = require('postcss-constants'),
     plumber = require('gulp-plumber');
 
-// Autoprefix and constants
+var exampleFileName = '02_example';
+
 gulp.task('styles', function() {
-  return gulp.src('src/02_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(plumber())
       .pipe(postcss([
         constants

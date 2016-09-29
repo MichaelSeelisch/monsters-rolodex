@@ -8,9 +8,10 @@ var gulp = require('gulp'),
     reporter = require('postcss-reporter'),
     cssvariables = require('postcss-css-variables')
 
-// Autoprefix
+var exampleFileName = '01_example';
+
 gulp.task('styles', function() {
-  return gulp.src('src/01_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
         autoprefixer,
         cssvariables(/* options */)
@@ -18,9 +19,8 @@ gulp.task('styles', function() {
       .pipe(gulp.dest('dest/'));
 });
 
-// Linting
 gulp.task('lint-styles', ['styles'], function() {
-  return gulp.src('src/01_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
         stylelint({
           'rules': {
@@ -38,18 +38,18 @@ gulp.task('lint-styles', ['styles'], function() {
 
 // Shrink an rename
 gulp.task('rename', ['lint-styles'], function() {
-  return gulp.src('dest/01_example.css')
+  return gulp.src('dest/' + exampleFileName + '.css')
       .pipe(postcss([
         cssnano
       ]))
-      .pipe(rename('01_example.min.css'))
+      .pipe(rename(exampleFileName + '.min.css'))
       .pipe(sourcemaps.init())
       .pipe(sourcemaps.write('maps/'))
       .pipe(gulp.dest('dest/'));
 });
 
 // Watch
-var watcher = gulp.watch('src/*css', ['default']);
+var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 });

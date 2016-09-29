@@ -1,26 +1,24 @@
 var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     cssnano = require('cssnano'),
-    autoprefixer = require('autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     rename = require('gulp-rename'),
     stylelint = require('stylelint'),
     reporter = require('postcss-reporter'),
-    responsiveimages = require('postcss-responsive-images'),
-    at2x = require('postcss-at2x'),
-    imagesset = require('postcss-image-set'),
-    responsivetype = require('postcss-responsive-type');
+    sprites = require('postcss-sprites');
 
-var exampleFileName = '08_example';
+var exampleFileName = '11_example';
 
-// Retina images
+var opts = {
+    stylesheetPath: 'dest/',
+    spritePath    : './img/11',
+    path          : 'src/img/_11/'
+};
+
 gulp.task('style', function() {
   return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
-        at2x(),
-        responsivetype(),
-        imagesset(),
-        autoprefixer
+        sprites(opts)
       ]))
       .pipe(gulp.dest('dest/'));
 });

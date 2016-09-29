@@ -9,9 +9,10 @@ var gulp = require('gulp'),
     cssmixins = require('postcss-mixins'),
     calc = require('postcss-calc');
 
-// Autoprefix
+var exampleFileName = '03_example';
+
 gulp.task('styles', function() {
-  return gulp.src('src/03_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
         autoprefixer,
         cssvariables(/* options */),
@@ -21,8 +22,7 @@ gulp.task('styles', function() {
       .pipe(gulp.dest('dest/'));
 });
 
-// Watch
-var watcher = gulp.watch('src/*css', ['default']);
+var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 });

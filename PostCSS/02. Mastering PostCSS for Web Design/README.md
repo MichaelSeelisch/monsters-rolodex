@@ -28,3 +28,12 @@
 08_gulpfile.js:
 - Responsive images
 - Responsive fonts
+
+09_gulpfile.js:
+- Automating links to assets
+
+10_gulpfile.js:
+- Fontpath managing
+
+11_gulpfile.js:
+- Image sprite

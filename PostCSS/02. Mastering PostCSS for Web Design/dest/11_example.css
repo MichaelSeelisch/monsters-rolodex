@@ -1,0 +1,21 @@
+.amex {
+  background-image: url(../img/11/sprite.png);
+  background-position: 0px 0px; background-color: #fff;
+}
+
+.cirrus {
+  background-image: url(../img/11/sprite.png);
+  background-position: -102px 0px;
+}
+
+.delta {
+  background-image: url(../img/11/sprite.png);
+  background-position: 0px -64px;
+}
+
+.solo {
+  background-image: url(../img/11/sprite.png);
+  background-position: -102px -64px;
+}
+
+/*# sourceMappingURL=maps/11_example.css.map */

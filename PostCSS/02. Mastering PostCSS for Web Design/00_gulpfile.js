@@ -7,9 +7,10 @@ var gulp = require('gulp'),
     stylelint = require('stylelint'),
     reporter = require('postcss-reporter');
 
-// Autoprefix
+var exampleFileName = '00_example';
+
 gulp.task('styles', function() {
-  return gulp.src('src/00_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
         autoprefixer
       ]))
@@ -18,21 +19,19 @@ gulp.task('styles', function() {
       .pipe(gulp.dest('dest/'));
 });
 
-// Shrink an rename
 gulp.task('rename', ['styles'], function() {
-  return gulp.src('dest/00_example.css')
+  return gulp.src('dest/' + exampleFileName + '.css')
       .pipe(postcss([
         cssnano
       ]))
-      .pipe(rename('00_example.min.css'))
+      .pipe(rename(exampleFileName + '.min.css'))
       .pipe(sourcemaps.init())
       .pipe(sourcemaps.write('maps/'))
       .pipe(gulp.dest('dest/'));
 });
 
-// Linting
 gulp.task('lint-styles', function() {
-  return gulp.src('src/00_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
         stylelint({
           'rules': {
@@ -48,8 +47,7 @@ gulp.task('lint-styles', function() {
       ]))
 });
 
-// Watch
-var watcher = gulp.watch('src/*css', ['default']);
+var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 });

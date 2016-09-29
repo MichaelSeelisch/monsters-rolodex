@@ -4,9 +4,11 @@ var gulp = require('gulp'),
     bemLinter = require('postcss-bem-linter'),
     reporter = require('postcss-reporter');
 
+var exampleFileName = '06_example';
+
 // Check consistency with BEM standards
 gulp.task('lint', ['bem'], function() {
-  return gulp.src('dest/06_example.css')
+  return gulp.src('dest/' + exampleFileName + '.css')
       .pipe(postcss([
         bemLinter({
           preset: 'bem'
@@ -20,7 +22,7 @@ gulp.task('lint', ['bem'], function() {
 
 // Compile BEM
 gulp.task('bem', function() {
-  return gulp.src('src/06_example.css')
+  return gulp.src('src/' + exampleFileName + '.css')
       .pipe(postcss([
         bem({
           style: 'bem',
@@ -32,7 +34,7 @@ gulp.task('bem', function() {
       .pipe(gulp.dest('dest/'));
 })
 
-var watcher = gulp.watch('src/06_example.css', ['default']);
+var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ' running tasks...');
 });
