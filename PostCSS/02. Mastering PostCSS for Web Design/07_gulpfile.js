@@ -6,14 +6,14 @@ var exampleFileName = '07_example';
 
 // Media queries
 gulp.task('style', function() {
-  return gulp.src('src/' + exampleFileName + '.css')
+  return gulp.src('src/css/' + exampleFileName + '.css')
       .pipe(postcss([
         customMedia()
       ]))
-      .pipe(gulp.dest('dest/'));
+      .pipe(gulp.dest('dest/css/'));
 });
 
-var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
+var watcher = gulp.watch('src/css/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ' running tasks...');
 });

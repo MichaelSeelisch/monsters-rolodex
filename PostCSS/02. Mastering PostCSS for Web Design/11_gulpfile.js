@@ -10,21 +10,21 @@ var gulp = require('gulp'),
 var exampleFileName = '11_example';
 
 var opts = {
-    stylesheetPath: 'dest/',
+    stylesheetPath: 'dest/css/',
     spritePath    : './img/11',
     path          : 'src/img/_11/'
 };
 
 gulp.task('style', function() {
-  return gulp.src('src/' + exampleFileName + '.css')
+  return gulp.src('src/css/' + exampleFileName + '.css')
       .pipe(postcss([
         sprites(opts)
       ]))
-      .pipe(gulp.dest('dest/'));
+      .pipe(gulp.dest('dest/css/'));
 });
 
 gulp.task('lint-styles', ['style'], function() {
-    return gulp.src('dest/' + exampleFileName + '.css')
+    return gulp.src('dest/css/' + exampleFileName + '.css')
     .pipe(postcss([ stylelint({
         'rules': {
           'color-no-invalid-hex': 2,
@@ -40,20 +40,20 @@ gulp.task('lint-styles', ['style'], function() {
 });
 
 gulp.task('rename', ['lint-styles'], function () {
-	return gulp.src('dest/' + exampleFileName + '.css')
+	return gulp.src('dest/css/' + exampleFileName + '.css')
     .pipe(postcss([ cssnano() ]))
 		.pipe(rename(exampleFileName + '.min.css'))
-		.pipe(gulp.dest('dest/'));
+		.pipe(gulp.dest('dest/css/'));
 });
 
 gulp.task('sourcemap', ['rename'], function () {
-	return gulp.src('dest/' + exampleFileName + '.css')
+	return gulp.src('dest/css/' + exampleFileName + '.css')
 		.pipe(sourcemaps.init())
 		.pipe(sourcemaps.write('maps/'))
-		.pipe(gulp.dest('dest/'));
+		.pipe(gulp.dest('dest/css/'));
 });
 
-var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
+var watcher = gulp.watch('src/css/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ' running tasks...');
 });

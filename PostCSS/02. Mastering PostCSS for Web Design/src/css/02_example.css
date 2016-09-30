@@ -1,0 +1,5 @@
+~colors: "../../constants.js";
+
+.foo {
+  color: ~colors.primary;
+}

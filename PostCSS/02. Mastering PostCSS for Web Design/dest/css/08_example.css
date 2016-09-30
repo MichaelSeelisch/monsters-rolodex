@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'robotoregular';
+  src: url('../Roboto-Regular-webfont.eot');
+  src: url('../Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../Roboto-Regular-webfont.woff') format('woff'),
+       url('../Roboto-Regular-webfont.ttf') format('truetype'),
+       url('../Roboto-Regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* postcss-responsive-type PlugIn */
+body {
+	font-family: "robotoregular", sans-serif;
+  font-size: calc(12px + 9 * ((100vw - 420px) / 860));
+}
+@media screen and (min-width: 1280px) {
+  body {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+/* postcss-responsive-image PlugIn */
+#retina img {
+  image-size: responsive;
+}
+
+/* postcss-image-set PlugIn */
+#retina-at2x img {
+  background: url("../img/mothorchid.png");
+}
+
+/* postcss-responsive-image PlugIn */
+#retina-src-set {
+  background-image: url("../img/mothorchid.png");
+  background-image:
+    -webkit-image-set(url("../img/mothorchid.png") 1x,
+    url("../img/mothorchid.png") 2x,
+    url("../img/mothorchid.png") 600dpi);
+  background-image:
+    image-set(url("../img/mothorchid.png") 1x,
+    url("../img/mothorchid.png") 2x,
+    url("../img/mothorchid.png") 600dpi);
+}
+
+#retina img {
+  padding: 4px;
+  border: solid 1px #bbb;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+#retina a:before {
+  position: absolute;
+  content: ' ';
+  top: 112px;
+  left: 25px;
+  width: 30px;
+  height: 60px;
+  background: url("../img/paper-clip.png") no-repeat;
+}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  #retina-at2x img {
+    background: url("../img/mothorchid@2x.png");
+  }
+}
+
+/*# sourceMappingURL=maps/08_example.css.map */

@@ -37,3 +37,18 @@
 
 11_gulpfile.js:
 - Image sprite
+
+12_gulpfile.js:
+- SVG
+
+13_gulpfile.js:
+- Mixin colors
+
+14_gulpfile.js:
+- Adjusting colors
+
+15_gulpfile.js:
+- Custom functions in PostCSS
+
+16_gulpfile.js:
+- Instagram filter

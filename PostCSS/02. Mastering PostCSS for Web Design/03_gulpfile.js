@@ -12,17 +12,17 @@ var gulp = require('gulp'),
 var exampleFileName = '03_example';
 
 gulp.task('styles', function() {
-  return gulp.src('src/' + exampleFileName + '.css')
+  return gulp.src('src/css/' + exampleFileName + '.css')
       .pipe(postcss([
         autoprefixer,
         cssvariables(/* options */),
         cssmixins(/* options */),
         calc(/* options */)
       ]))
-      .pipe(gulp.dest('dest/'));
+      .pipe(gulp.dest('dest/css/'));
 });
 
-var watcher = gulp.watch('src/' + exampleFileName + '.css', ['default']);
+var watcher = gulp.watch('src/css/' + exampleFileName + '.css', ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 });
