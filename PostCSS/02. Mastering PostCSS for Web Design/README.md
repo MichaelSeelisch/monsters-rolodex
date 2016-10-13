@@ -1,3 +1,6 @@
+RUN ALL EXAMPLES:
+$ gulp --gulpfile XX_gulfile.js
+
 00_gulpfile.js:
 - Autoprefixer
 - Shrink & Rename
@@ -52,3 +55,6 @@
 
 16_gulpfile.js:
 - Instagram filter
+
+17_gulpfile.js:
+- Grid system with neat
