@@ -1,0 +1,32 @@
+{
+  "name": "postcss-transition-shortcut",
+  "version": "0.0.0",
+  "description": "PostCSS plugin to allow use of shorthand properties in CSS transitions",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "transitions"
+  ],
+  "author": "Michael Seelisch <seelisch@kolle-rebbe.de>",
+  "license": "MIT",
+  "repository": "MichaelSeelisch/postcss-transition-shortcut",
+  "bugs": {
+    "url": "https://github.com/MichaelSeelisch/postcss-transition-shortcut/issues"
+  },
+  "homepage": "https://github.com/MichaelSeelisch/postcss-transition-shortcut",
+  "dependencies": {
+    "postcss": "^5.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "eslint": "^3.4.0",
+    "eslint-config-postcss": "^2.0.2"
+  },
+  "scripts": {
+    "test": "ava && eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5"
+  }
+}
