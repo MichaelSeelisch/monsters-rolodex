@@ -1,0 +1,7 @@
+-> User-Aktion wird in App.js registriert
+-> App.js führt Action aus/in BankActions.js aus
+-> BankActions.js dispatched entsprechende Aktion
+-> (AppDispatcher informiert gesamte Applikation über eine ausgeführte Aktion)
+-> BankBalanceStore.js führt Änderung an 'balance' aus, da es sich über'register' an die dispatchbaren Actions 'angehängt' hat
+-> App.js wird über 'balance' Änderung informiert, da es ein 'change' Event in BankBalanceStore registriet hat und führt 'handelStoreChange' aus
+-> in App.js wird der State (balance) upgedatet und die 'render'-Methode automatisch ausgeführt
