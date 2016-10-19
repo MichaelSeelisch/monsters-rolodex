@@ -1,5 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import AirportActions from '../actions/AirportActionsCreators';
+import AirportActions from '../actions/AirportActionCreators';
 import constants from '../constants';
 import RouteStore from './RouteStore';
 
@@ -15,7 +15,7 @@ class TicketStore extends ReduceStore {
             case constants.FETCH_TICKETS:
                 return [];
                 break;
-            
+
             case constants.FETCH_TICKETS_SUCCESS:
                 return action.payload.response;
                 break;

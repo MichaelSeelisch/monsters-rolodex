@@ -18,7 +18,7 @@ let AirCheapAPI = {
 
     fetchTickets(origin, destination) {
         fetch('./data/flights.json')
-            .then((response) =>.json())
+            .then((response) => response.json())
             .then((responseData) => {
                 AirportActionCreators.fetchTicketsSuccess(responseData);
             })

@@ -4,7 +4,7 @@ import AirCheapAPI from '../api/AirCheapAPI';
 
 let AirportActionCreators = {
     fetchAirports() {
-        AirCheapAPI.fetchAirports();        
+        AirCheapAPI.fetchAirports();
         AppDispatcher.dispatch({
             type: constants.FETCH_AIRPORTS
         });
@@ -40,7 +40,7 @@ let AirportActionCreators = {
     },
 
     fetchTicketsSuccess(response) {
-        AirCheapAPI.fetchTickets();
+        // AirCheapAPI.fetchTickets();
         AppDispatcher.dispatch({
             type: constants.FETCH_TICKETS_SUCCESS,
             payload: {response}

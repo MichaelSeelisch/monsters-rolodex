@@ -30,12 +30,12 @@ class TicketItem extends Component {
                     {ticket.company}
                 </span>
                 <span className='ticket-location'>
-                    <strong>{ticket.segment[0].origin</strong>{''}
+                    <strong>{ticket.segment[0].origin}</strong>{''}
                     <small>{departureTime}</small>
                 </span>
                 <span className='ticket-separator'></span>
                 <span className='ticket-location'>
-                    <strong>{ticket.segment[ticket.segment.length - 1].destination</strong>{''}
+                    <strong>{ticket.segment[ticket.segment.length - 1].destination}</strong>{''}
                     <small>{arrivalTime}</small>
                 </span>
                 <span className='ticket-connection'>

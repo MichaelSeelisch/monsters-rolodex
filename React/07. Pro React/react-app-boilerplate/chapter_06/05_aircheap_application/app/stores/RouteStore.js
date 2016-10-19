@@ -11,7 +11,7 @@ class RouteStore extends MapStore {
                 // action.code contains teh selected airport code
                 return state.set(action.target, action.code);
                 break;
-            
+
             default:
                 return state;
                 break;
