@@ -53,6 +53,14 @@ function paintStars(stars) {
   });
 }
 
+function renderScene(actors) {
+  paintStars(actors.stars);
+  paintSpaceShip(actors.spaceship.x, actors.spaceship.y);
+  paintEnemies(actors.enemies);
+  paintHeroShots(actors.heroShots, actors.enemies);
+  paintScore(actors.score);
+}
+
 /*** hero_1.js ***/
 var HERO_Y = canvas.height - 30;
 var mouseMove = Rx.Observable.fromEvent(canvas, 'mousemove');
@@ -68,7 +76,6 @@ var SpaceShip = mouseMove
     y: HERO_Y
   });
 
-
   // Draw game characters
   function drawTriangle(x, y, width, color, direction) {
     ctx.fillStyle = color;
@@ -83,13 +90,6 @@ var SpaceShip = mouseMove
 function paintSpaceShip(x, y) {
   drawTriangle(x, y, 20, '#ff0000', 'up');
 }
-
-function renderScene(actors) {
-  paintStars(actors.stars);
-  paintSpaceShip(actors.spaceship.x, actors.spaceship.y);
-  paintEnemies(actors.enemies);
-}
-
 
 
 /*** enemy_1.js ***/
@@ -114,21 +114,177 @@ function paintEnemies(enemies) {
     enemy.y += 5;
     enemy.x += getRandomInt(-15, 15);
 
-    drawTriangle(enemy.x, enemy.y, 20, '#00ff00', 'down');;
+    if (!enemy.isDead) {
+      drawTriangle(enemy.x, enemy.y, 20, '#00ff00', 'down');
+    }
+
+    enemy.shots.forEach(function(shot) {
+      shot.y += SHOOTING_SPEED;
+      drawTriangle(shot.x, shot.y, 5, '#00ffff', 'down');
+    });
   });
 }
 
+
+/* hero_Shots.js */
+var playerFiring = Rx.Observable
+  .merge(
+    Rx.Observable.fromEvent(canvas, 'click'),
+    Rx.Observable.fromEvent(document, 'keydown')
+      .filter(function(evt) {
+        return evt.keycode === 32;
+      })
+  )
+  .startWith({})
+  .sample(200) // Player can shoot only every 200ms
+  .timestamp();
+
+/*
+  var HeroShots = Rx.Observable
+    .combineLatest(
+      playerFiring,
+      SpaceShip,
+      function(shotEvents, spaceShip) {
+        return {
+          x: spaceShip.x
+        };
+      }
+    )
+    .scan(function(shotArray, shot) {
+      shotArray.push({
+        x: shot.x,
+        y: HERO_Y
+      });
+      return shotArray;
+    }, []);
+*/
+
+/* hero:_shots2.js */
+var HeroShots = Rx.Observable
+  .combineLatest(
+    playerFiring,
+    SpaceShip,
+    function(shotEvents, spaceShip) {
+      return {
+        timestamp: shotEvents.timestamp,
+        x: spaceShip.x
+      };
+    }
+  )
+  .distinctUntilChanged(function(shot) {
+    return shot.timestamp;
+  })
+  .scan(function(shotArray, shot) {
+    shotArray.push({
+      x: shot.x,
+      y: HERO_Y
+    });
+    return shotArray;
+  }, []);
+
+var SHOOTING_SPEED = 15;
+var SCORE_INCREASE = 10;
+function paintHeroShots(heroShots, enemies) {
+  heroShots.forEach(function(shot, i) {
+    for (var l = 0; l < enemies.length; l++) {
+      var enemy = enemies[l];
+      if (!enemy.isDead && collision(shot, enemy)) {
+        ScoreSubject.onNext(SCORE_INCREASE);
+        enemy.isDead = true;
+        shot.x = shot.y = -100;
+        break;
+      }
+    }
+    shot.y -= SHOOTING_SPEED;
+    drawTriangle(shot.x, shot.y, 5, '#ffff00', 'up');
+  });
+}
+
+
+/* enemy_shots.js */
+function isVisible(obj) {
+  return obj.x > -40 && obj.x < canvas.width + 40 && obj.y > -40 && obj.y < canvas.height + 40;
+}
+
+var ENEMY_FREQ = 1500;
+var ENEMY_SHOOTING_FREQ = 750;
+var Enemies = Rx.Observable.interval(ENEMY_FREQ)
+  .scan(function(enemyArray) {
+    var enemy = {
+      x: parseInt(Math.random() * canvas.width),
+      y: -30,
+      shots: []
+    };
+    Rx.Observable.interval(ENEMY_SHOOTING_FREQ)
+      .subscribe(function() {
+        if (!enemy.isDead) {
+          enemy.shots.push({
+            x: enemy.x,
+            y: enemy.y
+          });
+        }
+        enemy.shots = enemy.shots.filter(isVisible);
+      });
+      enemyArray.push(enemy);
+      return enemyArray
+        .filter(isVisible)
+        .filter(function(enemy) {
+          return !(enemy.isDead && enemy.shots.length === 0);
+        });
+  }, []);
+
+function gameOver(ship, enemies) {
+  return enemies.some(function(enemy) {
+    if (collision(ship, enemy)) {
+      return true;
+    }
+
+    return enemy.shots.some(function(shot) {
+      return collision(ship, shot);
+    });
+  });
+}
+
+
+/* enemy_shots2.js */
+function collision(target1, target2) {
+  return (target1.x > target2.x - 20 && target1.x < target2.x + 20) &&
+    (target1.y > target2.y - 20 && target1.y < target2.y + 20);
+}
+
+
+/* score.js */
+function paintScore(score) {
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 26px sans-serif';
+  ctx.fillText('Score: ' + score, 40, 43);
+}
+
+var ScoreSubject = new Rx.BehaviorSubject(0);
+var score = ScoreSubject.scan(function (prev, cur) {
+  return prev + cur;
+}, 0);
+
+/* GameLoop */
 var Game = Rx.Observable
   .combineLatest(
     StarStream,
     SpaceShip,
     Enemies,
-    function(stars, spaceship, enemies) {
+    HeroShots,
+    score,
+    function(stars, spaceship, enemies, heroShots, score) {
       return {
         stars: stars,
         spaceship: spaceship,
-        enemies: enemies
+        enemies: enemies,
+        heroShots: heroShots,
+        score: score
       };
     }
-  );
-Game.subscribe(renderScene);
+  )
+  .sample(SPEED)
+  .takeWhile(function(actors) {
+    return gameOver(actors.spaceship, actors.enemies) === false;
+  })
+  .subscribe(renderScene);
