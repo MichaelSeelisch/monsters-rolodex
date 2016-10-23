@@ -11,7 +11,7 @@ module.exports = postcss.plugin('postcss-transition-shortcut', function (opts) {
   };
 
   return function (css, result) {
-    css.walkRules(function(rule) {
+    css.walkRules(function (rule) {
       var transitionRule;
       var transitionValues = [];
       var index = -1, node;
@@ -19,7 +19,7 @@ module.exports = postcss.plugin('postcss-transition-shortcut', function (opts) {
 
       while(node = rule.nodes[++index]) {
         if(attributes.test(node.prop)) {
-          transitionRule || node.cloneBefore({prop: 'transition'});
+          transitionRule || node.cloneBefore({ prop: 'transition' });
           var transValues = postcss.list.space(node.value);
           transitionValues.push(transValues.join(','));
           node.remove();
