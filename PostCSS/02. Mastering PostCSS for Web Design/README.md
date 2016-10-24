@@ -64,4 +64,20 @@ $ gulp --gulpfile XX_gulfile.js
 - Media queries
 
 19_gulpfile.js:
-- Build a custom PostCSS PlugIn
+- Build a custom PostCSS PlugIn (postcss-transition-shortcut)
+- Testing with ava
+
+20_gulpfile.js:
+- postcss-custom-fonts (Custom font plugin)
+
+21_gulpfile.js:
+- Easings-PlugIn or 'Rucksack'-PlugIn Pack?
+
+22_gulpfile.js:
+- Slider with 'Rucksack'
+
+23_gulpfile.js:
+- Remove CSS-Stile Hacks
+
+24_gulpfile.js:
+- BEM CSSSytle per PostCSS

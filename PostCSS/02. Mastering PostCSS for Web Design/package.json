@@ -8,10 +8,15 @@
   },
   "author": "Michael Seelisch",
   "license": "ISC",
+  "dependencies": {
+    "postcss-custom-fonts": "^1.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "css-color-converter": "^1.1.0",
     "cssnano": "^3.7.5",
+    "cssstyle": "^0.2.37",
+    "csstyle": "^1.5.0",
     "gulp": "^3.9.1",
     "gulp-evil-icons": "^0.3.0",
     "gulp-plumber": "^1.1.0",
@@ -44,6 +49,8 @@
     "postcss-responsive-type": "^0.4.0",
     "postcss-sprites": "^4.0.0",
     "postcss-svg": "^1.0.6",
+    "rucksack-css": "^0.8.6",
+    "stylehacks": "^2.3.1",
     "stylelint": "^7.2.0"
   }
 }
