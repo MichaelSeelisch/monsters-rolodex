@@ -81,3 +81,21 @@ $ gulp --gulpfile XX_gulfile.js
 
 24_gulpfile.js:
 - BEM CSSSytle per PostCSS
+
+25_gulpfile.js:
+- Parsing misspelled CSS content and fixing errors
+
+26_gulpfile.js:
+- Parsing SCSS content WITHOUT A SCSS COMPILER!!!!
+
+27_gulpfile.js:
+- Use CSS4 matches selector
+
+28_gulpfile.js:
+- Supporting the new range input
+
+29_gulpfile.js:
+- CSS4 Support through 'cssnext'
+
+30_gulpfile.js:
+- Browser compatibility through 'timemachine'

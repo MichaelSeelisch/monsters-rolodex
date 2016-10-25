@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["27_example.css"],"sourcesContent":[":valid, :invalid {\n  border: 2px solid;\n}\n\n:valid {\n    border-color: green;\n}\n\n:invalid {\n    border-color: red;\n}\n"],"file":"27_example.css","sourceRoot":"/source/"}

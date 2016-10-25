@@ -1,0 +1,13 @@
+:valid, :invalid {
+  border: 2px solid;
+}
+
+:valid {
+    border-color: green;
+}
+
+:invalid {
+    border-color: red;
+}
+
+/*# sourceMappingURL=https://www.mydomain.com//maps/27_example.css.map */
