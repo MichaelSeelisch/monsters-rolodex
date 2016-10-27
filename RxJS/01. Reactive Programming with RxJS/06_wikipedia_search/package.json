@@ -1,0 +1,20 @@
+{
+  "name": "06_wikipedia_search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/browserify index.js -t babelify --outfile bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cycle/core": "^7.0.0",
+    "@cycle/dom": "^13.0.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "rx": "^4.1.0",
+    "xstream": "^7.0.0"
+  }
+}
