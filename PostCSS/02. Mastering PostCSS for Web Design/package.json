@@ -20,6 +20,7 @@
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-evil-icons": "^0.3.0",
+    "gulp-pleeease": "^2.0.2",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",

@@ -99,3 +99,9 @@ $ gulp --gulpfile XX_gulfile.js
 
 30_gulpfile.js:
 - Browser compatibility through 'timemachine'
+
+31_gulpfile.js:
+- Combine Pre-/Post-Processors with Pleeease
+
+32_gulpfile.js:
+- Creating a page using pleeease

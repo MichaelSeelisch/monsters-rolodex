@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["31_example.css"],"sourcesContent":["*,*:after,*:before{box-sizing:border-box}.a{font-size:32px;font-size:2rem;width:calc(2em*2)}@media(min-width:38rem){.a{color:red}}@media(min-width:38rem){.b{color:blue}}"],"file":"31_example.css","sourceRoot":"/source/"}
