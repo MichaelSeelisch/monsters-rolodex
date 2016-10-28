@@ -16,5 +16,8 @@
     "browserify": "^13.1.1",
     "rx": "^4.1.0",
     "xstream": "^7.0.0"
+  },
+  "dependencies": {
+    "@cycle/jsonp": "^6.0.1"
   }
 }
