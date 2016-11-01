@@ -23,12 +23,15 @@ server.connection({
 // Add the route
 server.route({
   method: 'GET',
-  path: '/hello',
+  path: '/hello/{fname}/{lname}',
   handler: function handler(request, reply) {
     // Read template and compile using context object
     _nunjucks2.default.render('index.html', {
-      fname: 'Rick',
-      lname: 'Sanchez'
+
+      /* Path parameters */
+      fname: request.params.fname,
+      lname: request.params.lname
+
     }, function (err, html) {
       // Reply with html response
       reply(html);

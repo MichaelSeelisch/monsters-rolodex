@@ -14,12 +14,17 @@ server.connection({
 // Add the route
 server.route({
   method: 'GET',
-  path: '/hello',
+  path: '/hello/{fname}/{lname}',
   handler: function (request, reply) {
     // Read template and compile using context object
     nunjucks.render('index.html', {
-      fname: 'Rick',
-      lname: 'Sanchez'
+
+      /* Path parameters
+       * localhost:8000/hello/John/Smith
+       */
+      fname: request.params.fname,
+      lname: request.params.lname
+
     }, function (err, html) {
       // Reply with html response
       reply(html);
