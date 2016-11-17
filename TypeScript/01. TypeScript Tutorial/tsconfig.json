@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "target": "es5",
+      "removeComments": true
+  },
+  "files": [
+      "01_hello_world/index.ts",
+      "02_data_types/index.ts",
+      "03_enum/index.ts",
+      "04_functions/index.ts",
+      "05_default_arguments/index.ts",
+      "06_optional_arguments/index.ts",
+      "07_function_overloading/index.ts",
+      "08_introduction_to_interface/index.ts",
+      "09_more_on_interface/index.ts",
+      "10_introduction_to_classes/index.ts",
+      "11_constructor_method/index.ts",
+      "12_methods/index.ts",
+      "13_getters/index.ts"
+  ]
+}
