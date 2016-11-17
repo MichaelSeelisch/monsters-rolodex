@@ -1,0 +1,16 @@
+{
+  "name": "03_browserify_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "require.js",
+  "scripts": {
+    "browserify": "./node_modules/.bin/browserify ./node/app.js -o ./node/amdmodule.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^13.1.1"
+  }
+}

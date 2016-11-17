@@ -1,0 +1,3 @@
+define(['../node/amdmodule'], function (amdmodule) {
+  // Do nothing....
+});
