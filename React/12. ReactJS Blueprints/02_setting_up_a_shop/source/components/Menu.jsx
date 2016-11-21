@@ -17,24 +17,30 @@ const Menu = React.createClass({
       <Navbar inverse fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to='/'>My Webshop</Link>
+            <Link to='/'>Webshop</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
 
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer eventKey={1} top='/company'>
-              <Button bsStyle='link'>About</Button>
+            <LinkContainer eventKey={1} to='/company'>
+              <Button bsStyle='link' className='nav-item'>
+                About
+              </Button>
             </LinkContainer>
-            <LinkContainer eventKey={1} top='/products'>
-              <Button bsStyle='link'>Products</Button>
+            <LinkContainer eventKey={2} to='/products'>
+              <Button bsStyle='link' className='nav-item'>
+                Products
+              </Button>
             </LinkContainer>
           </Nav>
 
           <Nav pullRight>
             <LinkContainer to='/checkout'>
-              <Button bsStyle='link'>Your cart: {this.props.cart.length} items</Button>
+              <Button bsStyle='link'>
+               {/* Your cart: {this.props.cart.length} items */}
+              </Button>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

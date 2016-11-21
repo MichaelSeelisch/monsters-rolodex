@@ -11,12 +11,12 @@ const Layout = React.createClass({
       <div>
         <Menu />
 
-        {
-          React.cloneElement(this.props.children, this.state)
-        }
+        { React.cloneElement(this.props.children, this.state) }
 
         <Footer />  
       </div>
     );
   }
 });
+
+module.exports = Layout;
