@@ -12,6 +12,12 @@ import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Menu = React.createClass({
+  getDefaultProps() {
+    return {
+      cart: []
+    }
+  },
+
   render() {
     return (
       <Navbar inverse fixedTop>
@@ -37,9 +43,9 @@ const Menu = React.createClass({
           </Nav>
 
           <Nav pullRight>
-            <LinkContainer to='/checkout'>
-              <Button bsStyle='link'>
-               {/* Your cart: {this.props.cart.length} items */}
+            <LinkContainer eventKey={3} to='/checkout'>
+              <Button bsStyle='link' className='nav-item'>
+                Your cart: {this.props.cart.length} items
               </Button>
             </LinkContainer>
           </Nav>

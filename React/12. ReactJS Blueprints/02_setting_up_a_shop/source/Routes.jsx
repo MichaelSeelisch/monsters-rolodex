@@ -11,7 +11,7 @@ import Layout from './Layout';
 import Products from './pages/Products';
 import Home from './pages/Home';
 import Company from './pages/Company';
-import Item from './pages/Item';
+import Item from './pages//products/Item';
 import Checkout from './pages/Products';
 import Receipt from './pages/Receipt';
 
