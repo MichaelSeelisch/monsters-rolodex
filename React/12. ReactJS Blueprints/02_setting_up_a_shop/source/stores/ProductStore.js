@@ -3,11 +3,11 @@
 import Reflux from 'reflux';
 import Request from 'superagent';
 
-import Actions from '../actions/Products';
+import ProductActions from '../actions/ProductActions';
 
 const ProductStore = Reflux.createStore({
   init() {
-    this.listenTo(Actions.FetchProducts, this.onFetchProducts);
+    this.listenTo(ProductActions.FetchProducts, this.onFetchProducts);
   },
 
   onFetchProducts() {

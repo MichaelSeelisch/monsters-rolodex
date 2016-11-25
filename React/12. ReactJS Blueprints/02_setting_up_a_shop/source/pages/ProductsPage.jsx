@@ -11,7 +11,7 @@ import { Link } from 'react-router';
 
 import Offerings from './products/Offerings';
 
-const Products = React.createClass({
+const ProductsPage = React.createClass({
   propTypes: {
     products: React.PropTypes.object
   },
@@ -43,4 +43,4 @@ const Products = React.createClass({
   }
 });
 
-module.exports = Products;
+module.exports = ProductsPage;

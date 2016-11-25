@@ -11,7 +11,7 @@ import {
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router';
 
-const Home = React.createClass({
+const HomePage = React.createClass({
   render() {
     return (
       <Grid>
@@ -38,4 +38,4 @@ const Home = React.createClass({
   }
 });
 
-module.exports = Home;
+module.exports = HomePage;

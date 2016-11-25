@@ -2,8 +2,8 @@
 
 import Reflux from 'reflux';
 
-const Actions = {
+const ProductActions = {
   FetchProducts: Reflux.createAction('FetchProducts')
 };
 
-module.exports = Actions;
+module.exports = ProductActions;

@@ -8,22 +8,22 @@ import {
 } from 'react-router';
 
 import Layout from './Layout';
-import Products from './pages/Products';
-import Home from './pages/Home';
-import Company from './pages/Company';
+import ProductsPage from './pages/ProductsPage';
+import HomePage from './pages/HomePage';
+import CompanyPage from './pages/CompanyPage';
 import Item from './pages//products/Item';
-import Checkout from './pages/Products';
-import Receipt from './pages/Receipt';
+import CheckoutPage from './pages/CheckoutPage';
+import ReceiptPage from './pages/ReceiptPage';
 
 const Routes = (
   <Router history={browserHistory}>
     <Route component={Layout}>
-      <Route name='home' path='/' component={Home} />
-      <Route name='company' path='/company' component={Company} />
-      <Route name='products' path='/products' component={Products} />
+      <Route name='home' path='/' component={HomePage} />
+      <Route name='company' path='/company' component={CompanyPage} />
+      <Route name='products' path='/products' component={ProductsPage} />
       <Route name='item' path='/item/:id' component={Item} />
-      <Route name='checkout' path='/checkout' component={Checkout} />
-      <Route name='receipt' path='/receipt' component={Receipt} />
+      <Route name='checkout' path='/checkout' component={CheckoutPage} />
+      <Route name='receipt' path='/receipt' component={ReceiptPage} />
     </Route>
   </Router>
 );

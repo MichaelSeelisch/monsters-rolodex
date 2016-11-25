@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Checkout = React.createClass({
+const ReceiptPage = React.createClass({
   render() {
     return (
       <div />
@@ -10,4 +10,4 @@ const Checkout = React.createClass({
   }
 });
 
-module.exports = Checkout;
+module.exports = ReceiptPage;

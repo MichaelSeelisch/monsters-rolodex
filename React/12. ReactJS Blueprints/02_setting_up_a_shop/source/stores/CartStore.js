@@ -2,7 +2,7 @@
 
 import Reflux from 'reflux';
 
-import CartActions from '../actions/Cart';
+import CartActions from '../actions/CartActions';
 
 let _cart = {
   cart: []

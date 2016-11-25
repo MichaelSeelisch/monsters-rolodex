@@ -5,18 +5,22 @@ import Reflux from 'reflux';
 
 import Menu from './components/Menu';
 import Footer from './components/Footer';
-import Actions from './actions/Products';
-import ProductStore from './stores/Products';
-import CartStore from './stores/Cart';
+
+import ProductActions from './actions/ProductActions';
+
+import ProductStore from './stores/ProductStore';
+import CartStore from './stores/CartStore';
+import CustomerStore from './stores/CustomerStore';
 
 const Layout = React.createClass({
   mixins: [
     Reflux.listenTo(ProductStore, 'onFetchProducts'),
-    Reflux.listenTo(CartStore, 'onCartUpdated')
+    Reflux.listenTo(CartStore, 'onCartUpdated'),
+    Reflux.listenTo(CustomerStore, 'onCustomerUpdated')
   ],
 
   componentDidMount() {
-    Actions.FetchProducts();
+    ProductActions.FetchProducts();
   },
 
   onFetchProducts(data) {

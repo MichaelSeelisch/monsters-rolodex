@@ -8,7 +8,7 @@ import {
   Panel
 } from 'react-bootstrap';
 
-const Company = React.createClass({
+const CompanyPage = React.createClass({
   render() {
     return (
       <Grid>
@@ -27,4 +27,4 @@ const Company = React.createClass({
   }
 });
 
-module.exports = Company;
+module.exports = CompanyPage;

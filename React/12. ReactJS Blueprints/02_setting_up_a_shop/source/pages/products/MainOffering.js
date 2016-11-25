@@ -9,7 +9,7 @@ import {
   Button
 } from 'react-bootstrap';
 
-import CartActions from '../../actions/Cart';
+import CartActions from '../../actions/CartActions';
 
 const MainOffering = React.createClass({
   propTypes: {
