@@ -6,7 +6,7 @@ import {
   Button,
   Table,
   Well
- } from 'react-bootstrap';
+} from 'react-bootstrap';
 
 import CartActions from '../actions/CartActions';
 

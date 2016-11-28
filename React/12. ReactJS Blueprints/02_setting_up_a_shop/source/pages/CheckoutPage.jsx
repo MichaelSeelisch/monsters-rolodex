@@ -7,6 +7,7 @@ import {
   Table,
   Well
  } from 'react-bootstrap';
+ import { LinkContainer } from 'react-router-bootstrap';
 
  import CartActions from '../actions/CartActions';
  import CustomerData from '../components/CustomerData';
@@ -40,12 +41,14 @@ const CheckoutPage = React.createClass({
       <Cart {...this.props} />
 
       <CustomerData {...this.props} />
-
-      <Button
-        disabled={!CheckoutEnabled}
-        bsStyle={CheckoutEnabled ? 'success' : 'default'}>
-        Proceed to checkout
-      </Button>
+      
+      <LinkContainer to='/receipt'>
+        <Button
+          disabled={CheckoutEnabled}
+          bsStyle={CheckoutEnabled ? 'success' : 'default'}>
+          Proceed to checkout
+        </Button>
+      </LinkContainer>
      </Grid>
    );
   }

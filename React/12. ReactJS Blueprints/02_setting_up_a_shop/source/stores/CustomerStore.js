@@ -20,7 +20,11 @@ const CustomerStore = Reflux.createStore({
   },
 
   emit() {
-    this.trigger(_customer);
+    /*
+     * This function causes an error, so it's commented out:
+     * PublisherMethods.js:44 Uncaught TypeError: callback.apply is not a function(…)
+     */
+    // this.trigger(_customer);
   }
 });
 

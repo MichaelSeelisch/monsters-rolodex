@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 import React from 'react';
 import {
@@ -7,7 +7,6 @@ import {
   InputGroup,
   Button
 } from 'react-bootstrap';
-import clone from 'lodash/clone';
 
 import CustomerActions from '../actions/CustomerActions';
 
@@ -27,17 +26,19 @@ const CustomerData = React.createClass({
         name: this.props.customer.address.name ? this.props.address.name : '',
         address: this.props.customer.address.address ? this.props.customer.address.address : '',
         zipCode: this.props.customer.address.zipCode ? this.props.customer.address.zipCode : '',
-        city: this.props.customer.address.city ? this.props.customer.address.city : '',
-        validAddress: this.props.customer.address.validAddress ? this.props.customer.address.validAddress : false,
-      }
+        city: this.props.customer.address.city ? this.props.customer.address.city : ''
+      },
+      validAddress: this.props.customer.address.validAddress ? this.props.customer.address.validAddress : false
     }
   },
 
   validationStateName() {
-    if(this.state.customer.name.length > 5) {
+    let length = this.state.customer.name.length;
+
+    if(length > 3) {
       return 'success';
     }
-    else if(this.state.customer.name.length > 2) {
+    else if(length > 1) {
       return 'warning';
     }
     else {
@@ -46,22 +47,25 @@ const CustomerData = React.createClass({
   },
 
   handleChangeName(event) {
-    let customer = clone(this.state.customer);
-    customer.name = event.target.form[0].value;
+    let state = Object.assign({}, this.state);
+    state.customer.name = event.target.form[0].value;
     
-    this.setState({
-      customer,
-      validAddress: this.checkAllValidations()
-    });
+    if(this.checkAllValidations()) {
+      state.validAddress = true;
+    }
+
+    this.setState(state);
 
     CustomerActions.SaveAddress(this.state);
   },
 
   validationStateAddress() {
-   if(this.state.customer.address.length > 5) {
+   let length = this.state.customer.address.length;
+   
+   if(length > 5) {
       return 'success';
     }
-    else if(this.state.customer.address.length > 2) {
+    else if(length > 2) {
       return 'warning';
     }
     else {
@@ -70,22 +74,25 @@ const CustomerData = React.createClass({
   },
 
   handleChangeAddress(event) {
-    let customer = clone(this.state.customer);
-    customer.address = event.target.form[1].value;
+    let state = Object.assign({}, this.state);
+    state.customer.address = event.target.form[1].value;
     
-    this.setState({
-      customer,
-      validAddress: this.checkAllValidations()
-    });
+    if(this.checkAllValidations()) {
+      state.validAddress = true;
+    }
 
-    CustomerActions.SaveAddress(this.state);
+    this.setState(state);
+    
+    CustomerActions.SaveAddress(state);
   },
 
   validationStateZipCode() {
-   if(this.state.customer.zipCode.length > 5) {
+    let length = this.state.customer.zipCode.length;
+  
+   if(length > 3) {
       return 'success';
     }
-    else if(this.state.customer.zipCode.length > 2) {
+    else if(length > 1) {
       return 'warning';
     }
     else {
@@ -94,22 +101,25 @@ const CustomerData = React.createClass({
   },
 
   handleChangeZipCode(event) {
-    let customer = clone(this.state.customer);
-    customer.zipCode = event.target.form[2].value;
+    let state = Object.assign({}, this.state);
+    state.customer.zipCode = event.target.form[2].value;
     
-    this.setState({
-      customer,
-      validAddress: this.checkAllValidations()
-    });
+    if(this.checkAllValidations()) {
+      state.validAddress = true;
+    }
 
-    CustomerActions.SaveAddress(this.state);
+    this.setState(state);
+
+    CustomerActions.SaveAddress(state);
   },
 
   validationStateCity() {
-   if(this.state.customer.city.length > 5) {
+   let length = this.state.customer.city.length;
+
+   if(length > 3) {
       return 'success';
     }
-    else if(this.state.customer.city.length > 2) {
+    else if(length > 1) {
       return 'warning';
     }
     else {
@@ -118,15 +128,16 @@ const CustomerData = React.createClass({
   },
 
   handleChangeCity(event) {
-    let customer = clone(this.state.customer);
-    customer.city = event.target.form[3].value;
+    let state = Object.assign({}, this.state);
+    state.customer.city = event.target.form[3].value;
     
-    this.setState({
-      customer,
-      validAddress: this.checkAllValidations()
-    });
+    if(this.checkAllValidations) {
+      state.validAddress = true;
+    }
 
-    CustomerActions.SaveAddress(this.state);
+    this.setState(state);
+    
+    CustomerActions.SaveAddress(state);
   },
 
   checkAllValidations() {
