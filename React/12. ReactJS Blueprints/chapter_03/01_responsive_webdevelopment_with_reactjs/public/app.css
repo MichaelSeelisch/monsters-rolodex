@@ -1,0 +1,30 @@
+body {
+  background: #eee;
+  padding: 22px;
+}
+
+br {
+  line-height: 2em;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.row {
+  margin-top: 35px;
+}
+
+div[class^="col"] {
+  border: 1px dotted rgba(60, 60, 60, 0.5);
+  padding: 10px;
+  background-color: #eee;
+  text-align: center;
+  border-radius: 3px;
+  min-height: 40px;
+  line-height: 40px;
+}
