@@ -1,0 +1,15 @@
+<svg width="240px" height="240px" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <g id="company_mascot">
+  <!-- drawing of company mascot -->
+  </g>
+
+  <g id="company_logo" style="stroke: none;">
+    <polygon points="0 20, 20 0, 40 20, 20 40" style="fill: #696;"/>
+    <rect x="7" y="7" width="26" height="26" style="fill: #c9c;"/>
+  </g>
+
+  <g id="partner_logo">
+    <!-- drawing of company partner's logo -->
+  </g>
+
+</svg>
