@@ -20,9 +20,11 @@ const queryType = new GraphQLObjectType({
       type: new GraphQLList(GraphQLInt),
       args: {
         count: {
-          type: GraphQLInt
+          type: GraphQLInt,
+          defaultValue: 2
         }
       },
+      // First argument represents the parent object, here underscore, because we're not using it
       resolve: (_, args) => {
         let rolls = [];
         for (let i = 0; i < args.count; ++i) {
