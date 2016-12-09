@@ -3,16 +3,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Navigation from './examples/navbar.jsx';
-import Wells from './examples/wells.jsx';
+import Carousels from './examples/carousels.jsx';
 
 const App = React.createClass({
   render() {
-    return (
-      <div>
-        <Navigation />
-        <Wells />
-      </div>      
+    return (  
+      <Carousels />
     );
   }
 });
