@@ -1,19 +1,20 @@
-# Angular2 By Example
+# Personal Trainer
 
-[![Angular2 By Example Front Cover](https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B05079_MockupCover_Normal.jpg)](https://www.packtpub.com/web-development/angular-2-example)
+Personal Trainer built using Angular2 and TypeScript
 
-Source code repository for the book [Angular2 by Example](https://www.packtpub.com/web-development/angular-2-example)
+## Install
 
-**Releasing soon!!**
+Clone this repo and execute in your favourite shell:
 
-To setup code for Guess The Number see the README.md in **guessthenumber** folder.
+* `npm i -g gulp` to install gulp globally (if you don't have it installed already)
+* `npm install` to install local npm dependencies
 
-To setup code for Personal Trainer see the README.md in **trainer** folder.
+## Play
 
-## Note
+After completing installation type in your favourite shell:
 
-The **master** branch contains the final outcome for both the samples we build throughout the book.
+* `gulp play` to start the app in a new browser window. App files are observed and will be re-transpiled on each change.
 
-Chapter progress is tracked using individual branches. Each **chapter has checkpoints** and each checkpoint code is **available on a seperate branch**.
-
-For example, branches *base*, *checkpoint2.1*, *checkpoint2.2*, *checkpoint2.3* and *checkpoint2.4* contain code checkpoints for **Chapter 2**.
+> If you see a bunch of **TypeScript** compilation errors while running `gulp play`, the required **typings** did not get installed.  While `npm install` should also install the typings, at times this does not happen. 
+> To fix this, try to install typings again with command `npm run typings install`. 
+> If the typing installation throws error try to upgrade the typing global installation with command `npm install typings -g` and then run the command `npm run typings install` again.
