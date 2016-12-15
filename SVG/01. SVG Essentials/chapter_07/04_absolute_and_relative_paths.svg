@@ -1,0 +1,8 @@
+<svg width="150px" height="150px" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="stroke: gray; stroke-width: 8; fill: none;">
+
+    <path d="M 10 10 L 20 10 L 20 30 M 40 40 L 55 35" style="stroke: black;"/>
+    <path d="M 10 10 l 10 0 l 0 20 m 20 10 l 15 -5" style="stroke: black;"/>
+
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg width="150px" height="150px" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="stroke: gray; stroke-width: 1; fill: none;">
+
+    <path d="M 12 24 h 15 v 25 h -15 z"/>
+
+    <g style="fill:none; stroke: black">
+    <!--
+      The following six paths all draw the same diamond figure;
+      the first three are in absolute coordinates...
+    -->
+
+      <path d="M 30 30 L 55 5 L 80 30 L 55 55 Z"/>
+      <path d="M 30 30 L 55 5 80 30 55 55 Z"/>
+      <path d="M 30 30 55 5 80 30 55 55 Z"/>
+
+      <!--
+        ...and the last three in relative coordinates.
+        The third and sixth paths have an interesting twist —
+        if you place multiple pairs of coordinates after a moveto,
+        all the pairs after the first are presumed to be preceded by a lineto: [10]
+      -->
+      <path d="m 30 30 l 25 -25 l 25 25 l -25 25 z"/>
+      <path d="m 30 30 l 25 -25 25 25 -25 25 z"/>
+      <path d="m 30 30 25 -25 25 25 -25 25 z"/>
+
+    </g>
+
+    <!--
+      Any unnecessary whitespace may be eliminated.
+      You don’t need a blank after a command letter because all commands are one letter only.
+      You don’t need a blank between a number and a command because the command letter can’t be part of the number.
+      You don’t need a blank between a positive and a negative number because the leading minus sign of the
+      negative number can’t be a part of the positive number.
+      This lets you reduce the third and sixth paths in the preceding listing even further:
+    -->
+    <g style="fill:none; stroke: red">
+
+      <path d="M30 30 55 5 80 30 55 55Z"/>
+      <path d="m30 30 25-25 25 25-25 25z"/>
+
+   </g>
+
+
+   <!--
+    Another example of the whitespace elimination rule in action is shown by the example
+    that drew a rectangle 15 units in width and 25 units in height, with the upper-left corner at coordinates (12,24):
+    -->
+    <g style="fill:none; stroke: blue">
+       <path d="M 12 24 h 15 v 25 h -15 z"/> <!-- original -->
+       <path d="M12 24h15v25h-15z"/> <!-- shorter -->
+    </g>
+  </g>
+</svg>
