@@ -1,5 +1,5 @@
 {
-  "name": "07_fluid_carousels",
+  "name": "10_responsive_form_fields",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,7 @@
     "browser-sync": "2.13.0",
     "browserify": "13.0.1",
     "browserify-middleware": "7.0.0",
+    "classnames": "^2.2.5",
     "express": "^4.13.3",
     "history": "3.0.0",
     "jsxstyle": "0.0.18",
