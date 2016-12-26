@@ -1,5 +1,5 @@
 {
-  "name": "02a_rolling_multiple_dices",
+  "name": "03_connecting_local_mongodb_server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
