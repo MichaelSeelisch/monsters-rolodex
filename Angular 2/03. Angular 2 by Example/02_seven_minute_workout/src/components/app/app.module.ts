@@ -9,4 +9,5 @@ import { WorkoutRunnerComponent } from '../workout-runner/workout-runner.compone
   declarations: [ TrainerAppComponent, WorkoutRunnerComponent ],
   bootstrap:    [ TrainerAppComponent ]
 })
+
 export class AppModule { }

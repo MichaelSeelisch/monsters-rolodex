@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', './app.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', './app.component', '../workout-runner/workout-runner.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, app_component_1;
+    var core_1, platform_browser_1, app_component_1, workout_runner_component_1;
     var AppModule;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
+            },
+            function (workout_runner_component_1_1) {
+                workout_runner_component_1 = workout_runner_component_1_1;
             }],
         execute: function() {
             AppModule = (function () {
@@ -30,7 +33,7 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
                 AppModule = __decorate([
                     core_1.NgModule({
                         imports: [platform_browser_1.BrowserModule],
-                        declarations: [app_component_1.TrainerAppComponent],
+                        declarations: [app_component_1.TrainerAppComponent, workout_runner_component_1.WorkoutRunnerComponent],
                         bootstrap: [app_component_1.TrainerAppComponent]
                     }), 
                     __metadata('design:paramtypes', [])
@@ -42,4 +45,4 @@ System.register(['@angular/core', '@angular/platform-browser', './app.component'
     }
 });
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvYXBwL2FwcC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFVQTtnQkFBQTtnQkFBeUIsQ0FBQztnQkFMMUI7b0JBQUMsZUFBUSxDQUFDO3dCQUNSLE9BQU8sRUFBTyxDQUFFLGdDQUFhLENBQUU7d0JBQy9CLFlBQVksRUFBRSxDQUFFLG1DQUFtQixDQUFFO3dCQUNyQyxTQUFTLEVBQUssQ0FBRSxtQ0FBbUIsQ0FBRTtxQkFDdEMsQ0FBQzs7NkJBQUE7Z0JBQ3VCLGdCQUFDO1lBQUQsQ0FBekIsQUFBMEIsSUFBQTtZQUExQixpQ0FBMEIsQ0FBQSIsImZpbGUiOiJjb21wb25lbnRzL2FwcC9hcHAubW9kdWxlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmdNb2R1bGUgfSAgICAgIGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgQnJvd3Nlck1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL3BsYXRmb3JtLWJyb3dzZXInO1xuXG5pbXBvcnQgeyBUcmFpbmVyQXBwQ29tcG9uZW50IH0gIGZyb20gJy4vYXBwLmNvbXBvbmVudCc7XG5cbkBOZ01vZHVsZSh7XG4gIGltcG9ydHM6ICAgICAgWyBCcm93c2VyTW9kdWxlIF0sXG4gIGRlY2xhcmF0aW9uczogWyBUcmFpbmVyQXBwQ29tcG9uZW50IF0sXG4gIGJvb3RzdHJhcDogICAgWyBUcmFpbmVyQXBwQ29tcG9uZW50IF1cbn0pXG5leHBvcnQgY2xhc3MgQXBwTW9kdWxlIHsgfSJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvYXBwL2FwcC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFZQTtnQkFBQTtnQkFBeUIsQ0FBQztnQkFOMUI7b0JBQUMsZUFBUSxDQUFDO3dCQUNSLE9BQU8sRUFBTyxDQUFFLGdDQUFhLENBQUU7d0JBQy9CLFlBQVksRUFBRSxDQUFFLG1DQUFtQixFQUFFLGlEQUFzQixDQUFFO3dCQUM3RCxTQUFTLEVBQUssQ0FBRSxtQ0FBbUIsQ0FBRTtxQkFDdEMsQ0FBQzs7NkJBQUE7Z0JBRXVCLGdCQUFDO1lBQUQsQ0FBekIsQUFBMEIsSUFBQTtZQUExQixpQ0FBMEIsQ0FBQSIsImZpbGUiOiJjb21wb25lbnRzL2FwcC9hcHAubW9kdWxlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmdNb2R1bGUgfSAgICAgIGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgQnJvd3Nlck1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL3BsYXRmb3JtLWJyb3dzZXInO1xuXG5pbXBvcnQgeyBUcmFpbmVyQXBwQ29tcG9uZW50IH0gIGZyb20gJy4vYXBwLmNvbXBvbmVudCc7XG5pbXBvcnQgeyBXb3Jrb3V0UnVubmVyQ29tcG9uZW50IH0gZnJvbSAnLi4vd29ya291dC1ydW5uZXIvd29ya291dC1ydW5uZXIuY29tcG9uZW50JztcblxuQE5nTW9kdWxlKHtcbiAgaW1wb3J0czogICAgICBbIEJyb3dzZXJNb2R1bGUgXSxcbiAgZGVjbGFyYXRpb25zOiBbIFRyYWluZXJBcHBDb21wb25lbnQsIFdvcmtvdXRSdW5uZXJDb21wb25lbnQgXSxcbiAgYm9vdHN0cmFwOiAgICBbIFRyYWluZXJBcHBDb21wb25lbnQgXVxufSlcblxuZXhwb3J0IGNsYXNzIEFwcE1vZHVsZSB7IH1cbiJdfQ==
