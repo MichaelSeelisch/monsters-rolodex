@@ -1,0 +1,11 @@
+{
+  "globals": {
+    "title": "Mischis Site!",
+    "owner": "Michael Seelisch",
+    "subjects": [
+      "Math",
+      "Science",
+      "Beer"
+    ]
+  }
+}

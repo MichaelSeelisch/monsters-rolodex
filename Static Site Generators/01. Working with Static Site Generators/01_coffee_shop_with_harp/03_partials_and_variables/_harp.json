@@ -1,0 +1,11 @@
+{
+  "globals": {
+    "title": "My Site!",
+    "owner": "Raymond Camden",
+    "subjects": [
+      "Math",
+      "Science",
+      "Beer"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+html
+  head
+    title #{title}
+    link(href='/css/styles.css', rel='stylesheet')
+  body
+    != yield
+    hr
+    p Copyright #{new Date().getFullYear()}
