@@ -1,0 +1,26 @@
+<head>
+  <title>The HouseSitter</title>
+</head>
+
+<body>
+  <h1>The House-Sitter App</h1>
+  {{> selectHouse}}
+  {{> showHouse}}
+  {{> houseForm}}
+</body>
+
+<template name='selectHouse'>
+  <select id='selectHouse'>
+    <!-- Begin the list with an empty option to select -->
+    <option value='' {{isSelected}}></option>
+
+    <!-- 'Each' iterates over all objects returned by a helper called houseNameId -->
+    {{#each houseNameId}}
+      <option value='{{_id}}' {{isSelected}}>{{name}}</option>}
+    {{/each}}
+  </select>
+</template>
+
+<template name='showHouse'></template>
+
+<template name='houseForm'></template>
