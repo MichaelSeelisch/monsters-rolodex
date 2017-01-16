@@ -7,5 +7,6 @@ MongoClient.connect(MONGO_URL, (err, db) => {
   assert.equal(null, err); 
   console.log('Connected to MongoDB server'); 
  
-  // The readline interface code 
+  db.collection('users').count() 
+    .then(usersCount => console.log(usersCount));
 });
