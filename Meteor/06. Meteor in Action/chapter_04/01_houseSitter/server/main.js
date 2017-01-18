@@ -16,9 +16,17 @@ Meteor.startup(() => {
         }, {
         color: 'white',
         instructions: 'keep humid'
-        }
-      ]
-    }];
+        }   
+      ]}, {
+      name: 'Manuel',
+      plants: [{
+        color: 'Red',
+        instructions: '3 pots/week'
+        }, {
+        color: 'Yellow',
+        instructions: 'keep humid'
+      }]
+      }];
 
     // Insert all objects from the houses array into the database
     while (houses.length > 0) {

@@ -1,9 +1,14 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Tracker } from 'meteor/tracker';
 
 import './main.html';
 
 import { HousesCollection } from '../collections/houses';
+
+Tracker.autorun(function () {
+  console.log('The selectedHouse ID is: ' + Session.get('selectedHouseId'));
+});
 
 Template.selectHouse.helpers({
   // Returns all documents from the collection
