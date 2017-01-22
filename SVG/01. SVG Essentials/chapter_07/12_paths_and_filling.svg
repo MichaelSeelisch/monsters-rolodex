@@ -1,0 +1,9 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- both paths clockwise -->
+  <path d="M 0 0, 60 0, 60 60, 0 60 Z M 15 15, 45 15, 45 45, 15 45Z" style="stroke: red; fill: nonezero;"/>
+
+  <!-- outer path clockwise; inner path counterclockwise -->
+  <path d="M 0 0, 60 0, 60 60, 0 60 Z M 15 15, 15 45, 45 45, 45 15Z" style="stroke: blue; fill: nonezero;"/>
+
+</svg>

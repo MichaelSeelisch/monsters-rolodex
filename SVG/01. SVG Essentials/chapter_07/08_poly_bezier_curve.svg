@@ -1,0 +1,9 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Presume you want a <path> that draws a curve from (30,100) to (100,100)
+       with a control point at (80,30) and then continues with a curve to (200,80)
+       with a control point at (130,65)
+  -->
+  <path d="M30 100 Q 80 30, 100 100, 130 65, 200 80" style="stroke: black; fill: none;"/>
+
+</svg>

@@ -1,0 +1,8 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- The curve in the example was drawn from (20,80) to (200,120) 
+       with control points at (50,20) and (150,60)
+  -->
+  <path d="M20 80 C 50 20, 150 60, 200 120" style="stroke: black; fill: none;"/>
+
+</svg>
