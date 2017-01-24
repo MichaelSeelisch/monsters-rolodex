@@ -1,0 +1,11 @@
+{
+  "name": "05_custom_plugin",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "../../node_modules/.bin/browserify script.js -t [ babelify --presets [ es2015 ] ] --o main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
