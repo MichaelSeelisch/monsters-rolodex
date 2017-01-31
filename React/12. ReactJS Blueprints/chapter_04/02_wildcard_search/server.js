@@ -24,13 +24,14 @@ var searchDb = mongoose.model('sites', siteSchema);
 
 var routes = function (app) {
   app.use(bodyparser.json());
-  app.get ('/search/:title', function (req, res) {
-    searchDb.find({ title: req.params.title }, function (err, data) {
-      if (err) {
-        return res.status(500)
-          .send({ 'msg': 'couldn\'t find anything'});
+  app.get('/search/:title', function (req, res) {
+    searchDb.find({
+      title: {
+        // $regex: '^' + req.params.title + '*',
+        $regex: req.params.title + '*',
+        $options: 'ix'
       }
-
+    }, function (err, data) {
       res.json(data);
     });
   });
