@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg width="400px" height="300px" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+
+    <g style="font-size: 14pt;">
+      <path d="M 20 10 20 70 M 220 10 220 70" style="stroke: gray;"/>
+      
+      <text x="20" y="30" textLength="200" lengthAdjust="spacing">Two words</text>
+      <text x="20" y="60" textLength="200" lengthAdjust="spacingAndGlyphs">Two words</text>
+      <text x="20" y="90">Two words
+        <tspan style="font-size: 10pt;">(normal length)</tspan></text>
+        <path d="M 20 100 20 170 M 100 100 100 170" style="stroke: gray;"/>
+        <text x="20" y="120" textLength="80" lengthAdjust="spacing">Two words</text>
+        <text x="20" y="160" textLength="80" lengthAdjust="spacingAndGlyphs">Two words
+      </text>
+    </g>
+
+  </svg>
+</html>
