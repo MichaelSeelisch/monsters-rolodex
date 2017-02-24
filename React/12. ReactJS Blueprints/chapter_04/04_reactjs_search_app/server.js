@@ -27,6 +27,13 @@ app.get('*', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+// Favicon
+app.get('/favicon.ico', function (req, res) {
+  res.writeHead(200, {'Content-Type': 'image/x-icon'});
+  res.end();
+  return;
+});
+
 // Run the server
 app.listen(port, function () {
   browserSync({
