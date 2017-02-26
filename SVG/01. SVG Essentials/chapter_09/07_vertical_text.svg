@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg width="400px" height="300px" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+
+    <text x="10" y="20" transform="rotate(90,10,20)">Rotated 90</text>
+    <text x="50" y="20" style="writing-mode: tb;">Writing Mode tb</text>
+    
+    <!-- WURDE DURCH CSS WRITING-MODE ERSETZT!!!-->
+    <text x="90" y="20" style="writing-mode: tb; glyph-orientation-vertical: 0;">Vertical zero</text>
+
+  </svg>
+</html>
