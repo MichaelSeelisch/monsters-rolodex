@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "dev-old": "webpack -d --watch",
+    "dev-server": "webpack-dev-server",
+    "dev-mode": "webpack -d --watch",
     "build": "webpack ./src/app.js ./dist/app.bundle.js",
     "prod": "webpack -p",
     "watch": "webpack ./src/app.js ./dist/app.bundle.js -p --watch"
