@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-server": "webpack-dev-server",
-    "dev-mode": "webpack -d --watch",
-    "build": "webpack ./src/app.js ./dist/app.bundle.js",
-    "prod": "webpack -p",
-    "watch": "webpack ./src/app.js ./dist/app.bundle.js -p --watch"
+    "dev-server": "../node_modules/.bin/webpack-dev-server",
+    "dev-mode": "../node_modules/.bin/webpack -d --watch",
+    "build": "../node_modules/.bin/webpack ./src/app.js ./dist/app.bundle.js",
+    "prod": "../node_modules/.bin/webpack -p",
+    "watch": "../node_modules/.bin/webpack ./src/app.js ./dist/app.bundle.js -p --watch"
   },
   "author": "Michael Seelisch",
   "license": "ISC",
