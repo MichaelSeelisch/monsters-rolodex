@@ -28,7 +28,7 @@ app.get('*', function (req, res) {
 });
 
 // Favicon
-app.get('/favicon.ico', function (req, res) {
+app.get('favicon.ico', function (req, res) {
   res.writeHead(200, {'Content-Type': 'image/x-icon'});
   res.end();
   return;
