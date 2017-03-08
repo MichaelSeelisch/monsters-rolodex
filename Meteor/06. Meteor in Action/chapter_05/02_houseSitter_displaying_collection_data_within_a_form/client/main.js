@@ -173,6 +173,31 @@ Template.houseForm.events({
   },
 });
 
+Template.houseForm.onCreated(function () {
+  this.autorun(function () {
+    // Check, if the doc already exists on the server and if it is newer.
+    if (HousesCollection.findOne(Session.get('selectedHouseId')) &&
+      LocalHouse.findOne(Session.get('selectedHouseId')).lastsave <
+      HousesCollection.findOne(Session.get('selectedHouseId')).lastsave) {
+        Session.set('notification', {
+          type: 'warning',
+          text: 'This document has been changed inside the database!'
+        });
+      }
+      // Check, if the local document has an unsaved status
+      else if (LocalHouse.findOne(Session.get('selectedHouseId')) &&
+        LocalHouse.findOne(Session.get('selectedHouseId')).status === 'unsaved') {
+          Session.set('notification', {
+            type: 'reminder',
+            text: 'Remember to save your changes'
+          });
+      }
+      else {
+        Session.set('notification', '');
+      }
+  })
+});
+
 // Global helper that returns the edit object
 Template.registerHelper('selectedHouse', function () {
   return LocalHouse.findOne(Session.get('selectedHouseId'));
@@ -204,7 +229,8 @@ Template.plantFieldset.events({
 
     var modifier = { 
       $set: {
-        'plants': plants
+        'plants': plants,
+        'status': 'unsaved'
       }
     };
 
@@ -240,3 +266,9 @@ updateLocalHouse = function (id, modifier) {
     modifier
   );
 };
+
+Template.notificationArea.helpers({
+  notification: function () {
+    return Session.get('notification');
+  }
+});

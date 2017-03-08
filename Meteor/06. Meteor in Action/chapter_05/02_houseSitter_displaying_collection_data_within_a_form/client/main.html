@@ -5,9 +5,16 @@
 <body>
   <h1>The House-Sitter App</h1>
   {{> selectHouse}}
+  {{> notificationArea}}
   {{> showHouse}}
   {{> houseForm}}
 </body>
+
+<template name="notificationArea">
+  {{#if notification}}
+    <p class="{{notification.type}}">{{notification.text}}</p>
+  {{/if}}
+</template>
 
 <template name='selectHouse'>
   <select id='selectHouse'>
