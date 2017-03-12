@@ -1,0 +1,15 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "Webpack Project Starter",
+  "main": "index.js",
+  "scripts": {
+    "dev-mode": "../node_modules/.bin/webpack -d --watch",
+    "prod": "../node_modules/.bin/webpack -p"
+  },
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}

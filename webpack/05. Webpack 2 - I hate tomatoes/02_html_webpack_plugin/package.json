@@ -1,0 +1,16 @@
+{
+  "name": "webpack-html-plugin",
+  "version": "1.0.0",
+  "description": "Webpack HTML Plugin",
+  "main": "index.js",
+  "scripts": {
+    "dev-mode": "../node_modules/.bin/webpack -d --watch",
+    "prod": "../node_modules/.bin/webpack -p"
+  },
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.2.1"
+  }
+}
