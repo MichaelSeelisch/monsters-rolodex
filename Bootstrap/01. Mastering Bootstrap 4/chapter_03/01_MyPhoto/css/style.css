@@ -11,3 +11,13 @@
   background-color: white;
   color: #504747;
 }
+
+.bg-myphoto-welcome {
+  background-image: url('../images/skyline.png');
+  background-size: cover;
+  color: #504747;
+}
+
+.bg-myphoto-dark .nav-tabs a {
+  color: white;
+}
