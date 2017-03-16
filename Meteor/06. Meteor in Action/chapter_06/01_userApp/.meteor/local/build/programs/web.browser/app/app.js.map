@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/client/client.js"],"names":["Accounts","ui","config","passwordSignupFields"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACAA,SAASC,EAAT,CAAYC,MAAZ,CAAmB;AACjBC,wBAAsB;AADL,CAAnB,wE","file":"/app.js","sourcesContent":["// Configuration\nAccounts.ui.config({\n  passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'\n});"]}
