@@ -51,9 +51,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=afe62241181cf76d807bea9f607336169c3f194f",
-      "size": 741684,
-      "hash": "afe62241181cf76d807bea9f607336169c3f194f"
+      "url": "/packages/modules.js?hash=7c3e1d52e89fe17260ac39b032d6e90b4fcd41fb",
+      "size": 383212,
+      "hash": "7c3e1d52e89fe17260ac39b032d6e90b4fcd41fb"
     },
     {
       "path": "packages/es5-shim.js",
@@ -69,18 +69,18 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/promise.js?hash=eec40c1916e7cf5d43137744a30db10b6cb323a2",
+      "url": "/packages/promise.js?hash=905ac01b1b7c21a1903970dd618b463ea6562e13",
       "size": 65779,
-      "hash": "eec40c1916e7cf5d43137744a30db10b6cb323a2"
+      "hash": "905ac01b1b7c21a1903970dd618b463ea6562e13"
     },
     {
       "path": "packages/ecmascript-runtime.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/ecmascript-runtime.js?hash=ce9634a8799126226957ea18c01ad0ff74b009df",
+      "url": "/packages/ecmascript-runtime.js?hash=9984d53d814103137752c1ed3895ee35c76ae14f",
       "size": 519496,
-      "hash": "ce9634a8799126226957ea18c01ad0ff74b009df"
+      "hash": "9984d53d814103137752c1ed3895ee35c76ae14f"
     },
     {
       "path": "packages/babel-compiler.js",
@@ -150,9 +150,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/babel-runtime.js?hash=b63502ff2be5ab1c68ab0f8c05cae9631261df5f",
+      "url": "/packages/babel-runtime.js?hash=421f60aafac75859139267241b202d53942c9fb0",
       "size": 11132,
-      "hash": "b63502ff2be5ab1c68ab0f8c05cae9631261df5f"
+      "hash": "421f60aafac75859139267241b202d53942c9fb0"
     },
     {
       "path": "packages/random.js",

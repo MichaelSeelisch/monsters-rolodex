@@ -64,7 +64,7 @@ Object.keys(methods).forEach(function (key) {
 
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
-// ../../.0.9.2.ytck2z++os+web.browser+web.cordova/npm/node_modules/bcryptj //
+// ../../.0.9.2.12yett1++os+web.browser+web.cordova/npm/node_modules/bcrypt //
 //                                                                          //
 //////////////////////////////////////////////////////////////////////////////
                                                                             //
