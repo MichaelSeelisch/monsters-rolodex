@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  <svg width="150" height="200" viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <filter id="brightness-shadow" filterUnits="objectBoundingBox">
+        <feImage xlink:href="sky.jpg" result="sky"/>
+        <feComponentTransfer in="sky" result="sky">
+            <feFuncB type="linear" slope="3" intercept="0"/>
+            <feFuncR type="linear" slope="1.5" intercept="0.2"/>
+            <feFuncG type="linear" slope="1.5" intercept="0.2"/>
+        </feComponentTransfer>
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+        <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+        <feMerge>
+            <feMergeNode in="sky"/>
+            <feMergeNode in="offsetBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+    <g id="flower" style="filter: url(#brightness-shadow)">
+        <image xlink:href="flower.svg" x="0" y="0" width="150" height="200"/>
+    </g>
+
+</svg>
