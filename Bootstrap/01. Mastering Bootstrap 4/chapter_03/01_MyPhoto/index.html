@@ -7,9 +7,83 @@
     <link rel="stylesheet" href="bower_components/tether/dist/css/tether.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="container-fluid myphoto-section bg-myphoto-welcome">
+    <nav class="navbar navbar-toggleable-sm navbar-myphoto">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation">
+			  &#9776;
+			</button>
+      <a class="navbar-brand" href="#">MyPhoto</a>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mr-auto">      
+          <li class="nav-item"><a class="nav-link" href="#welcome">
+              Welcome</a>
+          </li>      
+          <li class="nav-item"><a class="nav-link" href="#services">
+              Services</a>
+          </li>     
+          <li class="nav-item"><a class="nav-link" href="#gallery">
+              Gallery</a>
+          </li>     
+          <li class="nav-item"><a class="nav-link" href="#about">
+              About</a>
+          </li>      
+          <li class="nav-item"><a class="nav-link" href="#contact">
+              Contact Us</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Profile <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#profile-modal">
+                Profile
+							</a>
+							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#settings-modal">
+                Settings
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">
+                Logout
+							</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="modal" id="profile-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">						
+						<h4 class="modal-title" id="profile-modal-label">Profile</h4>
+            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">
+						Profile
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal" id="settings-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="settings-modal-label">Settings</h4>
+            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">
+						Settings
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <div class="container-fluid myphoto-section bg-myphoto-welcome" id="services">
       <div class="container">        
         <div class="jumbotron">
             <h1>Welcome to MyPhoto</h1>
@@ -216,9 +290,25 @@
     </div>
     
     <div class="container-fluid myphoto-section bg-myphoto-dark">
-      <div class="row">   
-        <h3>About</h3>
-      </div>
+      <div class="container">
+        <div class="row">        
+          <h3>About</h3>        
+          <div class="card bg-myphoto-light">
+            <div class="card-block">            
+              <p>The style of photography will be customised to your personal preference, as if being shot from your own eyes. You
+                will be part of every step of the photography process, to ensure these photos feel like your own.</p>
+            
+              <p>Our excellent photographers have many years of experience, capturing moments from weddings to sporting events of
+                absolute quality.
+              </p>
+            
+              <p>MyPhoto also provides superb printing options of all shapes and sizes, on any canvas, in any form. From large canvas
+                prints to personalised photo albums, MyPhoto provides it all.</p>
+            
+              <p>MyPhoto provides a full, holistic solution for all your     photography needs.</p>
+            </div>
+          </div>
+        </div>
     </div>
     
     <div class="container-fluid myphoto-section bg-myphoto-light">
