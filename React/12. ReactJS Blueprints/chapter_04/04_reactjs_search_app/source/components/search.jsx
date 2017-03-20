@@ -32,12 +32,25 @@ const Search = React.createClass({
 
   getInitialState() {
     return {
-      showQuickSearch: false
-    }
+      showQuickSearch: false,
+      results: [],
+      numResults: 0
+    } 
   },
 
   renderQuickSearch() {
-
+    return this.state.results.map((result, idx) => {
+    if (idx < 5) {
+      return (<ListGroupItem key={"f" + idx}
+        onClick={this.handleClick.bind(null,idx)}
+        header={result.title}>{result.desc}
+        <br/>
+        <a bsStyle="link" style={{padding:0}} href={result.link} target="_blank">
+          {result.link}
+        </a>
+      </ListGroupItem>)
+      }
+    })
   },
 
   renderImages() {
@@ -62,6 +75,12 @@ const Search = React.createClass({
       defaultImage: defaultImage
     }
   },
+
+  handleClick(targetIndex) {
+    if (this.state.numResults >= targetIndex) {
+      window.open(this.state.results[targetIndex].link, "_blank");
+    }
+  }, 
 
   render() {
     return (<Grid>
