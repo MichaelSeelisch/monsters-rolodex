@@ -34,7 +34,7 @@ module.exports = {
             },
             {
                 test: /\.(svg|woff|woff2|eot|ttf)(\?.*$|$)/,
-                loader: 'file'
+                use: 'url-loader'
             }
         ]
     },
@@ -65,7 +65,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: 'app.css',
-            disable: true,
+            disable: !cssConfig,
             allChunks: true
         }),
         new webpack.HotModuleReplacementPlugin(), // enable HMR globally
