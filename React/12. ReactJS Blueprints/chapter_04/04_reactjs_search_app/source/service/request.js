@@ -8,7 +8,7 @@ class Request {
   }
 
   get(query, params) {
-    return this.httpAgent(query, 'get,', params, null);
+    return this.httpAgent(query, 'get', params, null);
   }
 
   post(url, params, data, options) {
