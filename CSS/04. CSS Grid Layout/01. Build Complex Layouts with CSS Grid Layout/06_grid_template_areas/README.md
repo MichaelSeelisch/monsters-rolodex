@@ -1,0 +1,1 @@
+#6 - Describe a grid layout using grid-template-areas
