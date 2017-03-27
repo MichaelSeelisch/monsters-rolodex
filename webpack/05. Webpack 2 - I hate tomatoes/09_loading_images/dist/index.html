@@ -1,93 +1,13 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
-    Referenced from: /Users/michael/misc_workspace/Private/Web-Projects/webpack/05. Webpack 2 - I hate tomatoes/09_loading_images/node_modules/mozjpeg/vendor/cjpeg
-    Reason: image not found
-  
-  - index.js:201 Promise.all.then.arr
-    [09_loading_images]/[execa]/index.js:201:11
-  
-  
-  - Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
-  
-  - Referenced from: /Users/michael/misc_workspace/Private/Web-Projects/webpack/05. Webpack 2 - I hate tomatoes/09_loading_images/node_modules/mozjpeg/vendor/cjpeg
-  
-  - Reason: image not found
-  
-  - compiler.js:76 
-    [09_loading_images]/[html-webpack-plugin]/lib/compiler.js:76:16
-  
-  - Compiler.js:280 Compiler.<anonymous>
-    [09_loading_images]/[webpack]/lib/Compiler.js:280:10
-  
-  - Compiler.js:480 
-    [09_loading_images]/[webpack]/lib/Compiler.js:480:13
-  
-  - Tapable.js:138 next
-    [09_loading_images]/[tapable]/lib/Tapable.js:138:11
-  
-  - CachePlugin.js:62 Compiler.<anonymous>
-    [09_loading_images]/[webpack]/lib/CachePlugin.js:62:5
-  
-  - Tapable.js:142 Compiler.applyPluginsAsyncSeries
-    [09_loading_images]/[tapable]/lib/Tapable.js:142:13
-  
-  - Compiler.js:477 
-    [09_loading_images]/[webpack]/lib/Compiler.js:477:10
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [09_loading_images]/[tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:640 self.applyPluginsAsync.err
-    [09_loading_images]/[webpack]/lib/Compilation.js:640:19
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [09_loading_images]/[tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:631 self.applyPluginsAsync.err
-    [09_loading_images]/[webpack]/lib/Compilation.js:631:11
-  
-  - Tapable.js:138 next
-    [09_loading_images]/[tapable]/lib/Tapable.js:138:11
-  
-  - UglifyJsPlugin.js:140 Compilation.compilation.plugin
-    [09_loading_images]/[webpack]/lib/optimize/UglifyJsPlugin.js:140:5
-  
-  - Tapable.js:142 Compilation.applyPluginsAsyncSeries
-    [09_loading_images]/[tapable]/lib/Tapable.js:142:13
-  
-  - Compilation.js:626 self.applyPluginsAsync.err
-    [09_loading_images]/[webpack]/lib/Compilation.js:626:10
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [09_loading_images]/[tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:622 sealPart2
-    [09_loading_images]/[webpack]/lib/Compilation.js:622:9
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [09_loading_images]/[tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:570 Compilation.seal
-    [09_loading_images]/[webpack]/lib/Compilation.js:570:8
-  
-  - Compiler.js:474 
-    [09_loading_images]/[webpack]/lib/Compiler.js:474:16
-  
-  - Tapable.js:225 
-    [09_loading_images]/[tapable]/lib/Tapable.js:225:11
-  
-  - Compilation.js:472 _addModuleChain
-    [09_loading_images]/[webpack]/lib/Compilation.js:472:11
-  
-  - Compilation.js:443 processModuleDependencies.err
-    [09_loading_images]/[webpack]/lib/Compilation.js:443:13
-  
-  - next_tick.js:67 _combinedTickCallback
-    internal/process/next_tick.js:67:7
-  
-  - next_tick.js:98 process._tickCallback
-    internal/process/next_tick.js:98:9
-  
-</pre><script type="text/javascript" src="app.bundle.js?19099df74fa11edd4d92"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Project Demo</title>
+  <link href="app.css?3820c6f7ce35f9e11872" rel="stylesheet"></head>
+  <body>
+  <div id="root">
+    <h1>Webpack 2 - Loading Image</h1>  
+
+    <img src=images/no_tomato.jpg />
+  </div>
+</html><script type="text/javascript" src="app.bundle.js?3820c6f7ce35f9e11872"></script>

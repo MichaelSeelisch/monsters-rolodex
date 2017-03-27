@@ -4,11 +4,11 @@
   "description": "Webpack Multiple Templates and RimRaf",
   "main": "index.js",
   "scripts": {
-    "dev-server": "./node_modules/.bin/webpack-dev-server",
-    "dev-mode": "./node_modules/.bin/webpack -d --watch",
-    "prod": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack -p",
-    "watch": "./node_modules/.bin/webpack ./src/app.js ./dist/app.bundle.js -p --watch",
-    "clean": "./node_modules/.bin/rimraf ./dist/*"
+    "dev-server": "../node_modules/.bin/webpack-dev-server",
+    "dev-mode": "../node_modules/.bin/webpack -d --watch",
+    "prod": "npm run clean && NODE_ENV=production ../node_modules/.bin/webpack -p",
+    "watch": "../node_modules/.bin/webpack ./src/app.js ./dist/app.bundle.js -p --watch",
+    "clean": "../node_modules/.bin/rimraf ./dist/*"
   },
   "author": "Michael Seelisch",
   "license": "ISC",
