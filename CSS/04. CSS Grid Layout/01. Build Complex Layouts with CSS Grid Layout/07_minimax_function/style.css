@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-gap: 30px;
+  grid-template-columns:
+   /* minmax(100px, 200px) */
+   /* minmax(10%, 200px) */
+   /* minmax(100px, auto); */
+   minmax(10%, 1fr)
+   minmax(100px, 4fr);
+}
+
+.box {
+  background-color: mediumpurple;
+}

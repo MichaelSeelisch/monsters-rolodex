@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-gap: 20px;
+  height: 100vh;
+  /*
+  grid-template-areas: 
+    "nav1 nav2 nav3"
+    "main main nav3";
+  */
+  /*
+  grid-template-rows:
+    [header-top] 1fr [header-bottom main-top] 5fr [main-bottom];
+  grid-template-columns: 2fr auto 1fr;
+  */
+
+  grid-template: [header-top] "nav1 nav2 nav3" 1fr [header-bottom]
+                 [main-top]   "main main nav3" 5fr [main-bottom]
+                              / 2fr auto 1fr
+}
+
+.container > * {
+  background-color: orange;
+  font-size: 40px;
+}
+
+nav:nth-of-type(2) {
+  grid-area: nav2;
+}
+
+nav:nth-of-type(3) {
+  grid-area: nav3;
+}
+
+section {
+  grid-area: main;
+}

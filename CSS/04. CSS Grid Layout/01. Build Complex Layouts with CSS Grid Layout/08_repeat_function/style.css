@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-gap: 10px;
+  grid-template-columns:
+    /* repeat(26, 15px); */
+    /* repeat(3,
+      20px
+      40px
+      20px
+      80px
+    );*/
+    
+    /* repeat(3,
+      minmax(20px, auto)
+      minmax(40px, auto)
+      minmax(20px, auto)
+      minmax(80px, auto)
+    );*/
+    [start]
+    repeat(3,
+      [col-sml-start] minmax(20px, auto)
+      [col-sml-end col-med-start] minmax(40px, auto)
+      [col-med-end col-sml-start] minmax(20px, auto)
+      [col-sml-end col-lrg-start] minmax(80px, auto)
+      [col-lrg-end]
+    )
+    [end];
+}
+
+.box {
+  background-color: orangered;
+  font-size: 20px;
+}
+

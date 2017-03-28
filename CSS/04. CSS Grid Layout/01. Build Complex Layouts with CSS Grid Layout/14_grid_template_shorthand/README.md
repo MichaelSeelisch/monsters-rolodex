@@ -1,0 +1,1 @@
+#14 - Specify grid columns, rows, and areas at once with the grid-template shorthand
