@@ -13,18 +13,6 @@ Meteor.startup(function () {
   process.env.ROOT_URL = 'http://www.michaelseelisch.de';
 });
 
-// Add user profile information, only if logged in with facebook
-/*
-  Accounts.onCreateUser(function (options, user) {
-    if (user.services.facebook) {
-      user.profile.first_name = user.services.facebook.first_name;
-      user.profile.last_name = user.services.facebook.last_name;
-      user.profile.gender = user.services.facebook.gender;
-    }
-    return user;
-  }
-*/
-
 Accounts.onCreateUser(function (options, user) {
 
   if (options.profile) {
@@ -42,6 +30,13 @@ Accounts.onCreateUser(function (options, user) {
       Accounts.sendVerificationEmail(user._id);
       console.log('Verification Email sent!');
     }, 2 * 1000);
+  }
+
+  // Add user profile information, only if logged in with facebookcd
+  if (user.services.facebook) {
+    user.profile.first_name = user.services.facebook.first_name;
+    user.profile.last_name = user.services.facebook.last_name;
+    user.profile.gender = user.services.facebook.gender;
   }
 
   return user;
