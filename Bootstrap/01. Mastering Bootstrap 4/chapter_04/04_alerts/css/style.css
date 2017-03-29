@@ -111,17 +111,3 @@ body {
 	z-index: 3000;
 	height: 3.2em;
 }
-
-footer {
-	width: 100%;
-	background-color: #f5f5f5;
-}
-
-footer p {
-	display: inline;
-	margin-left: 10px;
-}
-
-footer a {
-	color: inherit;
-}
