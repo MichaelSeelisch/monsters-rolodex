@@ -1,0 +1,119 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
+const path = require("path");
+const bootstrapEntryPoints = require('./webpack.bootstrap.config');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
+
+const isProd = process.env.NODE_ENV == 'production'; // true or false
+const cssDev = ['style-loader', 'css-loader','sass-loader'];
+const cssProd = ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    loader: ['css-loader','sass-loader'],
+    publicPath: '/dist'
+});
+
+const cssConfig = isProd ? cssProd : cssDev;
+
+const bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev;
+
+module.exports = {
+    entry: {
+        app: './src/app.js',
+        bootstrap: bootstrapConfig,
+        contact: './src/contact'  
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: cssConfig
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                loaders: [
+                    // 'file-loader?name=[path][hash:12].[ext]'
+                    'file-loader?name=[name].[ext]&publicPath=images/&outputPath=images/',
+                    {
+                        loader: 'image-webpack-loader',
+                        query: {
+                            progressive: true,
+                            /*  Deprecated:
+                                optimizationLevel: 7,
+                                interlaced: false,
+                            */
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            }
+                        }
+                    }
+                ]
+            },
+            // Fonts
+            {
+                test: /\.(woff2?|svg)$/,
+                loader: 'url-loader?limit=10000&name=fonts/[name].[ext]'
+            },
+            {
+                test: /\.(ttf|eot)$/,
+                loader: 'file-loader?name=fonts/[name].[ext]'
+            },
+            
+            // Bootstrap 3 jQuery
+            {
+                test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/,
+                loader: 'imports-loader?jQuery=jquery'
+            },
+        ]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        hot: true,
+        stats: "errors-only",
+        open: true
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Webpack 2 and Twitter Bootstrap',
+            /*minify: {
+                collapseWhitespace: true
+            },*/
+            hash: true,
+            excludeChunks: ['contact'],     // Exclude contact.js code
+            /* filename: './../index.html', */
+            template: './src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Contact Page',
+            hash: true,
+            chunks: ['contact'],    // Only inlcude contact.js code
+            filename: 'contact.html',
+            template: './src/contact.html'
+        }),
+        new ExtractTextPlugin({
+            filename: '/css/[name].css',
+            disable: !isProd,
+            allChunks: true
+        }),
+        new webpack.HotModuleReplacementPlugin(), // enable HMR globally
+
+        new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
+
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, 'src/*.html')),
+        })
+    ]
+}
