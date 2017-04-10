@@ -103,7 +103,7 @@ module.exports = {
             template: './src/contact.html'
         }),
         new ExtractTextPlugin({
-            filename: '/css/[name].css',
+            filename: './css/[name].css',
             disable: !isProd,
             allChunks: true
         }),
@@ -113,6 +113,7 @@ module.exports = {
 
         new PurifyCSSPlugin({
             // Give paths to parse for rules. These should be absolute!
+            // ATTENTION: ALSO REMOVES CLASSES FOR THE MODAL AND DROPDOWN
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
         })
     ]
