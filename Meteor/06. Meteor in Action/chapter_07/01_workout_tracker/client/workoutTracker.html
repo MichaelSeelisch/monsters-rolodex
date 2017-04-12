@@ -1,0 +1,43 @@
+<head>
+  <title>workoutTracker</title>
+</head>
+
+<body>
+  <h1>Track all your workouts with Meteor!</h1>
+  <h2>Detailed Workout listing</h2>
+  {{> workoutList}}
+</body>
+
+<template name='workoutList'>
+  <!-- Return true if all template subscriptions are ready -->
+  {{#if Template.subscriptionsReady}}
+    <ul>
+      {{#each workouts}}
+        <!-- Display workout details -->
+        <li>{{workoutAt}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    Loading workouts...
+  {{/if}}
+  <button class='show-more'>Show more</button>
+</template>
+
+<template name="distanceByMonth">
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Total Distance</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each month}}
+      <tr>
+        <td>{{translateMonth}}</td>
+        <td>{{distance}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
