@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  <svg width="350" height="250" viewbox="0 0 350 250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+      <filter id="flood-filter" x="0" y="0" width="100%" height="100%">
+        <feFlood flood-color="#993300" flood-opacity="0.8" result="tint"/>
+        <feComposite in="tint" in2="SourceGraphic" operator="in"/>
+      </filter>
+
+      <filter id="tile-filter" x="0" y="0" width="100%" height="100%">
+        <feImage xlink:href="cloth.jpg" width="32" height="32" result="cloth"/>
+        <feTile in="cloth" result="cloth"/>
+        <feComposite in="cloth" in2="SourceGraphic" operator="in"/>
+      </filter>
+
+      <g id="flower">
+          <image xlink:href="flower.svg" x="0" y="0" width="150" height="200"/>
+      </g>
+    </defs>
+
+    <use xlink:href="#flower" transform="translate(0, 0)" style="filter: url(#flood-filter);"/>
+    <use xlink:href="#flower" transform="translate(110,0)" style="filter: url(#tile-filter);"/>
+
+    <image xlink:href="cloth.jpg" x="220" y="10" width="32" height="32"/>
+
+</svg>
