@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  <svg width="450" height="250" viewbox="0 0 350 250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+      <filter id="emboss01">
+        <feConvolveMatrix preserveAlpha="true" kernelMatrix="1 0 0 0 0 0 0 0 -1" bias="0.5"/>
+      </filter>
+
+      <filter id="emboss02">
+        <feConvolveMatrix preserveAlpha="false" kernelMatrix="1 0 0 0 0 0 0 0 -1" bias="0.5"/>
+      </filter>
+  
+      <g id="flower">
+        <image xlink:href="flower.svg" x="0" y="0" width="150" height="200"/>
+      </g>
+    </defs>
+    
+    <use xlink:href="#flower" style="filter: url(#emboss01);"/>
+    <use xlink:href="#flower" transform="translate(110,0)" style="filter: url(#emboss02);"/>
+
+</svg>
