@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trendy Splitscreen Layout With CSS3 Animations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>  
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="grid">
+      <!-- Left side -->
+      <div id="west" class="column effect-hover">
+        <div class="content">
+          <i class="fa fa-venus" aria-hidden="true"></i>
+          <h2>Go <span>West</span></h2>
+          <h3>Do something amazing</h3>
+          <p>And Click</p>
+        </div>
+      </div>
+
+      <!-- Right side -->
+      <div id="east" class="column effect-hover">
+        <div class="content">
+          <i class="fa fa-venus" aria-hidden="true"></i>
+          <h2>Go <span>East</span></h2>
+          <h3>Do something amazing</h3>
+          <p>And Click</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left side content -->
+    <div id="west-overlay" class="overlay"></div>
+
+    <!-- Right side content -->
+    <div id="east-overlay" class="overlay"></div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="./js/main.js"></script>
+
+  </body>
+</html>
