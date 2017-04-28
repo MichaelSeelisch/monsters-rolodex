@@ -4,7 +4,7 @@
   "description": "Webpack Dev Server",
   "main": "index.js",
   "scripts": {
-    "wlan-server": "webpack-dev-server -d"
+    "wlan-server": "webpack-dev-server"
   },
   "author": "Michael Seelisch",
   "license": "ISC",
