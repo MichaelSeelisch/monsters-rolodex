@@ -1,0 +1,15 @@
+{
+  "name": "PhantomJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "capture": "phantomjs index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "phantomjs": "^2.1.7"
+  }
+}
