@@ -26,8 +26,7 @@ module.exports = {
         compress: true,
         stats: "errors-only",
         open: true,
-        /* host: '192.168.178.34', */
-        host: '0.0.0.0',
+        host: '192.168.178.34',
         port: 3000,
         /* hot: true */
     },
