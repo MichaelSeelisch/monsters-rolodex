@@ -68,6 +68,17 @@ const Search = React.createClass({
     this.setState({results: res, numResults: res.length < 5 ? res.length : 5});
   },
 
+  mixins: [
+    Reflux.listenTo(SearchStore, 'getSearchResults')
+  ],
+
+  getSearchResults(res) {
+    this.setState({
+      results: res,
+      numResults: res.length < 5 ? res.length : 5
+    });
+  },
+
   getInitialState() {
     return {
       showQuickSearch: false,
@@ -194,6 +205,7 @@ const Search = React.createClass({
   },
 
   performSearch() {
+    // console.log(findDOMNode(this.refs.searchInput).value);
     const val = findDOMNode(this.refs.searchInput).value;
     val.length > 1 ? SearchAction.performSearch(val) : this.setState({results: []});
   },
