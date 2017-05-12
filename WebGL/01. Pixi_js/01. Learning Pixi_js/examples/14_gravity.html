@@ -1,0 +1,156 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Keyboard movment</title>
+<body>
+<script src="./../_libs/pixi.js"></script>
+<script>
+
+var Container = PIXI.Container,
+    autoDetectRenderer = PIXI.autoDetectRenderer,
+    loader = PIXI.loader,
+    resources = PIXI.loader.resources,
+    Sprite = PIXI.Sprite;
+
+var stage = new Container(),
+    renderer = autoDetectRenderer(256, 256);
+
+document.body.appendChild(renderer.view);
+
+loader
+  .add("images/cat.png")
+  .load(setup);
+
+var cat, state;
+
+function setup() {
+
+  cat = new Sprite(resources["images/cat.png"].texture);
+  cat.y = 96;
+  cat.vx = 0;
+  cat.vy = 0;
+  cat.accelerationX = 0;
+  cat.accelerationY = 0;
+  cat.frictionX = 1;
+  cat.frictionY = 1;
+  cat.speed = 0.2;
+  cat.drag = 0.98;
+  stage.addChild(cat);
+
+  var left = keyboard(37),
+      up = keyboard(38),
+      right = keyboard(39),
+      down = keyboard(40);
+
+  left.press = function() {
+    cat.accelerationX =- cat.speed;
+    cat.frictionX = 1;
+  };
+  left.release = function() {
+    if (!right.isDown) {
+      cat.accelerationX = 0;
+      cat.frictionX = cat.drag;
+    }
+  };
+
+  up.press = function() {
+    cat.accelerationY =- cat.speed;
+    cat.frictionY = 1;
+  };
+  up.release = function() {
+    if (!down.isDown) {
+      cat.accelerationY = 0;
+      cat.frictionY = cat.drag;
+    }
+  };
+
+  right.press = function() {
+    cat.accelerationX = cat.speed;
+    cat.frictionX = 1;
+  };
+  right.release = function() {
+    if (!left.isDown) {
+      cat.accelerationX = 0;
+      cat.frictionX = cat.drag;
+    }
+  };
+
+  down.press = function() {
+    cat.accelerationY = cat.speed;
+    cat.frictionY = 1;
+  };
+  down.release = function() {
+    if (!up.isDown) {
+      cat.accelerationY = 0;
+      cat.frictionY = cat.drag;
+    }
+  };
+
+  state = play;
+
+  gameLoop();
+}
+
+function gameLoop(){
+
+  requestAnimationFrame(gameLoop);
+
+  state();
+
+  renderer.render(stage);
+}
+
+function play() {
+
+  // Apply physics to the sprite's position
+  cat.vx += cat.accelerationX;
+  cat.vy += cat.accelerationY;
+  cat.vx *= cat.frictionX;
+  cat.vy *= cat.frictionY;
+
+  // Gravity
+  cat.vy += 0.1;
+
+  // Move the sprite
+  cat.x += cat.vx;
+  cat.y += cat.vy;
+}
+
+function keyboard(keyCode) {
+
+  var key = {};
+  key.code = keyCode;
+  key.isDown = false;
+  key.isUp = true;
+  key.press = undefined;
+  key.release = undefined;
+
+  key.downHandler = function(event) {
+    if (event.keyCode === key.code) {
+      if (key.isUp && key.press) key.press();
+      key.isDown = true;
+      key.isUp = false;
+    }
+    event.preventDefault();
+  };
+
+
+  key.upHandler = function(event) {
+    if (event.keyCode === key.code) {
+      if (key.isDown && key.release) key.release();
+      key.isDown = false;
+      key.isUp = true;
+    }
+    event.preventDefault();
+  };
+
+  window.addEventListener(
+    "keydown", key.downHandler.bind(key), false
+  );
+  window.addEventListener(
+    "keyup", key.upHandler.bind(key), false
+  );
+  return key;
+}
+
+</script>
+</body>
