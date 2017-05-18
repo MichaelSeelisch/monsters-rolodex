@@ -5,6 +5,9 @@ export class App {
     { id: 2, displayName: 'secondItem' },
     { id: 3, displayName: 'thirdItem' },
   ];
+  onItemClicked(event: ClickableItem) {
+    alert(`App.onItemClicked, event.id ${event.id} - ${event.displayName}`);
+  }
 }
 
 export class ClickableItem {
