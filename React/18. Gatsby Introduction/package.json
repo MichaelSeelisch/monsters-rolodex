@@ -1,0 +1,15 @@
+{
+  "name": "gatsby_introduction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/gatsby develop"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gatsby": "^1.0.6",
+    "gatsby-link": "^1.0.1"
+  }
+}
