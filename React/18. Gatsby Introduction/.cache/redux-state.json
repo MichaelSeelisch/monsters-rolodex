@@ -1,0 +1,291 @@
+{
+  "nodes": {
+    "SitePage /dev-404-page/": {
+      "component": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/.cache/dev-404-page.js",
+      "path": "/dev-404-page/",
+      "componentChunkName": "page-component---cache-dev-404-page-js",
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
+      "context": {},
+      "pluginCreator___NODE": "Plugin dev-404-page",
+      "id": "SitePage /dev-404-page/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "da313c862c16ff24dc68eef7812b2ade",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin component-page-creator": {
+      "resolve": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/component-page-creator",
+      "name": "component-page-creator",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/component-page-creator",
+      "packageJson": {
+        "name": "component-page-creator",
+        "description": "An internal Gatsby plugin that creates pages from component files in src/pages",
+        "version": "1.0.0",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin component-page-creator",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "920cc78e551f090d811bf7835b8e5cd1",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin internal-data-bridge": {
+      "resolve": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "name": "internal-data-bridge",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "packageJson": {
+        "name": "internal-data-bridge",
+        "description": "An internal Gatsby plugin which creates data nodes from internal data",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin internal-data-bridge",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "0d90940b6256b6b600e6d788c5a7dd06",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin dev-404-page": {
+      "resolve": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "name": "dev-404-page",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "packageJson": {
+        "name": "dev-404-page",
+        "description": "Internal plugin to add a 404 page in development with helpful information",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin dev-404-page",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "2ffac2cd4c7fdcbf220d52504c74a36e",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin prod-404": {
+      "resolve": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "name": "prod-404",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "packageJson": {
+        "name": "prod-404",
+        "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin prod-404",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "99bb0187068550ea576ed429a38eb556",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin query-runner": {
+      "resolve": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "name": "query-runner",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "packageJson": {
+        "name": "query-runner",
+        "description": "Internal plugin for running queries",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin query-runner",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "83ec2df6200210a1918f0d91c35b3044",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin default-site-plugin": {
+      "resolve": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction",
+      "name": "default-site-plugin",
+      "version": "d41d8cd98f00b204e9800998ecf8427e",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction",
+      "packageJson": {
+        "name": "gatsby_introduction",
+        "description": "",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "",
+        "license": "ISC",
+        "dependencies": [
+          {
+            "name": "gatsby",
+            "version": "^1.0.6"
+          },
+          {
+            "name": "gatsby-link",
+            "version": "^1.0.1"
+          }
+        ],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin default-site-plugin",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "f25edc700643bc2ba6a576b86f8ed936",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Site": {
+      "siteMetadata": {},
+      "port": "8000",
+      "host": "localhost",
+      "buildTime": "2017-07-09T11:55:10.872Z",
+      "id": "Site",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "991f30cc3d85381a382d1c8d3716d19f",
+        "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /my-second-gatsby-page/": {
+      "path": "/my-second-gatsby-page/",
+      "component": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/src/pages/my-second-gatsby-page.js",
+      "componentChunkName": "page-component---src-pages-my-second-gatsby-page-js",
+      "jsonName": "my-second-gatsby-page.json",
+      "internalComponentName": "ComponentMySecondGatsbyPage",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "id": "SitePage /my-second-gatsby-page/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "d9c22fdc423fb44aae98430e8d0a1890",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "path": "/",
+      "component": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/src/pages/index.js",
+      "componentChunkName": "page-component---src-pages-index-js",
+      "jsonName": "index.json",
+      "internalComponentName": "ComponentIndex",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "id": "SitePage /",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "7a239c1f607a5ab42bca0dba127d2d8c",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /counter/": {
+      "path": "/counter/",
+      "component": "/Applications/MAMP/htdocs/Private/Web-Projects/React/18. Gatsby Introduction/src/pages/counter.js",
+      "componentChunkName": "page-component---src-pages-counter-js",
+      "jsonName": "counter.json",
+      "internalComponentName": "ComponentCounter",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "id": "SitePage /counter/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "d6ef35f16a7cf9d57f3cf854d87d172d",
+        "owner": "internal-data-bridge"
+      }
+    }
+  },
+  "status": {
+    "plugins": {},
+    "PLUGINS_HASH": "b835117489f313955802431791f1a204"
+  },
+  "pageDataDependencies": {
+    "nodes": {},
+    "connections": {
+      "SitePage": [
+        "/dev-404-page/"
+      ]
+    }
+  }
+}
