@@ -1,0 +1,29 @@
+.navbar-myphoto .navbar-nav > li > a:hover {
+  background-color: #504747;
+  color: yellow;
+}
+
+.navbar-myphoto .navbar-nav > li > a:focus {
+  background-color: #504747;
+  color: yellow;
+}
+
+.navbar-myphoto .navbar-nav > li.active > a {
+  background-color: #504747;
+  color: yellow;
+}
+
+.navbar-myphoto .dropdown-menu > a:hover  {
+  color: yellow;
+  background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > a:focus {
+  color: yellow;
+  background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > .active > a:focus {
+  color: yellow;
+  background-color: #504747;
+}
