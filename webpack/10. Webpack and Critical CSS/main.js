@@ -1,0 +1,1 @@
+require("bootstrap-sass/assets/stylesheets/_bootstrap.scss");
