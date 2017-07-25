@@ -2,7 +2,7 @@
   "name": "07_shopping_list_application",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Michael Seelisch <seelisch@kolle-rebbe.de>",
+  "author": "Michael Seelisch <info@michaelseelisch.de>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

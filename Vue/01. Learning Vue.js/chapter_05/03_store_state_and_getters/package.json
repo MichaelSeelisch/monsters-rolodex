@@ -1,5 +1,5 @@
 {
-  "name": "02_simple_store",
+  "name": "03_store_state_and_getters",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "Michael Seelisch <info@michaelseelisch.de>",
