@@ -1,0 +1,30 @@
+{
+  "name": "hardeck_80_jahre_landingpage",
+  "version": "1.0.0",
+  "description": "Landingpage Special Event 80ter Geburtstag Hardeck",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack",
+    "build": "webpack -p"
+  },
+  "author": "Michael Seelisch | m.seelisch@superreal.de",
+  "license": "ISC",
+  "repository": {
+    "url": "https://gitlab.sr-system.de:Hardeck/www.hardeck.de.git",
+    "type": "git"
+  },
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "3.0.0",
+    "file-loader": "^0.11.2",
+    "image-webpack-loader": "^3.3.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.4.1"
+  },
+  "devDependencies": {}
+}
