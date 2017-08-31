@@ -1,0 +1,39 @@
+{
+  "name": "hardeck_80_jahre_landingpage",
+  "version": "1.0.0",
+  "description": "Landingpage Special Event 80ter Geburtstag Hardeck",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack",
+    "build": "webpack -p"
+  },
+  "author": "Michael Seelisch | m.seelisch@superreal.de",
+  "license": "ISC",
+  "repository": {
+    "url": "https://gitlab.sr-system.de:Hardeck/www.hardeck.de.git",
+    "type": "git"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "eslint-config-superreal": "^1.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-check-unused-css": "^2.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^4.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.2",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-uglify": "^3.0.0",
+    "require-dir": "^0.3.2"
+  },
+  "devDependencies": {},
+  "eslintConfig": {
+    "extends": "superreal"
+  }
+}

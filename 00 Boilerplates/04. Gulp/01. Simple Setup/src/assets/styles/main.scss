@@ -1,0 +1,13 @@
+$background-color: #ff5;
+
+body {
+  background-color: $background-color;
+}
+
+.unused-class {
+  border: 1px solid;
+}
+
+.custom-class-not-unused {
+  font: Arial;
+}
