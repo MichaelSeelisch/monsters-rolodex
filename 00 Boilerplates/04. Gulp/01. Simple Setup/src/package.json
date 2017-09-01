@@ -4,8 +4,8 @@
   "description": "Landingpage Special Event 80ter Geburtstag Hardeck",
   "main": "main.js",
   "scripts": {
-    "dev": "gulp",
-    "build": "gulp --production"
+    "dev": "webpack",
+    "build": "webpack -p"
   },
   "author": "Michael Seelisch | m.seelisch@superreal.de",
   "license": "ISC",
