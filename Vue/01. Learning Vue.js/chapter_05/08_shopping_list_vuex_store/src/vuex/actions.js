@@ -1,13 +1,7 @@
-import * as types from './mutation_types';
+import { CHANGE_TITLE } from './mutation_types'
 
-export const start = ({ dispatch }) => {
-  dispatch(types.START);
-};
-
-export const pause = ({ dispatch }) => {
-  dispatch(types.PAUSE);
-};
-
-export const stop = ({ dispatch }) => {
-  dispatch(types.STOP);
-};
+export default {
+  changeTitle: ({ commit }, data) => {
+    commit(CHANGE_TITLE, data)
+  }
+}

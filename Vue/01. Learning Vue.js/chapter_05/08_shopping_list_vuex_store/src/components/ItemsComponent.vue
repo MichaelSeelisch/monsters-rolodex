@@ -5,14 +5,14 @@
 </template>
 
 <script>
-  import ItemComponent from './ItemComponent';
+  import ItemComponent from './ItemComponent'
 
   export default {
     components: {
       ItemComponent
     },
     props: ['items']
-  };
+  }
 </script>
 
 <style scoped>

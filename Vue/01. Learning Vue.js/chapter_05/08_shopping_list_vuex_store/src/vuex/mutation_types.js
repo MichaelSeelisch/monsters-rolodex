@@ -1,3 +1,1 @@
-export const START = 'START';
-export const PAUSE = 'PAUSE';
-export const STOP = 'STOP';
+export const CHANGE_TITLE = 'CHANGE_TITLE'

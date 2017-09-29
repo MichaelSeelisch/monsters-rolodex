@@ -9,10 +9,12 @@
 </template>
 
 <script>
+
 import ControlsComponent from './components/ControlsComponent'
 import CountdownComponent from './components/CountdownComponent'
 import KittensComponent from './components/KittensComponent'
 import StateTitleComponent from './components/StateTitleComponent'
+
 import store from './vuex/store'
 import { isWorking } from './vuex/getters'
 

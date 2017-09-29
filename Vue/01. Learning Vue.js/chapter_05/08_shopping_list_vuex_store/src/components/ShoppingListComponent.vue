@@ -5,15 +5,15 @@
     <items-component :items="items"></items-component>
     <div class="footer">
       <hr />
-      <change-title-component :title="title" v-on:changeTitle="onChangeTitle"></change-title-component>
+      <change-title-component :title="title" :id="id"></change-title-component>
     </div>
   </div>
 </template>
 
 <script>
-  import AddItemComponent from './AddItemComponent';
-  import ItemsComponent from './ItemsComponent';
-  import ChangeTitleComponent from './ChangeTitleComponent';
+  import AddItemComponent from './AddItemComponent'
+  import ItemsComponent from './ItemsComponent'
+  import ChangeTitleComponent from './ChangeTitleComponent'
 
   export default {
     components: {
@@ -28,12 +28,9 @@
           text: text,
           checked: false
         })
-      },
-      onChangeTitle (text) {
-        this.$emit('changeTitle', this.id, text);
       }
     }
-  };
+  }
 </script>
 
 <style scoped>

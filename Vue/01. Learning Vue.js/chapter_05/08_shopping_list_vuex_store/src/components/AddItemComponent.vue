@@ -16,16 +16,16 @@
     },
     methods: {
       addItem () {
-        var text;
+        var text
 
-        text = this.newItem.trim();
+        text = this.newItem.trim()
         if (text) {
-          this.$emit('add', this.newItem);
-          this.newItem = '';
+          this.$emit('add', this.newItem)
+          this.newItem = ''
         }
       }
     }
-  };
+  }
 </script>
 
 <style scoped>
