@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/es6-shim": "^0.31.34",
-    "@types/systemjs": "^0.20.3",
-    "systemjs": "^0.20.17"
+    "@types/es6-shim": "^0.31.35",
+    "@types/systemjs": "^0.20.6",
+    "systemjs": "^0.20.19"
   }
 }
