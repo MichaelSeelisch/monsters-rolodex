@@ -1,0 +1,101 @@
+[
+  {
+    "timeStamp": 1508269214399,
+    "time": 14500,
+    "hash": "93c96f98a9506a0cc642",
+    "errors": [
+      "./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss\nModule build failed: Error: Missing binding /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/node-sass/vendor/darwin-x64-57/binding.node\nNode Sass could not find a binding for your current environment: OS X 64-bit with Node.js 8.x\n\nFound bindings for the following environments:\n  - OS X 64-bit with Node.js 7.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:624:30)\n    at Object.Module._extensions..js (module.js:635:10)\n    at Module.load (module.js:545:32)\n    at tryModuleLoad (module.js:508:12)\n    at Function.Module._load (module.js:500:3)\n    at Module.require (module.js:568:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:624:30)\n    at Object.Module._extensions..js (module.js:635:10)\n    at Module.load (module.js:545:32)\n    at tryModuleLoad (module.js:508:12)\n    at Function.Module._load (module.js:500:3)\n    at Module.require (module.js:568:17)\n    at require (internal/module.js:11:18)\n    at loadLoader (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:181:3)\n    at NormalModule.build (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:274:15)\n    at Compilation.buildModule (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/Compilation.js:146:10)\n    at factoryCallback (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/Compilation.js:329:11)\n    at factory (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:253:5)\n    at applyPluginsAsyncWaterfall (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:99:14)\n @ ./node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss 4:14-108\n @ ./main.js",
+      "./node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss\nModule build failed: ModuleBuildError: Module build failed: Error: Missing binding /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/node-sass/vendor/darwin-x64-57/binding.node\nNode Sass could not find a binding for your current environment: OS X 64-bit with Node.js 8.x\n\nFound bindings for the following environments:\n  - OS X 64-bit with Node.js 7.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:624:30)\n    at Object.Module._extensions..js (module.js:635:10)\n    at Module.load (module.js:545:32)\n    at tryModuleLoad (module.js:508:12)\n    at Function.Module._load (module.js:500:3)\n    at Module.require (module.js:568:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:624:30)\n    at Object.Module._extensions..js (module.js:635:10)\n    at Module.load (module.js:545:32)\n    at tryModuleLoad (module.js:508:12)\n    at Function.Module._load (module.js:500:3)\n    at Module.require (module.js:568:17)\n    at require (internal/module.js:11:18)\n    at loadLoader (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:181:3)\n    at NormalModule.build (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:274:15)\n    at Compilation.buildModule (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/Compilation.js:146:10)\n    at moduleFactory.create (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/Compilation.js:433:9)\n    at factory (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:253:5)\n    at applyPluginsAsyncWaterfall (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:99:14)\n    at runLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:194:19)\n    at /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:181:3)\n    at NormalModule.build (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModule.js:274:15)\n    at Compilation.buildModule (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/Compilation.js:146:10)\n    at moduleFactory.create (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/Compilation.js:433:9)\n    at factory (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:253:5)\n    at applyPluginsAsyncWaterfall (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:99:14)\n    at /Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/tapable/lib/Tapable.js:250:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/tapable/lib/Tapable.js:254:13)\n    at resolver (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:74:11)\n    at process.nextTick (/Applications/MAMP/htdocs/Private/Web-Projects/webpack/12. Webpackmonitor/node_modules/webpack/lib/NormalModuleFactory.js:205:8)\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)"
+    ],
+    "size": 11999,
+    "assets": [
+      {
+        "name": "main.bundle.js",
+        "chunks": [
+          0
+        ],
+        "size": 9535,
+        "miniSize": 9250,
+        "minified": false
+      },
+      {
+        "name": "index.html",
+        "chunks": [],
+        "size": 2464
+      }
+    ],
+    "chunks": [
+      {
+        "size": 7022,
+        "files": [
+          "main.bundle.js"
+        ],
+        "modules": [
+          {
+            "name": "./main.js",
+            "size": 76,
+            "id": 0
+          },
+          {
+            "name": "./node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
+            "size": 6946,
+            "id": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "timeStamp": 1508269418347,
+    "time": 14928,
+    "hash": "be42314d5c609d5c9ca7",
+    "errors": [],
+    "size": 470739,
+    "assets": [
+      {
+        "name": "main.bundle.js",
+        "chunks": [
+          0
+        ],
+        "size": 2630,
+        "miniSize": 2346,
+        "minified": false
+      },
+      {
+        "name": "style.css",
+        "chunks": [
+          0
+        ],
+        "size": 465605
+      },
+      {
+        "name": "index.html",
+        "chunks": [],
+        "size": 2504
+      }
+    ],
+    "chunks": [
+      {
+        "size": 117,
+        "files": [
+          "main.bundle.js",
+          "style.css"
+        ],
+        "modules": [
+          {
+            "name": "./main.js",
+            "size": 76,
+            "id": 0
+          },
+          {
+            "name": "./node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
+            "size": 41,
+            "id": 1
+          }
+        ]
+      }
+    ],
+    "pureCssSize": 316888,
+    "unPureCssSize": 465605
+  }
+]
