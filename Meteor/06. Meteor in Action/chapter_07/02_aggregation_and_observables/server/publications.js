@@ -79,10 +79,12 @@ Meteor.publish('distanceByMonth', function () {
 
     // The subscription is ready to send the data to the client
     subscription.ready();
+
+    // The subscription (or this) has an onStop callback that's fired whenever the client subscription is closed
+    subscription.onStop(function () {
+      // The handle that's returned from the observerChanges() function is used to stop observing 
+      workoutHandle.stop();
+    })
 })
 
-// The subscription (or this) has an onStop callback that's fired whenever the client subscription is closed
-subscription.onStop(function () {
-  // The handle that's returned from the observerChanges() function is used to stop observing 
-  workoutHandle.stop();
-})
+
