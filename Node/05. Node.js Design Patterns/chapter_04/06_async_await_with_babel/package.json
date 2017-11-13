@@ -1,0 +1,19 @@
+{
+  "name": "06_async_await_with_babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/babel-node --plugins 'syntax-async-functions,transform-async-to-generator' index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

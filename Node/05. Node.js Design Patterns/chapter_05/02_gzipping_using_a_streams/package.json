@@ -1,0 +1,14 @@
+{
+  "name": "02_gzipping_using_a_streams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js file_to_zip.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zlib": "^1.0.5"
+  }
+}
