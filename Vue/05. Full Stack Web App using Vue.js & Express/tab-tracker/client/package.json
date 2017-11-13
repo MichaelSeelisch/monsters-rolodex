@@ -2,7 +2,7 @@
   "name": "client",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Michael Seelisch <info@michaelseelisch.de>",
+  "author": "Cody Seibert <cseibert113@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -15,8 +15,14 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "lodash": "^4.17.4",
     "vue": "^2.4.2",
-    "vue-router": "^2.7.0"
+    "vue-router": "^2.7.0",
+    "vue-youtube-embed": "^2.1.2",
+    "vuetify": "^0.15.2",
+    "vuex": "^2.4.0",
+    "vuex-persistedstate": "^2.0.0",
+    "vuex-router-sync": "^4.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
