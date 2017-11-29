@@ -5,3 +5,7 @@ $ tsc
 Danach:
 
 $ node simple_app.js
+
+Browser:
+
+http://localhost:3000/

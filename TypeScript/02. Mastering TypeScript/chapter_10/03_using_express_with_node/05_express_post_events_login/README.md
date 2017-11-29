@@ -8,4 +8,4 @@ $ node simple_app.js
 
 Browser:
 
-http://localhost:3000/
+http://localhost:3000/login
