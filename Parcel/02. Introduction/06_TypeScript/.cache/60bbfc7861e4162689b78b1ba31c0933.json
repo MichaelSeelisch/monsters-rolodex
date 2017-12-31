@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"var framework = document.getElementById('tsapp');\nwindow.addEventListener('load', function () {\n    framework.style.color = '#ff3e96',\n        framework.style.fontSize = '2rem',\n        framework.style.fontWeight = 'bold',\n        framework.innerHTML = 'Hello TypeScript';\n});\n"},"hash":"0da2391debfc798d805b2685733d812f"}
