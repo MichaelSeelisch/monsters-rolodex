@@ -1,0 +1,20 @@
+{
+  "name": "chapter_12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bluebird": "^3.5.18",
+    "@types/node": "^8.5.1",
+    "@types/nodemailer": "^4.3.1",
+    "@types/nodemailer-direct-transport": "^1.0.31",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
+    "nodemailer": "^4.4.1"
+  }
+}
