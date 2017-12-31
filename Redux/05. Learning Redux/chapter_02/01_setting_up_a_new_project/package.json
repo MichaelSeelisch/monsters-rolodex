@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm build && serve dist",
+    "start": "npm run build && serve dist",
     "start:dev": "webpack-dev-server",
     "build": "webpack"
   },

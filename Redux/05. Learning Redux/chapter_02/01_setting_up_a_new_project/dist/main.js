@@ -70,7 +70,13 @@
 "use strict";
 
 
-console.log('Hello World!');
+var createPost = {
+  type: 'CREATE_POST',
+  user: 'dan',
+  text: 'New post'
+};
+
+console.log(createPost);
 
 /***/ })
 /******/ ]);
