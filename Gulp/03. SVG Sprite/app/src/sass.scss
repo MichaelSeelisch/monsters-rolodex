@@ -1,0 +1,25 @@
+%svg-common {
+	background: url("dist/images/spritesheet-0bcd120d.svg") no-repeat;
+}
+
+.icon-package {
+	@extend %svg-common;
+	background-position: 0 99.82841990329122%;
+	width: 504.12px;
+	height: 504.12px;
+}
+
+.icon-santa {
+	@extend %svg-common;
+	background-position: 0 0;
+	width: 512px;
+	height: 512px;
+}
+
+.icon-tree {
+	@extend %svg-common;
+	background-position: 100% 0;
+	width: 512px;
+	height: 512px;
+}
+
