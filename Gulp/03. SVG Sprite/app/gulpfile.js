@@ -11,10 +11,11 @@ let config = {
             prefix: '.icon-',
             dimensions: true,
             sprite: './dist/images/spritesheet.svg',
+            spritePath: 'http://www.google.de',
             bust: true,
             render: {
 				scss: {
-                    dest: './src/sass',
+                    dest: './src/sass'
                 }
 			}
 		}
