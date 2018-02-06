@@ -1,0 +1,13 @@
+{
+  "name": "08_writable_stream_back_presuure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node entropyServer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
