@@ -1,17 +1,14 @@
-import * as nodemailer from 'nodemailer'; 
+import GMailService from './app/GMailService'; 
+ 
+let gmailService = new GMailService({ 
+    SmtpServerConnectionString : 'smtp://localhost:1025', 
+    SmtpFromAddress : 'smtp_from@test.com' 
+}); 
 
-var transporter = nodemailer.createTransport(`smtps://<username>%40gmail.com:<password>@smtp.gmail.com`); 
- 
-var mailOptions = { 
-	from : 'from_test@gmail.com', 
-	to : 'to_test@gmail.com', 
-	subject : 'Hello', 
-	text: 'Hello from node.js' 
-}; 
- 
-transporter.sendMail( mailOptions, (error, info) => { 
-	if (error) { 
-		return console.log(`error: ${error}`); 
-	} 
-	console.log(`Message Sent ${info.response}`); 
-});
+gmailService.sendMail( 
+    "test2@test.com",  
+    "subject",  
+    "content").then( (msg) => { 
+        console.log(`sendMail result :(${msg})`); 
+    }
+);
