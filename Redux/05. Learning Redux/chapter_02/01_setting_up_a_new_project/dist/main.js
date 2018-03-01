@@ -70,13 +70,43 @@
 "use strict";
 
 
-var createPost = {
-  type: 'CREATE_POST',
-  user: 'dan',
-  text: 'New post'
+var _actions = __webpack_require__(1);
+
+console.log((0, _actions.createPost)('dan', 'New post'));
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.createPost = undefined;
+
+var _actionTypes = __webpack_require__(2);
+
+var createPost = exports.createPost = function createPost(user, text) {
+    return {
+        type: _actionTypes.CREATE_POST,
+        user: user,
+        text: text
+    };
 };
 
-console.log(createPost);
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var CREATE_POST = exports.CREATE_POST = 'CREATE_POST';
 
 /***/ })
 /******/ ]);

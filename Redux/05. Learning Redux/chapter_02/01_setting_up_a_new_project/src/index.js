@@ -1,9 +1,3 @@
-const CREATE_POST = 'CREATE_POST';
+import { createPost } from './actions';
 
-const createPost = {
-  type: CREATE_POST,
-  user: 'dan',
-  text: 'New post'
-};
-
-console.log(createPost);
+console.log(createPost('dan', 'New post'));
