@@ -1,11 +1,12 @@
 {
-  "name": "01_sending_mail",
+  "name": "03_service_locator_dependency_at_runtime",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc simple_mailer.ts",
-    "start": "node simple_mailer.js"
+    "compile": "tsc",
+    "start": "node simple_mailer.js",
+    "server": "./node_modules/.bin/smtp-sink"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,8 @@
     "@types/nodemailer-direct-transport": "^1.0.31",
     "@types/nodemailer-smtp-transport": "^2.7.4",
     "nodemailer": "^4.6.2"
+  },
+  "devDependencies": {
+    "smtp-sink": "0.0.3"
   }
 }
