@@ -1,0 +1,25 @@
+{
+  "name": "05_bulding_a_constructor_injectorclear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "start": "node simple_mailer.js",
+    "server": "./node_modules/.bin/smtp-sink"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bluebird": "^3.5.20",
+    "@types/node": "^9.4.6",
+    "@types/nodemailer": "^4.3.4",
+    "@types/nodemailer-direct-transport": "^1.0.31",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
+    "nodemailer": "^4.6.2"
+  },
+  "devDependencies": {
+    "smtp-sink": "0.0.3"
+  }
+}
