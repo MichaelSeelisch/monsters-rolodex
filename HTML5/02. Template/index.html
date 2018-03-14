@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Tag</title>
+</head>
+<body>
+    
+    <template id="t">
+        <figure>
+           <img>
+           <figcaption></figcaption>
+        </figure>
+     </template>
+
+     <div class="bss-slides"></div>
+
+     <script>
+         var src = [
+            ['http://via.placeholder.com/350x150','Am Strand'],
+            ['http://via.placeholder.com/350x150', 'Luftschlösser '],
+            ['http://via.placeholder.com/350x150','Trout fishing in america']
+            ];
+
+            var t = document.querySelector('#t');
+            var figcaption = t.content.querySelector('figcaption');
+            var img = t.content.querySelector('img'); 
+
+            src.forEach (function (image, index) {
+                figcaption.innerHTML = src[index][1];
+                img.setAttribute('src',src[index][0]);
+                img.setAttribute('alt',src[index][1]);
+                var clone = document.importNode(t.content, true);
+                document.querySelector('.bss-slides').appendChild (clone);
+            });
+
+            makeBSS('.bss-slides');
+     </script>
+
+</body>
+</html>
