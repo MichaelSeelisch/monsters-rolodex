@@ -1,5 +1,8 @@
 module.exports = {
+    mode: 'development',
+
     entry: "./app/index.tsx",
+    
     output: {
         filename: "./dist/bundle.js"
     },
