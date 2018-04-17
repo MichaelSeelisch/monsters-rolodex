@@ -1,0 +1,24 @@
+{
+    "name": "01_an_express_react_website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "compile": "tsc && ./node_modules/.bin/webpack",
+        "start": "npm run compile && node ./dist/main",
+        "test": "echo 'Error: no test specifie' && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0",
+        "hbs": "^4.0.1",
+        "promise-polyfill": "^6.0.2",
+        "react": "^15.4.0",
+        "react-dom": "^15.4.0",
+        "typescript": "^2.8.1",
+        "webpack": "^4.4.1",
+        "whatwg-fetch": "^2.0.1"
+    }
+}
