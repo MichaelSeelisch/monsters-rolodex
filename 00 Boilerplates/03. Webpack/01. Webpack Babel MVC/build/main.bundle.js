@@ -44,6 +44,11 @@
 /******/ 		}
 /******/ 	};
 /******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -59,198 +64,59 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/******/ ({
+
+/***/ "./src/PenguinController.js":
+/*!**********************************!*\
+  !*** ./src/PenguinController.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-var _PenguinController = __webpack_require__(1);
-
-var _PenguinController2 = _interopRequireDefault(_PenguinController);
-
-var _PenguinModel = __webpack_require__(2);
-
-var _PenguinModel2 = _interopRequireDefault(_PenguinModel);
-
-var _PenguinView = __webpack_require__(3);
-
-var _PenguinView2 = _interopRequireDefault(_PenguinView);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var penguinModel = new _PenguinModel2.default();
-
-var targetElement = document.getElementById('listOfPenguins');
-var penguinView = new _PenguinView2.default(targetElement);
-
-var controller = new _PenguinController2.default(penguinView, penguinModel);
-controller.onClickGetPenguin({ currentTarget: { dataset: { penguinIndex: 0 } } });
-
-console.log('App Started!');
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return PenguinController; });\nclass PenguinController {\n\n  constructor(penguinView, penguinModel) {\n    this.penguinView = penguinView;\n    this.penguinModel = penguinModel;\n\n    this.penguinView.onClickGetPenguin = this.onClickGetPenguin.bind(this);\n  }\n\n  onClickGetPenguin(event) {\n    let target = event.currentTarget;\n    let index = parseInt(target.dataset.penguinIndex, 10);\n\n    this.penguinModel.getPenguin(index, this.showPenguin.bind(this));\n  }\n\n  showPenguin(penguinModelData) {\n    let penguinViewModel = {\n      name: penguinModelData.name,\n      imageUrl: penguinModelData.imageUrl,\n      size: penguinModelData.size,\n      favoriteFood: penguinModelData.favoriteFood\n    };\n\n    penguinViewModel.previousIndex = penguinModelData.index - 1;\n    penguinViewModel.nextIndex = penguinModelData.index + 1;\n\n    if (penguinModelData.index === 0) {\n      penguinViewModel.previousIndex = penguinModelData.count - 1;\n    }\n\n    if (penguinModelData.index === penguinModelData.count - 1) {\n      penguinViewModel.nextIndex = 0;\n    }\n\n    this.penguinView.render(penguinViewModel);\n  }\n};\n\n//# sourceURL=webpack:///./src/PenguinController.js?");
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+
+/***/ "./src/PenguinModel.js":
+/*!*****************************!*\
+  !*** ./src/PenguinModel.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var PenguinController = function () {
-  function PenguinController(penguinView, penguinModel) {
-    _classCallCheck(this, PenguinController);
-
-    this.penguinView = penguinView;
-    this.penguinModel = penguinModel;
-
-    this.penguinView.onClickGetPenguin = this.onClickGetPenguin.bind(this);
-  }
-
-  _createClass(PenguinController, [{
-    key: "onClickGetPenguin",
-    value: function onClickGetPenguin(event) {
-      var target = event.currentTarget;
-      var index = parseInt(target.dataset.penguinIndex, 10);
-
-      this.penguinModel.getPenguin(index, this.showPenguin.bind(this));
-    }
-  }, {
-    key: "showPenguin",
-    value: function showPenguin(penguinModelData) {
-      var penguinViewModel = {
-        name: penguinModelData.name,
-        imageUrl: penguinModelData.imageUrl,
-        size: penguinModelData.size,
-        favoriteFood: penguinModelData.favoriteFood
-      };
-
-      penguinViewModel.previousIndex = penguinModelData.index - 1;
-      penguinViewModel.nextIndex = penguinModelData.index + 1;
-
-      if (penguinModelData.index === 0) {
-        penguinViewModel.previousIndex = penguinModelData.count - 1;
-      }
-
-      if (penguinModelData.index === penguinModelData.count - 1) {
-        penguinViewModel.nextIndex = 0;
-      }
-
-      this.penguinView.render(penguinViewModel);
-    }
-  }]);
-
-  return PenguinController;
-}();
-
-exports.default = PenguinController;
-;
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return PenguinModel; });\nclass PenguinModel {\n\n  constructor() {\n    this.XMLHttpRequest = XMLHttpRequest;\n  }\n\n  getPenguin(index, fn) {\n    let oReq = new this.XMLHttpRequest();\n\n    oReq.onload = function onLoad(e) {\n      let ajaxResponse = JSON.parse(e.currentTarget.responseText);\n      let penguin = ajaxResponse[index];\n\n      penguin.index = index;\n      penguin.count = ajaxResponse.length;\n\n      fn(penguin);\n    };\n\n    oReq.open('GET', 'https://codepen.io/beautifulcoder/pen/vmOOLr.js', true);\n    oReq.send();\n  }\n};\n\n//# sourceURL=webpack:///./src/PenguinModel.js?");
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+
+/***/ "./src/PenguinView.js":
+/*!****************************!*\
+  !*** ./src/PenguinView.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var PenguinModel = function () {
-  function PenguinModel() {
-    _classCallCheck(this, PenguinModel);
-
-    this.XMLHttpRequest = XMLHttpRequest;
-  }
-
-  _createClass(PenguinModel, [{
-    key: 'getPenguin',
-    value: function getPenguin(index, fn) {
-      var oReq = new this.XMLHttpRequest();
-
-      oReq.onload = function onLoad(e) {
-        var ajaxResponse = JSON.parse(e.currentTarget.responseText);
-        var penguin = ajaxResponse[index];
-
-        penguin.index = index;
-        penguin.count = ajaxResponse.length;
-
-        fn(penguin);
-      };
-
-      oReq.open('GET', 'https://codepen.io/beautifulcoder/pen/vmOOLr.js', true);
-      oReq.send();
-    }
-  }]);
-
-  return PenguinModel;
-}();
-
-exports.default = PenguinModel;
-;
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return PenguinView; });\nclass PenguinView {\n\n  constructor(element) {\n    this.element = element;\n    this.onClickGetPenguin = null;\n  }\n\n  render(viewModel) {\n    this.element.innerHTML = '<h3>' + viewModel.name + '</h3>' + '<img class=\"penguin-image\" src=\"' + viewModel.imageUrl + '\" alt=\"' + viewModel.name + '\" />' + '<p><b>Size:</b> ' + viewModel.size + '</p>' + '<p><b>Favorite food:</b> ' + viewModel.favoriteFood + '</p>' + '<a id=\"previousPenguin\" class=\"previous button\" href=\"javascript:void(0);\"' + ' data-penguin-index=\"' + viewModel.previousIndex + '\">Previous</a> ' + '<a id=\"nextPenguin\" class=\"next button\" href=\"javascript:void(0);\"' + ' data-penguin-index=\"' + viewModel.nextIndex + '\">Next</a>';\n\n    this.previousIndex = viewModel.previousIndex;\n    this.nextIndex = viewModel.nextIndex;\n\n    let previousPenguin = this.element.querySelector('#previousPenguin');\n    previousPenguin.addEventListener('click', this.onClickGetPenguin);\n\n    let nextPenguin = this.element.querySelector('#nextPenguin');\n    nextPenguin.addEventListener('click', this.onClickGetPenguin);\n    nextPenguin.focus();\n  }\n};\n\n//# sourceURL=webpack:///./src/PenguinView.js?");
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var PenguinView = function () {
-  function PenguinView(element) {
-    _classCallCheck(this, PenguinView);
-
-    this.element = element;
-    this.onClickGetPenguin = null;
-  }
-
-  _createClass(PenguinView, [{
-    key: 'render',
-    value: function render(viewModel) {
-      this.element.innerHTML = '<h3>' + viewModel.name + '</h3>' + '<img class="penguin-image" src="' + viewModel.imageUrl + '" alt="' + viewModel.name + '" />' + '<p><b>Size:</b> ' + viewModel.size + '</p>' + '<p><b>Favorite food:</b> ' + viewModel.favoriteFood + '</p>' + '<a id="previousPenguin" class="previous button" href="javascript:void(0);"' + ' data-penguin-index="' + viewModel.previousIndex + '">Previous</a> ' + '<a id="nextPenguin" class="next button" href="javascript:void(0);"' + ' data-penguin-index="' + viewModel.nextIndex + '">Next</a>';
-
-      this.previousIndex = viewModel.previousIndex;
-      this.nextIndex = viewModel.nextIndex;
-
-      var previousPenguin = this.element.querySelector('#previousPenguin');
-      previousPenguin.addEventListener('click', this.onClickGetPenguin);
-
-      var nextPenguin = this.element.querySelector('#nextPenguin');
-      nextPenguin.addEventListener('click', this.onClickGetPenguin);
-      nextPenguin.focus();
-    }
-  }]);
-
-  return PenguinView;
-}();
-
-exports.default = PenguinView;
-;
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _PenguinController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PenguinController */ \"./src/PenguinController.js\");\n/* harmony import */ var _PenguinModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PenguinModel */ \"./src/PenguinModel.js\");\n/* harmony import */ var _PenguinView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PenguinView */ \"./src/PenguinView.js\");\n\n\n\n\nlet penguinModel = new _PenguinModel__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n\nlet targetElement = document.getElementById('listOfPenguins');\nlet penguinView = new _PenguinView__WEBPACK_IMPORTED_MODULE_2__[\"default\"](targetElement);\n\nlet controller = new _PenguinController__WEBPACK_IMPORTED_MODULE_0__[\"default\"](penguinView, penguinModel);\ncontroller.onClickGetPenguin({ currentTarget: { dataset: { penguinIndex: 0 } } });\n\nconsole.log('App Started!');\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });

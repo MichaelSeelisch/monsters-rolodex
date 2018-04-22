@@ -5,7 +5,8 @@ const util = require("util");
 let router = express.Router();
 exports.router = router;
 router.get('/', (req, res, next) => {
-    res.render('index', { title: 'ExpressAurelia'
+    res.render('index', {
+        title: 'ExpressReact'
     });
 });
 router.get('/menuitems', (req, res, next) => {

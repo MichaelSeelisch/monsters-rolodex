@@ -11,8 +11,14 @@ export function postsReducer (state = [], action) {
         case EDIT_POST: {
             const {type, id, ...newPost} = action;
 
-            return state.map((oldPost, index) => 
-                action.id === index
+            /*  When the index value matches the id specified in the action, 
+             *  the post object will be overwritten with all other properties 
+             *  from the action. When the index value doesn't match, 
+             *  we simply return the oldPost.
+             */ 
+            return state.map((oldPost, index) =>
+                // We use the spread operator to combine the objects
+                action.id === index ? { ...oldPost, ...newPost } : oldPost
             );
         }
 

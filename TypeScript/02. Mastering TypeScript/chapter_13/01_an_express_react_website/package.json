@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "compile": "tsc && ./node_modules/.bin/webpack",
+        "compile": "tsc && webpack",
         "start": "npm run compile && node ./dist/main",
         "test": "echo 'Error: no test specifie' && exit 1"
     },

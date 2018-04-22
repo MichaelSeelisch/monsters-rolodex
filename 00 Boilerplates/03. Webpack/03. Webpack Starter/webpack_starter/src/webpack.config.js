@@ -11,10 +11,10 @@ module.exports = {
 		path: path.resolve(__dirname, '../bin')
 	},
 	module: {
-		rules: [
+	    rules: [
 			{
 				test: /\.(scss|css)$/,
-        use: ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({
 					use: [
 						{
 							loader: 'css-loader',
@@ -42,16 +42,23 @@ module.exports = {
 				loaders: [
 					'file-loader?name=[name].[ext]&publicPath=./img/&outputPath=./img/',
 					{
-						loader: 'image-webpack-loader',
-						query: {
-							progressive: true,
-							optimizationLevel: 7,
-							interlaced: false,
-							pngquant: {
-								quality: '65-90',
-								speed: 4
-							}
-						}
+                        loader: 'image-webpack-loader',
+                        options: {
+                            progressive: true,
+                            optipng: {
+                                optimizationLevel: 7,
+                            },
+                            mozjpeg: {
+                                quality: 65
+                            },
+                            gifsicle: {
+                                interlaced: true,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            }
+                        }
 					}
 				]
 			}
