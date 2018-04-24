@@ -1,0 +1,22 @@
+{
+  "name": "hsl-to-hex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/tap --cov test",
+    "lint": "standard"
+  },
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "dependencies": {
+    "hsl-to-rgb-for-reals": "^1.1.0"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1",
+    "tap": "^11.1.4"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
