@@ -13,10 +13,22 @@ export default class NavBar extends React.Component<NavBarProps, {}> {
     state: NavBarProps; 
     
     constructor (props ? : NavBarProps) { 
-        super(props); 
+        super(props);
+
         this.state = {
             menuItems : []
-        }; 
+        };
+        
+        fetch('/menuitems') 
+            .then( (response) => {  
+                return response.json();
+            }) 
+            .then( (json) => { 
+                this.setState({ menuItems : json.menuItems}); 
+            }) 
+            .catch( (err) => { 
+                console.log(`err : ${err}`); 
+            }); 
     }
     
     render() { 

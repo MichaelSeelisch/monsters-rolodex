@@ -13,6 +13,16 @@ class NavBar extends React.Component {
         this.state = {
             menuItems: []
         };
+        fetch('/menuitems')
+            .then((response) => {
+            return response.json();
+        })
+            .then((json) => {
+            this.setState({ menuItems: json.menuItems });
+        })
+            .catch((err) => {
+            console.log(`err : ${err}`);
+        });
     }
     render() {
         return React.createElement("div", null,
