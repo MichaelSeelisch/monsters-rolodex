@@ -1,0 +1,25 @@
+{
+    "name": "uxm",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "yarn wlan-server",
+        "wlan-server": "webpack-dev-server"
+    },
+    "dependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.6.1",
+        "css-loader": "^0.28.11",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "style-loader": "^0.21.0",
+        "uglifyjs-webpack-plugin": "^1.2.5",
+        "uxm": "^1.0.0",
+        "webpack": "^4.6.0",
+        "webpack-dev-server": "^3.1.3"
+    },
+    "devDependencies": {
+        "webpack-cli": "^2.0.15"
+    }
+}
