@@ -1,0 +1,16 @@
+{
+  "name": "12_asynchronous_control_flow_with_streams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node concat allTogether.txt file1.txt file2.txt"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "from2-array": "0.0.4",
+    "through2": "^2.0.3"
+  }
+}

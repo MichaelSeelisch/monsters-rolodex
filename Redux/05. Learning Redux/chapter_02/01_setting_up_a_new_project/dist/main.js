@@ -88,13 +88,16 @@ var _actions = __webpack_require__(2);
 
 var _reducers = __webpack_require__(3);
 
+var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var initialState = [];
 
 var action = (0, _actions.createPost)('dan', 'New post');
 
-var newState = (0, _reducers.postsReducer)(initialState, action);
-
-console.log(newState);
+var state = (0, _reducers2.default)(undefined, { type: 'INIT_ACTION' });
+console.log('initial state:', state);
 
 /***/ }),
 /* 2 */
@@ -146,7 +149,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-exports.postsReducer = postsReducer;
+var _redux = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"redux\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 var _actionTypes = __webpack_require__(0);
 
@@ -192,6 +195,24 @@ function postsReducer() {
             return state;
     }
 };
+
+function filterReducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'all';
+    var action = arguments[1];
+
+    if (action.type === _actionTypes.SET_FILTER) {
+        return action.filter;
+    } else {
+        return state;
+    }
+}
+
+var appReducer = (0, _redux.combineReducers)({
+    posts: postsReducer,
+    filter: filterReducer
+});
+
+exports.default = appReducer;
 
 /***/ })
 /******/ ]);
