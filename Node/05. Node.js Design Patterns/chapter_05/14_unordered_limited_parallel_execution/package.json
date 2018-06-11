@@ -1,6 +1,6 @@
 {
   "name": "14_unordered_limited_parallel_execution",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "clockface": "^1.1.1"
+  },
   "devDependencies": {
     "from2-array": "0.0.4",
     "request": "^2.85.0",
