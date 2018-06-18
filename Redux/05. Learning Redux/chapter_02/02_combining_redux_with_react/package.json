@@ -1,5 +1,5 @@
 {
-  "name": "01_setting_up_a_new_project",
+  "name": "02_combining_redux_with_react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +20,8 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "serve": "^6.4.1"
   }
 }
