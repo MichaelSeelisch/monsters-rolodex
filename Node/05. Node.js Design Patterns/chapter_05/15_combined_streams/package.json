@@ -1,0 +1,17 @@
+{
+  "name": "15_combinded_streams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node archive mypassword file.txt"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "crypto": "^1.0.1",
+    "multipipe": "^2.0.3",
+    "zlib": "^1.0.5"
+  }
+}
