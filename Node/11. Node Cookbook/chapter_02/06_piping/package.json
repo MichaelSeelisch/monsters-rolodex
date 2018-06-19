@@ -1,0 +1,13 @@
+{
+  "name": "06_piping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo -e 'hi\nthere' | node base64.js", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC"
+}
