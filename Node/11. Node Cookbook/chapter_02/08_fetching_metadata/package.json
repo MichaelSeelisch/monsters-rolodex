@@ -1,0 +1,15 @@
+{
+  "name": "08_fetching_metadata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "meta.js",
+  "scripts": {
+    "start": "node meta.js my-folder"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "dependencies": {
+    "tableaux": "^1.0.1"
+  }
+}

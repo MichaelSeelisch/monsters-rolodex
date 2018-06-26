@@ -1,0 +1,15 @@
+{
+  "name": "03_incremental_processing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node null-byte-remover.js"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "strip-bytes-stream": "^1.1.0"
+  }
+}
