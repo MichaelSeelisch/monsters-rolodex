@@ -1,0 +1,16 @@
+{
+  "name": "17_merging_streams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node mergeTar dest.tar inputFolder_01 inputFolder_02"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "fstream": "^1.0.11",
+    "tar": "^4.4.4"
+  }
+}

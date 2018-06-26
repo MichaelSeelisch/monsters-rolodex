@@ -1,0 +1,12 @@
+{
+  "name": "16_forking_streams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generateHashes.js",
+  "scripts": {
+    "start": "node generateHashes inputFile.txt"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC"
+}
