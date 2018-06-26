@@ -1,11 +1,12 @@
 {
-  "name": "wrapping-external-libraries-as-vue-components",
+  "name": "05_Encapsulating_External_Behavior_Background_Scrolling",
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev":
+      "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
@@ -13,7 +14,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "pikaday": "1.7.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -71,10 +71,6 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "keywords": []
 }
