@@ -11,6 +11,13 @@ const Greeting = ({ name }) => (
     )
 );
 
+const App = () => (
+    <div>
+        <Greeting name="Daniel" />
+        <Greeting name="Destiny" />
+    </div>
+);
+
 ReactDOM.render(
     <Greetng name='dan' />
     document.getElementById('root')
