@@ -1,0 +1,12 @@
+{
+  "name": "03_factory_simple_code_profiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "profilerTest.js",
+  "scripts": {
+    "start": "export NODE_ENV=development; node profilerTest.js"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC"
+}
