@@ -1,0 +1,16 @@
+{
+  "name": "13_watching_files_and_directories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node watcher my-file.txt",
+    "change": "echo 'more content' >> my-file.txt"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "dependencies": {
+    "human-time": "0.0.1"
+  }
+}
