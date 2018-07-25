@@ -90,11 +90,11 @@
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.js */ \"./main.js\");\n\n\nObject(_main_js__WEBPACK_IMPORTED_MODULE_0__[\"main\"])();\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("\n\nvar _main = __webpack_require__(/*! ./main.js */ \"./main.js\");\n\n(0, _main.main)();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -102,11 +102,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mai
 /*!*****************!*\
   !*** ./main.js ***!
   \*****************/
-/*! exports provided: main */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"main\", function() { return main; });\n/* harmony import */ var _rockets_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rockets/index.js */ \"./rockets/index.js\");\n\n\nfunction main () {\n    const rockets = [_rockets_index_js__WEBPACK_IMPORTED_MODULE_0__[\"saturnV\"], _rockets_index_js__WEBPACK_IMPORTED_MODULE_0__[\"atlas\"], _rockets_index_js__WEBPACK_IMPORTED_MODULE_0__[\"falconHeavy\"]];\n\n    for (const rocket of rockets.values()) {\n        rocket.launch();\n    }\n}\n\n\n//# sourceURL=webpack:///./main.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.main = main;\n\nvar _index = __webpack_require__(/*! ./rockets/index.js */ \"./rockets/index.js\");\n\nfunction main() {\n    var rockets = [_index.saturnV, _index.atlas, _index.falconHeavy];\n    rockets.map(function (rocket) {\n        return rocket.launch();\n    });\n}\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ }),
 
@@ -3803,11 +3803,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!**************************!*\
   !*** ./rockets/atlas.js ***!
   \**************************/
-/*! exports provided: atlas */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"atlas\", function() { return atlas; });\n/* harmony import */ var _launch_sequence_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./launch-sequence.js */ \"./rockets/launch-sequence.js\");\n\n\nconst name = 'Atlas';\nconst COUNT_DOWN_DURATION = 20;\n\nconst atlas = {\n    name: name,\n    COUNT_DOWN_DURATION: COUNT_DOWN_DURATION,\n\n    launch: function () {\n        Object(_launch_sequence_js__WEBPACK_IMPORTED_MODULE_0__[\"launchSequence\"])(COUNT_DOWN_DURATION, name);\n    }\n};\n\n\n//# sourceURL=webpack:///./rockets/atlas.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.atlas = undefined;\n\nvar _launchSequence = __webpack_require__(/*! ./launch-sequence.js */ \"./rockets/launch-sequence.js\");\n\nvar name = 'Atlas';\nvar COUNT_DOWN_DURATION = 20;\n\nvar atlas = exports.atlas = {\n    name: name,\n    COUNT_DOWN_DURATION: COUNT_DOWN_DURATION,\n\n    launch: function launch() {\n        (0, _launchSequence.launchSequence)(COUNT_DOWN_DURATION, name);\n    }\n};\n\n//# sourceURL=webpack:///./rockets/atlas.js?");
 
 /***/ }),
 
@@ -3815,11 +3815,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!*********************************!*\
   !*** ./rockets/falcon-heavy.js ***!
   \*********************************/
-/*! exports provided: name, COUNT_DOWN_DURATION, launch */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"name\", function() { return name; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"COUNT_DOWN_DURATION\", function() { return COUNT_DOWN_DURATION; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"launch\", function() { return launch; });\n/* harmony import */ var _launch_sequence_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./launch-sequence.js */ \"./rockets/launch-sequence.js\");\n\n\nconst name = \"Falcon Heavy\";\nconst COUNT_DOWN_DURATION = 5;\n\nfunction launch () {\n    Object(_launch_sequence_js__WEBPACK_IMPORTED_MODULE_0__[\"launchSequence\"])(COUNT_DOWN_DURATION, name);\n};\n\n\n//# sourceURL=webpack:///./rockets/falcon-heavy.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.COUNT_DOWN_DURATION = exports.name = undefined;\nexports.launch = launch;\n\nvar _launchSequence = __webpack_require__(/*! ./launch-sequence.js */ \"./rockets/launch-sequence.js\");\n\nvar name = exports.name = \"Falcon Heavy\";\nvar COUNT_DOWN_DURATION = exports.COUNT_DOWN_DURATION = 5;\n\nfunction launch() {\n    (0, _launchSequence.launchSequence)(COUNT_DOWN_DURATION, name);\n};\n\n//# sourceURL=webpack:///./rockets/falcon-heavy.js?");
 
 /***/ }),
 
@@ -3827,11 +3827,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**************************!*\
   !*** ./rockets/index.js ***!
   \**************************/
-/*! exports provided: falconHeavy, saturnV, atlas */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _falcon_heavy_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./falcon-heavy.js */ \"./rockets/falcon-heavy.js\");\n/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, \"falconHeavy\", function() { return _falcon_heavy_js__WEBPACK_IMPORTED_MODULE_0__; });\n/* harmony import */ var _saturn_v_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./saturn-v.js */ \"./rockets/saturn-v.js\");\n/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, \"saturnV\", function() { return _saturn_v_js__WEBPACK_IMPORTED_MODULE_1__; });\n/* harmony import */ var _atlas_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./atlas.js */ \"./rockets/atlas.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"atlas\", function() { return _atlas_js__WEBPACK_IMPORTED_MODULE_2__[\"atlas\"]; });\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./rockets/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.atlas = exports.saturnV = exports.falconHeavy = undefined;\n\nvar _atlas = __webpack_require__(/*! ./atlas.js */ \"./rockets/atlas.js\");\n\nObject.defineProperty(exports, 'atlas', {\n  enumerable: true,\n  get: function get() {\n    return _atlas.atlas;\n  }\n});\n\nvar _falconHeavy = __webpack_require__(/*! ./falcon-heavy.js */ \"./rockets/falcon-heavy.js\");\n\nvar falconHeavy = _interopRequireWildcard(_falconHeavy);\n\nvar _saturnV = __webpack_require__(/*! ./saturn-v.js */ \"./rockets/saturn-v.js\");\n\nvar saturnV = _interopRequireWildcard(_saturnV);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nexports.falconHeavy = falconHeavy;\nexports.saturnV = saturnV;\n\n//# sourceURL=webpack:///./rockets/index.js?");
 
 /***/ }),
 
@@ -3839,11 +3839,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fal
 /*!************************************!*\
   !*** ./rockets/launch-sequence.js ***!
   \************************************/
-/*! exports provided: launchSequence */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"launchSequence\", function() { return launchSequence; });\nfunction launchSequence (countDownDuration, name) {\n    let currCount = countDownDuration;\n    console.log(`Launching in ${countDownDuration}`, name);\n\n    const countDownInterval = setInterval(function () {\n        currCount--;\n\n        if (0 < currCount) {\n            console.log(currCount);\n        } else {\n            console.log('%s LIFTOFF!!! ', name);\n            clearInterval(countDownInterval);\n        }\n    }, 1000);\n  }\n\n\n//# sourceURL=webpack:///./rockets/launch-sequence.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.launchSequence = launchSequence;\nfunction launchSequence(countDownDuration, name) {\n    var currCount = countDownDuration;\n    console.log('Launching in ' + countDownDuration, name);\n\n    var countDownInterval = setInterval(function () {\n        currCount--;\n\n        if (0 < currCount) {\n            console.log(currCount);\n        } else {\n            console.log('%s LIFTOFF!!! ', name);\n            clearInterval(countDownInterval);\n        }\n    }, 1000);\n}\n\n//# sourceURL=webpack:///./rockets/launch-sequence.js?");
 
 /***/ }),
 
@@ -3851,11 +3851,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!*****************************!*\
   !*** ./rockets/saturn-v.js ***!
   \*****************************/
-/*! exports provided: name, COUNT_DOWN_DURATION, launch */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"name\", function() { return name; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"COUNT_DOWN_DURATION\", function() { return COUNT_DOWN_DURATION; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"launch\", function() { return launch; });\n/* harmony import */ var _launch_sequence_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./launch-sequence.js */ \"./rockets/launch-sequence.js\");\n\n\nconst name = \"Saturn V\";\nconst COUNT_DOWN_DURATION = 10;\n\nfunction launch () {\n  Object(_launch_sequence_js__WEBPACK_IMPORTED_MODULE_0__[\"launchSequence\"])(COUNT_DOWN_DURATION, name);\n}\n\n\n//# sourceURL=webpack:///./rockets/saturn-v.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.COUNT_DOWN_DURATION = exports.name = undefined;\nexports.launch = launch;\n\nvar _launchSequence = __webpack_require__(/*! ./launch-sequence.js */ \"./rockets/launch-sequence.js\");\n\nvar name = exports.name = \"Saturn V\";\nvar COUNT_DOWN_DURATION = exports.COUNT_DOWN_DURATION = 10;\n\nfunction launch() {\n  (0, _launchSequence.launchSequence)(COUNT_DOWN_DURATION, name);\n}\n\n//# sourceURL=webpack:///./rockets/saturn-v.js?");
 
 /***/ }),
 
