@@ -23,7 +23,7 @@ const render = () => {
         item.addEventListener('click', () =>
             store.dispatch(editPost(index, post.text + '!'))
         );
-        
+
         const text = document.createTextNode(post.user + ' - ' + post.text);
         item.appendChild(text)
         root.appendChild(item)
