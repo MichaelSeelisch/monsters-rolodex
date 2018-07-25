@@ -1,0 +1,14 @@
+{
+  "name": "16_UDP_sockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "node server.js",
+    "start-client": "node client.js 'Namey McNameface'"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC"
+}

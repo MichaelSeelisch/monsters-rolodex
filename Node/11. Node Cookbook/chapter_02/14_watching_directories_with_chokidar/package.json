@@ -1,0 +1,16 @@
+{
+  "name": "14_watching_directories_with_chokidar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node watcher.js my-folder"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^2.0.4",
+    "human-time": "0.0.1"
+  }
+}
