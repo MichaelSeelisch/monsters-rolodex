@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Post from './components/Post.jsx';
+import PostList from './components/PostList.jsx';
 
-ReactDOM.render(<Post user='Dan' text='Hello World!' />,
+const posts = [
+    { user: 'dan', text: 'hello world!' },
+    { user: 'des', text: 'hi!' }
+];
+
+ReactDOM.render(
+    <PostList posts={posts} />,
     document.getElementById('root')
 );
