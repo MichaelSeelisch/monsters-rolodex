@@ -1,0 +1,12 @@
+{
+  "name": "05_revealing_constructor_read_only_event_emitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC"
+}

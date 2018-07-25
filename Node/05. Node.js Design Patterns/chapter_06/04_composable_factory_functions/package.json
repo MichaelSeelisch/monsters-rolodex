@@ -1,0 +1,15 @@
+{
+  "name": "04_composable_factory_functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "characters.js",
+  "scripts": {
+    "start": "node characters.js"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "stampit": "^4.1.2"
+  }
+}
