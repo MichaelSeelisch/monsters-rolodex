@@ -1,22 +1,22 @@
 <script>
-export default {
-  props: ["tag"],
-  data() {
-    return {}
-  },
-  render(createElement) {
-    return createElement(
-      this.tag,
-      {
-        attrs: {
-          class: "btn btn-blue"
+    export default {
+        props: ["tag"],
+        data() {
+            return {}
         },
-        on: {
-          click: () => alert("Clicked!")
+        render(createElement) {
+            return createElement(
+                this.tag,
+                {
+                    attrs: {
+                        class: "btn btn-blue"
+                    },
+                    on: {
+                        click: () => alert("Clicked!")
+                    }
+                },
+                "Hello world!"
+            )
         }
-      },
-      "Hello world!"
-    )
-  }
-}
+    }
 </script>
