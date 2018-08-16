@@ -1,5 +1,5 @@
 // The function accepts a 'body' as parameter
-export default body => `
+export default (body, gists) => `
     <!DOCTYPE html>
     <html>
     <head>
@@ -7,6 +7,7 @@ export default body => `
     </head>
     <body>
         <div id='app'>${body}</div>
+        <script>window.gists = ${JSON.stringify(gists)}</script>
         <script src='/bundle.js'></script>
     </body>
     </html>

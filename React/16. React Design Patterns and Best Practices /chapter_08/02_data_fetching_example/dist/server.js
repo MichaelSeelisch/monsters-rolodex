@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    'Hello React'\n  );\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ \"prop-types\");\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App(_ref) {\n    var gists = _ref.gists;\n    return _react2.default.createElement(\n        'ul',\n        null,\n        gists.map(function (gist) {\n            return _react2.default.createElement(\n                'li',\n                { key: gist.id },\n                gist.description\n            );\n        })\n    );\n};\n\nApp.propTypes = {\n    gists: _propTypes2.default.array\n};\n\nexports.default = App;\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _server2 = _interopRequireDefault(_server);\n\nvar _app = __webpack_require__(/*! ./app */ \"./src/app.js\");\n\nvar _app2 = _interopRequireDefault(_app);\n\nvar _template = __webpack_require__(/*! ./template */ \"./src/template.js\");\n\nvar _template2 = _interopRequireDefault(_template);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// NOTICE '/server' HERE!!!!\n\nvar app = (0, _express2.default)();\napp.use(_express2.default.static('dist/public'));\n\napp.get('/', function (req, res) {\n    var body = _server2.default.renderToString(_react2.default.createElement(_app2.default, null));\n    var html = (0, _template2.default)(body);\n\n    res.send(html);\n});\n\napp.listen(3000, function () {\n    console.log('Listening on port 3000');\n});\n\n//# sourceURL=webpack:///./src/server.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _server2 = _interopRequireDefault(_server);\n\nvar _isomorphicFetch = __webpack_require__(/*! isomorphic-fetch */ \"isomorphic-fetch\");\n\nvar _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);\n\nvar _app = __webpack_require__(/*! ./app */ \"./src/app.js\");\n\nvar _app2 = _interopRequireDefault(_app);\n\nvar _template = __webpack_require__(/*! ./template */ \"./src/template.js\");\n\nvar _template2 = _interopRequireDefault(_template);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)(); // NOTICE '/server' HERE!!!!\n\napp.use(_express2.default.static('dist/public'));\n\napp.get('/', function (req, res) {\n    fetch('https://api.github.com/users/gaearon/gists').then(function (response) {\n        return response.json();\n    }).then(function (gists) {\n        var body = _server2.default.renderToString(_react2.default.createElement(_app2.default, { gists: gists }));\n        var html = (0, _template2.default)(body, gists);\n        res.send(html);\n    });\n});\n\napp.listen(3000, function () {\n    console.log('Listening on port 3000');\n});\n\n//# sourceURL=webpack:///./src/server.js?");
 
 /***/ }),
 
@@ -118,7 +118,7 @@ eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\n// The function accepts a 'body' as parameter\nexports.default = function (body) {\n    return \"\\n    <!DOCTYPE html>\\n    <html>\\n    <head>\\n        <meta charset=\\\"UTF-8\\\">\\n    </head>\\n    <body>\\n        <div id='app'>\" + body + \"</div>\\n        <script src='/bundle.js'></script>\\n    </body>\\n    </html>\\n\";\n};\n\n//# sourceURL=webpack:///./src/template.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\n// The function accepts a 'body' as parameter\nexports.default = function (body, gists) {\n    return \"\\n    <!DOCTYPE html>\\n    <html>\\n    <head>\\n        <meta charset=\\\"UTF-8\\\">\\n    </head>\\n    <body>\\n        <div id='app'>\" + body + \"</div>\\n        <script>window.gists = \" + JSON.stringify(gists) + \"</script>\\n        <script src='/bundle.js'></script>\\n    </body>\\n    </html>\\n\";\n};\n\n//# sourceURL=webpack:///./src/template.js?");
 
 /***/ }),
 
@@ -130,6 +130,28 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "isomorphic-fetch":
+/*!***********************************!*\
+  !*** external "isomorphic-fetch" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"isomorphic-fetch\");\n\n//# sourceURL=webpack:///external_%22isomorphic-fetch%22?");
+
+/***/ }),
+
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"prop-types\");\n\n//# sourceURL=webpack:///external_%22prop-types%22?");
 
 /***/ }),
 

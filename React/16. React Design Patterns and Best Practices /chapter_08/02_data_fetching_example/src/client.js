@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom';
 import App from './app';
 
 ReactDOM.hydrate(
-    <App />,
+    <App gists={window.gists} />,
     document.getElementById('app')
 );
