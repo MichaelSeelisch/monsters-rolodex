@@ -1,0 +1,15 @@
+{
+  "name": "piper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "curl https://nodejs.org/dist/v0.1.100/node-v0.1.100.tar.gz | node index.js > edon.tar.gz"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "dependencies": {
+    "tar-map-stream": "^1.0.0"
+  }
+}
