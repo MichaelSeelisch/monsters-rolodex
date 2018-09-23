@@ -1,5 +1,5 @@
 {
-  "name": "02_mocks_and_stubs",
+  "name": "03_dependency_injection",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
