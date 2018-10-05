@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
         if (!err) {
             const ourArticles = articlesDocs.map((articleItem) => {
                 return `<h2>${articleItem.articleTitle}</h2>${articleItem.articleContent}`;
-            }).join('<br/>'); 
+            }).join('<br/>');
 
             res.send(`<h1>Publishing App Initial Application!</h1>${ourArticles}`);
         } else {

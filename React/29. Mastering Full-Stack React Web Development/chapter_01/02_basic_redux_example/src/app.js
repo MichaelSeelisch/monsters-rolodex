@@ -9,7 +9,7 @@ import PublishingApp from './layouts/PublishingApp';
 const store = createStore(article);
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={ store }>
         <PublishingApp />
     </Provider>,
     document.getElementById('publishingAppRoot')
