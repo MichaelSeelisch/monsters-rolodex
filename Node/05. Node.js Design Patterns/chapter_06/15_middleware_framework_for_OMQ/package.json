@@ -1,0 +1,16 @@
+{
+  "name": "15_middleware_framework_for_OMQ",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "dependencies": {
+    "zmq": "^2.15.3"
+  }
+}
