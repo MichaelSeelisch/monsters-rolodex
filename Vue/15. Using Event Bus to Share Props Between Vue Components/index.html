@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="./vue.js"></script>
+    <script type="module" src="./eventBusSystem.js">
+        import { eventBus } from './eventBusSystem';
+    </script>
+    <script type="module" defer>
+        import { main } from './main.js';
+        main();
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Counter</h2>
+
+        <h2>{{ count }}</h2>
+
+        <input type="number" v-model="entry" />
+
+        <div class="div__buttons">
+            <button class="incrementButton" @click.prevent="handleIncrement">
+                Increment By Input
+            </button>
+
+            <button class="decrementButton" @click.prevent="handleDecrement">
+                Decrement By Input
+            </button>
+        </div>
+
+        <p>{{ text }}</p>
+    </div>
+</body>
+</html>

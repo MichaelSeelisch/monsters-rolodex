@@ -1,0 +1,21 @@
+#app {
+    margin: 5px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.div__buttons {
+    margin-top: 7px;
+}
+
+.incrementButton {
+    background-color:#44c767;
+    border:1px solid #18ab29;
+    font-size:17px;
+}
+
+.decrementButton {
+    background-color:#f70000;
+    border:1px solid #18ab29;
+    font-size:17px;
+}
