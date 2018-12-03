@@ -5,8 +5,8 @@ const PostList = ({ posts }) =>
     <ul>
         { posts.map(
             (post, i) =>
-                <li key={i.toString()}>
-                    <Post {...post} />
+                <li key={ i.toString() }>
+                    <Post { ...post } />
                 </li>
         )}
     </ul>;
