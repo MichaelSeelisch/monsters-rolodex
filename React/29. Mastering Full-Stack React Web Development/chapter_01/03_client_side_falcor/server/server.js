@@ -4,7 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost/local');
+mongoose.connect('mongodb://localhost/local', { useNewUrlParser: true });
 
 const articleSchema = {
     articleTitle: String,

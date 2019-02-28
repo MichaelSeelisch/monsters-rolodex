@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-      "start": "./node_modules/.bin/cypress open"
+    "start": "./node_modules/.bin/cypress open"
   },
-  "dependencies": {
-    "cypress": "^3.1.0"
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^3.1.4"
   }
 }
