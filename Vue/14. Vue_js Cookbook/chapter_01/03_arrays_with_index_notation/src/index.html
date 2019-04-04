@@ -7,13 +7,16 @@
     <title>Document</title>
 
     <script src="./vue.min.js"></script>
-    <script src="./components/App.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
 </head>
 
 <body>
-    Your App:<br />
     <div id="app">
+        <ul>
+            <li v-for="(animal, i) in animals">
+                The {{animal}} goes {{sounds[i]}}
+            </li>
+        </ul>
     </div>
-
 </body>
 </html>

@@ -7,13 +7,15 @@
     <title>Document</title>
 
     <script src="./vue.min.js"></script>
-    <script src="./components/App.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
 </head>
 
 <body>
-    Your App:<br />
     <div id="app">
+        <ul>
+            <li v-for="n in countdown">{{ n }}</li>
+            <li>{{ countdown.length == 11 ? 'launch missile!' : '' }}</li>
+        </ul>
     </div>
-
 </body>
 </html>

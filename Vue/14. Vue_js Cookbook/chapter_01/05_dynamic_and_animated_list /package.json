@@ -1,0 +1,15 @@
+{
+  "name": "02_arrays",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server 'src' --files 'src' --single"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.0"
+  }
+}
