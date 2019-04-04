@@ -1,0 +1,24 @@
+{
+  "name": "Gourmet_SSR",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node lib/server.js",
+    "build": "gourmet build"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "dependencies": {
+    "@gourmet/client-lib": "^1.2.4",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@gourmet/gourmet-cli": "^1.1.4",
+    "@gourmet/preset-react": "^1.2.9",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
