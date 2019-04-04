@@ -1,5 +1,5 @@
 - Start "mongod" in terminal
 
-- Start Application "npm start"
+- Start Application "npm run dev"
 
 - Connect with robomongo
