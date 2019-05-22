@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Native Lazy-Loading with Polyfill</title>
+
+    <style>
+        img {
+            display: block;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- In-viewport images should be loaded normally, or eagerly -->
+    <img src="https://picsum.photos/480/635" width="480" height="635" loading="eager" alt="Important image">
+
+    <!-- Let’s lazy-load the rest of these images -->
+    <img data-src="https://picsum.photos/480/640" width="480" height="640" loading="lazy" alt="Lazy image 1">
+    <img data-src="https://picsum.photos/480/645" width="480" height="645" loading="lazy" alt="Lazy image 2">
+    <img data-src="https://picsum.photos/480/650" width="480" height="650" loading="lazy" alt="Lazy image 3">
+    <img data-src="https://picsum.photos/480/655" width="480" height="655" loading="lazy" alt="Lazy image 4">
+    <img data-src="https://picsum.photos/480/660" width="480" height="660" loading="lazy" alt="Lazy image 5">
+
+    <!-- Set the options for the global instance of vanilla-lazyload -->
+    <script>
+    window.lazyLoadOptions = {
+        elements_selector: "[loading=lazy]",
+        use_native: true // ← enables hybrid lazy loading
+    };
+    </script>
+
+    <!-- Include vanilla lazyload 12 through an async script -->
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+</body>
+</html>
