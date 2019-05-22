@@ -13,12 +13,20 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Connect to mongodb
-mongoose.connect('mongodb://localhost/movie_rating_app', function() {
+mongoose.connect('mongodb://localhost/movie_rating_app', function () {
     console.log('Connection has been made');
 })
 .catch(err => {
     console.error('App starting error:', err.stack);
     process.exit(1);
+});
+
+// Include controllers
+fs.readdirSync("controllers").forEach(function (file) {
+    if(file.substr(-3) == ".js") {
+      const route = require("./controllers/" + file);
+      route.controller(app);
+    }
 });
 
 router.get('/', function(req, res) {
