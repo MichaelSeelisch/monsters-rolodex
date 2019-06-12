@@ -1,37 +1,35 @@
 const state = {
     auth: false,
     showLoginForm: false,
-};
-
+}
 const actions = {
     showLogin({ commit }) {
-        commit('showForm');
+        commit('showForm')
     },
     hideLogin({ commit }) {
-        commit('hideForm');
+        commit('hideForm')
     },
     attemptLogin({ commit }) {
         // not when empty => need to add stuff to state
-        commit('authorize');
+        commit('authorize')
     },
     logout({ commit }) {
-        commit('deauthorize');
+        commit('deauthorize')
     },
-};
-
+}
 const mutations = {
     showForm(state) {
-        state.showLoginForm = true;
+        state.showLoginForm = true
     },
     hideForm(state) {
-        state.showLoginForm = false;
+        state.showLoginForm = false
     },
     authorize(state) {
-        state.auth = true;
-        state.showLoginForm = false;
+        state.auth = true
+        state.showLoginForm = false
     },
     deauthorize(state) {
-        state.auth = false;
+        state.auth = false
     },
 }
 
@@ -40,4 +38,4 @@ export default {
     state,
     actions,
     mutations,
-};
+} 
