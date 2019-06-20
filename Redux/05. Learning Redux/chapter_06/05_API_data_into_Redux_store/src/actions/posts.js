@@ -5,29 +5,15 @@ import {
     CREATE_POST,
     EDIT_POST,
     DELETE_POST
-} from '../actionTypes'
+} from '../actionTypes';
 
-export const fetchPosts = () => (dispatch) => {
-    dispatch({
-        type: FETCH_POSTS_REQUEST
-    });
+import { thunkCreator } from './utils';
 
-    return fetch('http://localhost:8080/api/posts')
-        .then(response => response.json())
-        .then(json => {
-            dispatch({
-                type: FETCH_POSTS_SUCCESS,
-                result: json
-            })
-            return json
-        })
-        .catch(err =>
-            dispatch({
-                type: FETCH_POSTS_FAILURE,
-                error: err
-            })
-        )
-}
+export const fetchPosts = () => thunkCreator({
+    types: [ FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE ],
+    promise: fetch('http://localhost:8080/api/posts')
+               .then(response => response.json())
+})
 
 export const createPost = (user, post) => {
   const { title, text, category = 'random' } = post

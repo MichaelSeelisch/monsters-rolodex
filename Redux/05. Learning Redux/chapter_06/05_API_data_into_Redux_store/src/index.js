@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import configureStore from './store'
-import { createUser, createPost } from './actions'
+import { createUser, createPost, fetchPosts } from './actions'
 import App from './components/App.jsx'
 import DevTools from './containers/DevTools.jsx'
 
@@ -19,19 +19,7 @@ if (!initialState.users || initialState.users.length === 0) {
   store.dispatch(createUser('max', 'Max Mustermann'))
 }
 
-if (!initialState.posts || initialState.posts.length === 0) {
-  // create posts
-  store.dispatch(createPost('dan', {
-    title: 'First post',
-    text: 'Hello world! This is the first blog post.',
-    category: 'welcome',
-  }))
-  store.dispatch(createPost('max', {
-    title: 'Another test',
-    text: 'This is another test blog post.',
-    category: 'test',
-  }))
-}
+store.dispatch(fetchPosts());
 
 console.log('initial state:', JSON.stringify(store.getState(), null, 2))
 store.subscribe(() =>
