@@ -3,18 +3,18 @@
         v-model="valid"
         ref="form"
         lazy-validation>
-            <v-text-field
+            <v-textarea
                 label="Movie Name"
                 v-model="name"
                 :rules="nameRules"
                 required>
-            </v-text-field>
-            <v-text-field
+            </v-textarea>
+            <v-textarea
                 name="input-7-1"
                 label="Movie Description"
                 v-model="description"
                 multi-line>
-            </v-text-field>
+            </v-textarea>
             <v-select
                 label="Movie Release Year"
                 v-model="release_year"
@@ -92,7 +92,7 @@
                     })
                     .catch(() => {
                         this.$swal(
-                            'Oh oo!',
+                            'Oh no!',
                             'Could not add the movie!',
                             'error',
                         );
