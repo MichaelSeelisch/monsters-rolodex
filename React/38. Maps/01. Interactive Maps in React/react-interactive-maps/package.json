@@ -1,0 +1,27 @@
+{
+  "name": "react-interactive-maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "start": "node server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "convert-csv-to-json": "0.0.15",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-map-gl": "^5.0.7",
+    "react-vis": "^1.11.7"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "node-sass": "^4.12.0"
+  }
+}
