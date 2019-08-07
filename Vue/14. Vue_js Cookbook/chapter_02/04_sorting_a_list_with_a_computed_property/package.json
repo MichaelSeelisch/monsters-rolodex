@@ -1,0 +1,15 @@
+{
+  "name": "04_sorting_a_list_with_a_computed_property",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server 'src' --files 'src' --single"
+  },
+  "keywords": [],
+  "author": "Michael Seelisch",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.0"
+  }
+}

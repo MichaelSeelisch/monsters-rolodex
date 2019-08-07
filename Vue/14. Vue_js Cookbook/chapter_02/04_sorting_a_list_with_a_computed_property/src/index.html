@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="./vue.min.js"></script>
+    <script src="./main.js" type="module"></script>
+
+    <style>
+        .ascending:after { 
+            content: "\25B2";
+        } 
+ 
+        .descending:after { 
+            content: "\25BC";
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"> 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>Name</th> 
+                    <th>Country</th> 
+                    <th 
+                        v-bind:class="order === 1 ? 'descending' : 'ascending'" 
+                        @click="sort">
+                        Electricity
+                    </th> 
+                </tr> 
+            </thead> 
+            <tbody>
+                <tr v-for="dam in damsByElectricity"> 
+                    <td>{{dam.name}}</td> 
+                    <td>{{dam.country}}</td> 
+                    <td>{{dam.electricity}} MegaWatts</td> 
+                </tr>
+            </tbody> 
+        </table>
+    </div>
+</body>
+</html>
