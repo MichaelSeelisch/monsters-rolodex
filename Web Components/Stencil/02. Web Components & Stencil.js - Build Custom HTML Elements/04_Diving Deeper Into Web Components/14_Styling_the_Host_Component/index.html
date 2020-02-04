@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Components</title>
+    <script src="tooltip.js"></script>
+    <script src="confirm-link.js"></script>
+
+    <style>
+        div {
+            border: 2px solid orange;
+        }
+
+        uc-tooltip {
+            border: 1px solid blue;
+            padding: 0.15rem;
+        }
+
+        .highlight {
+             /* background-color: rgba(221, 148, 13, 0.733); */
+             /* border-bottom: 4px dotted blue; */
+        }
+    </style>
+</head>
+<body>
+    <template id="tooltip-template">
+        <slot>Some default text</slot>
+        <span>
+            (?)
+        </span>
+    </template>
+    <p>
+        <uc-tooltip text="Web Components is a set of standards!">
+            <span class="highlight">Web Components</span>
+        </uc-tooltip> are awesome!
+    </p>
+    <uc-tooltip></uc-tooltip>
+
+    <div>This does not get the web componenet styles.</div>
+
+    <a is='uc-confirm-link' href='https://www.google.de'>Google</a>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.form {
+    text-align: center;
+}
+
+vaadin-text-field {
+    margin-right: 20px;
+}
+
+vaadin-grid {
+    text-align: center;
+}
