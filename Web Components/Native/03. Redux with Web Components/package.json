@@ -1,0 +1,22 @@
+{
+    "name": "webcomponents-redux-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "build": "parcel build index.html"
+    },
+    "browserslist": "last 2 Chrome versions",
+    "dependencies": {
+        "redux": "^4.0.5",
+        "webcomponents-redux": "^2.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "7.2.0",
+        "@babel/preset-env": "7.8.7",
+        "babel-preset-env": "^1.7.0",
+        "parcel-bundler": "^1.6.1"
+    },
+    "keywords": []
+}
