@@ -1,0 +1,16 @@
+{
+  "name": "dynamic_environment_variables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js 'echo Bingo!'",
+    "build": "node index.js 'echo Bingo!'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "util": "^0.12.2"
+  }
+}
