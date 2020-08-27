@@ -1,0 +1,35 @@
+import { Component, h } from '@stencil/core';
+
+@Component({
+	tag: '{{kebabCase name}}',
+	styleUrl: '{{kebabCase name}}.less',
+	shadow: true,
+})
+
+export class {{pascalCase name}} {
+  {{#if lifecycles}}
+  connectedCallback() {}
+
+  componentWillLoad() {}
+
+  componentWillRender() {}
+
+  componentDidRender() {}
+
+  componentDidLoad() {}
+
+  componentDidUpdate() {}
+
+  componentShouldUpdate() {}
+
+  componentWillUpdate() {}
+
+  disconnectedCallback() {}
+  {{/if}}
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
+}
