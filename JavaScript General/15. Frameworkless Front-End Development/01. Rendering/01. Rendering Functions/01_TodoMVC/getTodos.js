@@ -1,4 +1,4 @@
-const { faker } = window
+const { faker } = window;
 
 const createElement = () => ({
     text: faker.random.words(2),

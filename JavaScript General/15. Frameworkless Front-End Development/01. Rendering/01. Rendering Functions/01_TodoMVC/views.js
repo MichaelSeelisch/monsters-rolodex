@@ -37,7 +37,7 @@ export default (targetElement, state) => {
     } = state;
 
     const element = targetElement.cloneNode(true);
-  ´
+
     const list = element.querySelector('.todo-list');
     const counter = element.querySelector('.todo-count');
     const filters = element.querySelector('.filters');
